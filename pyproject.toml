@@ -1,0 +1,41 @@
+[project]
+name = "agentfront"
+version = "0.1.0"
+description = "AgentFront -- Merchant Agent-Readiness Engine (Razorpay AI Buildathon 2026, Track 1)"
+requires-python = ">=3.11"
+readme = "README.md"
+dependencies = [
+    # API / validation
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "pydantic>=2.6",
+    "python-dotenv>=1.0",
+    # storage
+    "psycopg[binary]>=3.1",
+    "redis>=5.0",
+    # AI core
+    "langgraph>=0.1",
+    "langchain-core>=0.2",
+    "chromadb>=0.5",
+    "langsmith>=0.1",
+    # MCP surface
+    "mcp>=1.0",
+    # crypto (Ed25519 mandate signing) -- never hand-roll this
+    "pynacl>=1.5",
+    # payments, test mode only
+    "razorpay>=1.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.4",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pipeline*", "surface*", "eval*", "api*"]
