@@ -18,6 +18,11 @@ dependencies = [
     "langchain-core>=0.2",
     "chromadb>=0.5",
     "langsmith>=0.1",
+    # LLM providers, split by task -- see pipeline/llm_config.py.
+    # Gemini: structured extraction/canonicalization/compat-proposal/intent
+    # parsing. Groq: high-volume/speed-sensitive work (adversarial gen, explainer).
+    "langchain-google-genai>=2.0",
+    "langchain-groq>=0.2",
     # MCP surface
     "mcp>=1.0",
     # crypto (Ed25519 mandate signing) -- never hand-roll this

@@ -43,6 +43,11 @@ makes any merchant agent-ready.**
 
 - Python 3.11+, FastAPI, PostgreSQL, Redis
 - LangGraph (orchestration), ChromaDB (embedding clustering)
+- LLM providers, split by task to stay within free tiers (see
+  `pipeline/llm_config.py`): **Gemini** (2.5/3 Flash) for structured
+  extraction/canonicalization/compat-proposal/intent-parsing; **Groq**
+  (Llama 3.3 70B) for high-volume/speed-sensitive work (adversarial-scenario
+  generation, optionally the explainer agent)
 - MCP Python SDK / FastMCP
 - Pydantic (load-bearing — all boundary data is strictly validated)
 - PyNaCl (Ed25519 mandate signing)
