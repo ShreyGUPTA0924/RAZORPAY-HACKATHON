@@ -71,3 +71,41 @@ def get_component_config(component: str) -> LLMComponentConfig:
     model = os.environ.get(f"{env_prefix}_LLM_MODEL", default.model)
 
     return LLMComponentConfig(provider=provider, model=model)
+
+
+# ---------------------------------------------------------------------------
+# Fallback chains -- free-tier quotas are per (provider, model), not just
+# per provider: Gemini's gemini-2.5-flash and gemini-2.5-flash-lite are
+# separate daily buckets, and so is every individual Groq model. A chain
+# lets one component exhaust its primary bucket and keep working against
+# the next one instead of stopping for the day.
+#
+# Every model name below was confirmed to exist via a live models.list()
+# call on 2026-08-27 -- both providers rotate their catalogs faster than
+# expected (gemini-2.0-flash and llama-3.3-70b-versatile were both already
+# gone by then). Re-verify with client.models.list() before trusting this
+# chain again after any gap, rather than assuming it's still accurate.
+#
+# gemini-2.5-flash-lite: spot-checked (not the full synthetic suite) on
+# 3 obvious-answer cases on 2026-08-27 -- correct on all 3, including
+# correctly abstaining on the deliberately-uninformative listing. That's a
+# positive signal, not a full validation; it stays a fallback link rather
+# than replacing gemini-2.5-flash as primary until it's run against the
+# full tests/test_extract_llm.py suite.
+# ---------------------------------------------------------------------------
+
+FALLBACK_CHAINS: dict[str, list[LLMComponentConfig]] = {
+    "extractor": [
+        LLMComponentConfig(Provider.GEMINI, "gemini-2.5-flash"),
+        LLMComponentConfig(Provider.GEMINI, "gemini-2.5-flash-lite"),
+        LLMComponentConfig(Provider.GROQ, "openai/gpt-oss-120b"),
+        LLMComponentConfig(Provider.GROQ, "openai/gpt-oss-20b"),
+    ],
+}
+
+
+def get_fallback_chain(component: str) -> list[LLMComponentConfig]:
+    """The ordered list of (provider, model) to try for `component`. Falls
+    back to a single-entry chain of just get_component_config(component)
+    for any component without an explicit chain defined above."""
+    return FALLBACK_CHAINS.get(component) or [get_component_config(component)]

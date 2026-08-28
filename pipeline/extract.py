@@ -2,18 +2,36 @@
 Tier 1 centerpiece: attribute extraction agent.
 
 extract_sku(sku_id, title, description) -> ExtractionResult:
-  1. One structured-output Gemini call (get_chat_model("extractor")) fills a
-     full pipeline.schema.ProductAttributes from title + description.
+  1. One structured-output call (get_chat_model_with_fallback("extractor"))
+     fills a full pipeline.schema.ProductAttributes from title + description.
+     Tries every (provider, model) in pipeline.llm_config's fallback chain
+     in order -- free-tier quotas are per (provider, model), so exhausting
+     one doesn't stop the pipeline.
   2. Self-verification: a second, independent call re-derives ONE attribute
      -- the one the first call was most confident about -- from the same
      source text alone, blind to the first call's answer. Disagreement
      lowers that field's confidence; it never picks a winner between the
      two answers. Spot-checking the model's most confident claim is the
      more useful test of calibration than spot-checking a field it already
-     flagged as uncertain.
+     flagged as uncertain. Always one-SKU-at-a-time, even in batch mode --
+     see the "Batch mode" section below for why.
   3. Every call is traced through LangSmith with sku_id/field tags (see
      pipeline/tracing.py -- configure_tracing() must be called once at
      process start, which run_batch() below does).
+
+run_batch() is the real entrypoint for processing data/catalog.json (or a
+subset via --sku-id/--limit) and composes four things to make the free tier
+workable at catalog scale:
+  - disk cache (pipeline/extract_cache.py): a SKU already extracted under
+    the current PROMPT_VERSION + model is never recomputed, so a re-run
+    (e.g. demo rehearsal) costs zero quota.
+  - batched primary extraction (extract_primary_batch): several SKUs'
+    primary calls in one request instead of one each -- see "Batch mode".
+  - the fallback chain (see point 1) for every call that isn't cached.
+  - token diet (trim_boilerplate): strips generic marketing/warranty
+    boilerplate before it goes over the wire. Never applied to what's
+    persisted to disk -- data/catalog.json and raw_description stay
+    verbatim; this only shrinks what the LLM actually sees.
 
 Never guesses: the system prompt is explicit that value=null + low
 confidence beats a plausible-sounding fabrication, and pipeline/quarantine.py
@@ -34,10 +52,19 @@ from typing import Any
 from pydantic import BaseModel, create_model
 from pydantic import Field as PydanticField
 
-from pipeline.llm_clients import get_chat_model
+from pipeline import extract_cache
+from pipeline.llm_clients import get_chat_model_with_fallback
+from pipeline.llm_config import get_component_config
 from pipeline.quarantine import evaluate as quarantine_evaluate
 from pipeline.schema import ATTRIBUTE_FIELDS, ProductAttributes
 from pipeline.tracing import configure_tracing
+
+# Bump whenever a change to the system prompt, batching behavior, or token
+# diet could plausibly change what the model returns for the same
+# sku_id+description+model -- this is part of the cache key
+# (pipeline/extract_cache.py) specifically so such a change correctly
+# misses the cache instead of serving a stale pre-change result.
+PROMPT_VERSION = "v2-batch-trim-fallback"
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "data" / "catalog.json"
@@ -55,6 +82,61 @@ SPEC_BLOCK_MARKER = re.compile(r"specifications of", re.IGNORECASE)
 def strip_spec_block(description: str) -> str:
     match = SPEC_BLOCK_MARKER.search(description)
     return description[: match.start()].strip() if match else description
+
+
+# ---------------------------------------------------------------------------
+# Token diet -- generic Flipkart marketing/policy boilerplate that carries
+# zero product-attribute signal but shows up, verbatim or near-verbatim,
+# across a large fraction of descriptions. Trimmed only from what goes over
+# the wire to the LLM; data/catalog.json and raw_description on disk are
+# never touched -- this is purely a request-cost optimization, not a
+# cleaning pass on the source data (Tier 0's "preserve verbatim" rule still
+# applies to what's stored).
+# ---------------------------------------------------------------------------
+
+BOILERPLATE_PATTERNS = [
+    # "Buy X only for Rs. Y from Flipkart.com. Only Genuine Products. 30 Day
+    # Replacement Guarantee. Free Shipping. Cash On Delivery!" -- the entire
+    # generic marketing sentence, seen verbatim on many listings.
+    re.compile(
+        r"Buy .*? from Flipkart\.com\.\s*Only Genuine Products\.\s*\d+\s*Day Replacement Guarantee\.\s*"
+        r"Free Shipping\.\s*Cash On Delivery!?",
+        re.IGNORECASE,
+    ),
+    # The same clauses, individually, when they appear without the full
+    # "Buy ... Flipkart.com" lead-in (e.g. inside a "Key Features" sentence).
+    re.compile(r"Only Genuine Products\.?", re.IGNORECASE),
+    re.compile(r"\d+\s*Day Replacement Guarantee\.?", re.IGNORECASE),
+    re.compile(r"Free Shipping\.?", re.IGNORECASE),
+    re.compile(r"Cash On Delivery!?", re.IGNORECASE),
+    # Standalone price restatement -- price already lives in catalog.json's
+    # own retail_price/discounted_price fields, not needed for attribute
+    # extraction.
+    re.compile(r"Price:\s*Rs\.?\s*[\d,]+(\.\d+)?", re.IGNORECASE),
+    # Warranty boilerplate that sometimes leaks into prose outside the
+    # structured spec block (which strip_spec_block already removes wholesale).
+    re.compile(r"Not Covered in Warranty", re.IGNORECASE),
+    re.compile(r"Covered in Warranty\s*:?\s*\w*", re.IGNORECASE),
+    re.compile(r"\d+\s*Days?\s*Brand Warranty", re.IGNORECASE),
+    re.compile(r"Domestic Warranty", re.IGNORECASE),
+    re.compile(r"International Warranty", re.IGNORECASE),
+    re.compile(r"Warranty Summary\s*:?", re.IGNORECASE),
+]
+
+WHITESPACE_RUN = re.compile(r"[ \t]{2,}")
+BLANK_LINES = re.compile(r"\n{2,}")
+STRAY_PUNCTUATION = re.compile(r"\s+([,.])")
+
+
+def trim_boilerplate(text: str) -> str:
+    """Strip generic marketing/policy/warranty boilerplate before it goes
+    over the wire. Never applied to anything persisted to disk."""
+    for pattern in BOILERPLATE_PATTERNS:
+        text = pattern.sub("", text)
+    text = STRAY_PUNCTUATION.sub(r"\1", text)  # e.g. "cable ." left behind by a removed clause
+    text = WHITESPACE_RUN.sub(" ", text)
+    text = BLANK_LINES.sub("\n", text)
+    return text.strip()
 
 
 # ---------------------------------------------------------------------------
@@ -119,6 +201,99 @@ def build_system_prompt() -> str:
 
 def build_user_message(title: str, description: str) -> str:
     return f"Title: {title}\n\nDescription: {description}"
+
+
+# ---------------------------------------------------------------------------
+# Batch mode (B1): N SKUs in one structured-output call instead of one.
+# Gemini's free tier limits REQUESTS/day, not tokens, so one call covering
+# 8-10 SKUs is worth roughly 8-10x a single-SKU call against that budget.
+# Only the PRIMARY extraction call is batched -- self-verification stays
+# one-SKU-at-a-time (see run_self_verification), because its whole value is
+# genuine independence from the primary call, and batching it would need a
+# stringly-typed cross-field response shape that trades exactly the kind of
+# quality risk this batching is required to be validated against. Combined
+# with the disk cache, self-verification's cost is paid once per SKU ever,
+# not once per SKU per run.
+#
+# Validated, not assumed: re-ran 5 already-extracted SKUs (spanning cable,
+# charger, case, screen_protector, headphone) through this batched path at
+# batch_size=5, same model, and diffed against their earlier unbatched
+# results field-by-field -- 38/40 field comparisons matched exactly. The 2
+# that didn't were both on ambiguous/underspecified fields, not evidence of
+# cross-SKU contamination: one was model_compat on a SKU whose title says
+# "for Android Smart Phone" (arguably a genuinely universal accessory --
+# unbatched hedged with value=None conf=0.10, batched called it value=[]
+# conf=0.70, which is plausibly the *better* answer per this schema's own
+# "empty list means confidently universal" semantics); the other was
+# wireless_charging on a wired headphone, where the schema/prompt doesn't
+# explicitly say the field only applies to charger/power_bank/case (the
+# ground-truth suggester in eval/build_ground_truth.py already encodes that
+# gating; the extraction prompt here doesn't yet) -- worth tightening
+# independent of batching, since it'd likely reduce this same inconsistency
+# in unbatched runs too. No SKU picked up another SKU's connector_type,
+# material, or model_compat -- the actual "does information bleed between
+# SKUs" failure mode this validation was checking for.
+# ---------------------------------------------------------------------------
+
+BATCH_SYSTEM_PROMPT_SUFFIX = """
+
+You will be given MULTIPLE product listings in one request, each labeled with its own sku_id. \
+Extract attributes for EACH one independently -- never let information from one listing (brand, \
+model, connector, material, etc.) leak into another's answer just because they appeared in the \
+same request. Return exactly one result per input sku_id, using the same sku_id string, in any order.
+"""
+
+
+class BatchItem(BaseModel):
+    sku_id: str
+    attributes: ProductAttributes
+
+
+class BatchExtractionResponse(BaseModel):
+    items: list[BatchItem]
+
+
+def build_batch_system_prompt() -> str:
+    return build_system_prompt() + BATCH_SYSTEM_PROMPT_SUFFIX
+
+
+def build_batch_user_message(rows: list[tuple[str, str, str]]) -> str:
+    """rows: list of (sku_id, title, description)."""
+    parts = [f"=== SKU: {sku_id} ===\nTitle: {title}\n\nDescription: {description}" for sku_id, title, description in rows]
+    return "\n\n".join(parts)
+
+
+DEFAULT_BATCH_SIZE = 8
+
+
+def _chunks(items: list, size: int):
+    for i in range(0, len(items), size):
+        yield items[i : i + size]
+
+
+def extract_primary_batch(rows: list[tuple[str, str, str]], batch_size: int = DEFAULT_BATCH_SIZE) -> dict[str, ProductAttributes | None]:
+    """Primary extraction only (no self-verification), batch_size SKUs per
+    request. rows: list of (sku_id, title, description).
+
+    Returns {sku_id: ProductAttributes}; a SKU missing from the model's
+    response maps to None -- a batch-level failure for that SKU, reported
+    as an error by the caller, never silently defaulted to empty attributes.
+    """
+    results: dict[str, ProductAttributes | None] = {}
+    for chunk in _chunks(rows, batch_size):
+        sku_ids = [r[0] for r in chunk]
+        model = get_chat_model_with_fallback("extractor", output_schema=BatchExtractionResponse)
+        response = model.invoke(
+            [
+                ("system", build_batch_system_prompt()),
+                ("human", build_batch_user_message(chunk)),
+            ],
+            config={"run_name": f"extract_batch:{sku_ids[0]}..{sku_ids[-1]}", "tags": ["extraction", "batch", *sku_ids]},
+        )
+        by_id = {item.sku_id: item.attributes for item in response.items}
+        for sku_id in sku_ids:
+            results[sku_id] = by_id.get(sku_id)
+    return results
 
 
 # ---------------------------------------------------------------------------
@@ -198,7 +373,7 @@ def self_verify_field(sku_id: str, title: str, description: str, field_name: str
     blind to whatever the primary extraction call already produced."""
     value_type = FIELD_VALUE_TYPES[field_name]
     schema_field = ProductAttributes.model_fields[field_name]
-    verify_model = get_chat_model("extractor", output_schema=_verification_schema(field_name))
+    verify_model = get_chat_model_with_fallback("extractor", output_schema=_verification_schema(field_name))
 
     prompt = (
         f"From the product listing below, determine only this one attribute: {field_name}.\n"
@@ -241,9 +416,24 @@ def run_self_verification(sku_id: str, title: str, description: str, attrs: Prod
     return sv
 
 
+def finish_with_self_verification(sku_id: str, title: str, description: str, attrs: ProductAttributes | None) -> ExtractionResult:
+    """Shared tail end of both extraction paths (single-call and batched):
+    given the primary call's attributes (or None if it's missing -- e.g. a
+    SKU absent from a batch response), run self-verification and wrap the
+    result. Used directly by extract_sku() and by the batch orchestrator in
+    run_batch()."""
+    if attrs is None:
+        return ExtractionResult(sku_id=sku_id, attributes=ProductAttributes(), error="no attributes returned (missing from batch response)")
+    try:
+        sv = run_self_verification(sku_id, title, description, attrs)
+    except Exception as e:  # noqa: BLE001 -- self-verification failure shouldn't discard a good primary extraction
+        return ExtractionResult(sku_id=sku_id, attributes=attrs, error=f"self-verification call failed: {e}")
+    return ExtractionResult(sku_id=sku_id, attributes=attrs, self_verification=sv)
+
+
 def extract_sku(sku_id: str, title: str, description: str) -> ExtractionResult:
     try:
-        model = get_chat_model("extractor", output_schema=ProductAttributes)
+        model = get_chat_model_with_fallback("extractor", output_schema=ProductAttributes)
         attrs = model.invoke(
             [
                 ("system", build_system_prompt()),
@@ -254,12 +444,7 @@ def extract_sku(sku_id: str, title: str, description: str) -> ExtractionResult:
     except Exception as e:  # noqa: BLE001 -- batch runner must not die on one bad SKU
         return ExtractionResult(sku_id=sku_id, attributes=ProductAttributes(), error=f"extraction call failed: {e}")
 
-    try:
-        sv = run_self_verification(sku_id, title, description, attrs)
-    except Exception as e:  # noqa: BLE001 -- self-verification failure shouldn't discard a good primary extraction
-        return ExtractionResult(sku_id=sku_id, attributes=attrs, error=f"self-verification call failed: {e}")
-
-    return ExtractionResult(sku_id=sku_id, attributes=attrs, self_verification=sv)
+    return finish_with_self_verification(sku_id, title, description, attrs)
 
 
 # ---------------------------------------------------------------------------
@@ -269,15 +454,41 @@ def extract_sku(sku_id: str, title: str, description: str) -> ExtractionResult:
 PACING_DELAY_S = 1.0  # proactive spacing between SKUs, on top of reactive retry-with-backoff
 
 
-def run_batch(catalog_path: Path = CATALOG, limit: int | None = None, sku_ids: list[str] | None = None) -> list[ExtractionResult]:
+def _cache_entry_to_result(sku_id: str, entry: dict) -> ExtractionResult:
+    return ExtractionResult(
+        sku_id=sku_id,
+        attributes=ProductAttributes.model_validate(entry["attributes"]),
+        self_verification=SelfVerification(**entry["self_verification"]),
+    )
+
+
+def _result_to_cache_entry(result: ExtractionResult) -> dict:
+    return {
+        "attributes": result.attributes.model_dump(mode="json"),
+        "self_verification": asdict(result.self_verification),
+    }
+
+
+def run_batch(
+    catalog_path: Path = CATALOG,
+    limit: int | None = None,
+    sku_ids: list[str] | None = None,
+    use_cache: bool = True,
+    force: bool = False,
+    batching: bool = True,
+    batch_size: int = DEFAULT_BATCH_SIZE,
+) -> list[ExtractionResult]:
     """Runs extraction over data/catalog.json using the FULL raw description
-    -- deliberately not strip_spec_block()'d. That strip exists only to keep
-    the held-out eval leak-free when scoring against ground truth derived
-    from the same spec column (see eval/build_ground_truth.py's
-    extractor_eval_description); it has no reason to apply here. Stripping
-    it from every catalog row starves connector_type/material of real
-    signal for no benefit -- there's nothing to leak against when the
-    production pipeline just extracts and publishes, it isn't being scored.
+    (trim_boilerplate()'d, but NOT strip_spec_block()'d -- that strip exists
+    only to keep the held-out eval leak-free when scoring against ground
+    truth derived from the same spec column; it has no reason to apply here.
+    Stripping it from every catalog row would starve connector_type/material
+    of real signal for no benefit -- there's nothing to leak against when
+    the production pipeline just extracts and publishes, it isn't scored.)
+
+    Cache-checks every row first (unless force=True); only SKUs that miss
+    the cache actually call an LLM, batched batch_size-at-a-time unless
+    batching=False.
     """
     configure_tracing()
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
@@ -286,18 +497,49 @@ def run_batch(catalog_path: Path = CATALOG, limit: int | None = None, sku_ids: l
     if limit:
         catalog = catalog[:limit]
 
-    results = []
-    for i, row in enumerate(catalog):
-        title = row["product_name"]
-        description = row["description"]
-        print(f"[{i + 1}/{len(catalog)}] {row['sku_id']}: {title[:60]}")
-        result = extract_sku(row["sku_id"], title, description)
-        if result.error:
-            print(f"    ERROR: {result.error}")
-        results.append(result)
-        if i < len(catalog) - 1:
-            time.sleep(PACING_DELAY_S)
-    return results
+    model_name = get_component_config("extractor").model  # cache key uses the configured primary model, even if a fallback ends up serving a given call
+    results: dict[str, ExtractionResult] = {}
+    to_process: list[tuple[dict, str, str]] = []  # (row, trimmed_description, cache_key)
+
+    for row in catalog:
+        description = trim_boilerplate(row["description"])
+        key = extract_cache.cache_key(row["sku_id"], description, PROMPT_VERSION, model_name)
+        cached = None if force else (extract_cache.get(key) if use_cache else None)
+        if cached is not None:
+            results[row["sku_id"]] = _cache_entry_to_result(row["sku_id"], cached)
+        else:
+            to_process.append((row, description, key))
+
+    if results:
+        print(f"{len(results)}/{len(catalog)} SKUs served from cache (zero quota spent)")
+    print(f"{len(to_process)}/{len(catalog)} SKUs to extract")
+
+    if batching and to_process:
+        batch_rows = [(row["sku_id"], row["product_name"], description) for row, description, _ in to_process]
+        print(f"  batching {len(batch_rows)} SKUs, {batch_size} per request "
+              f"({-(-len(batch_rows) // batch_size)} requests instead of {len(batch_rows)})")
+        primary = extract_primary_batch(batch_rows, batch_size=batch_size)
+        for row, description, key in to_process:
+            sku_id = row["sku_id"]
+            result = finish_with_self_verification(sku_id, row["product_name"], description, primary.get(sku_id))
+            if result.error:
+                print(f"    ERROR {sku_id}: {result.error}")
+            results[sku_id] = result
+            if use_cache and not result.error:
+                extract_cache.put(key, _result_to_cache_entry(result))
+    else:
+        for i, (row, description, key) in enumerate(to_process):
+            print(f"[{i + 1}/{len(to_process)}] {row['sku_id']}: {row['product_name'][:60]}")
+            result = extract_sku(row["sku_id"], row["product_name"], description)
+            if result.error:
+                print(f"    ERROR: {result.error}")
+            results[row["sku_id"]] = result
+            if use_cache and not result.error:
+                extract_cache.put(key, _result_to_cache_entry(result))
+            if i < len(to_process) - 1:
+                time.sleep(PACING_DELAY_S)
+
+    return [results[row["sku_id"]] for row in catalog]  # preserve catalog order
 
 
 def _result_to_dict(result: ExtractionResult, decision) -> dict:
@@ -373,10 +615,21 @@ def main():
     parser.add_argument("--limit", type=int, default=None, help="Only process the first N catalog rows.")
     parser.add_argument("--sku-id", action="append", dest="sku_ids", help="Only process specific SKU id(s). Repeatable.")
     parser.add_argument("--out", type=Path, default=ROOT / "eval" / "extraction_results.json")
+    parser.add_argument("--no-cache", action="store_true", help="Don't read or write the disk cache.")
+    parser.add_argument("--force", action="store_true", help="Ignore cache hits and re-extract every requested SKU.")
+    parser.add_argument("--no-batch", action="store_true", help="Disable batched primary extraction; one call per SKU.")
+    parser.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE)
     args = parser.parse_args()
     out_path = args.out.resolve()
 
-    results = run_batch(limit=args.limit, sku_ids=args.sku_ids)
+    results = run_batch(
+        limit=args.limit,
+        sku_ids=args.sku_ids,
+        use_cache=not args.no_cache,
+        force=args.force,
+        batching=not args.no_batch,
+        batch_size=args.batch_size,
+    )
     decisions = {r.sku_id: quarantine_evaluate(r.sku_id, r.attributes) for r in results if not r.error}
 
     output = [_result_to_dict(r, decisions.get(r.sku_id)) for r in results]

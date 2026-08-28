@@ -101,7 +101,7 @@ def test_self_verification_skipped_when_nothing_to_check():
 
 
 # ---------------------------------------------------------------------------
-# extract_sku -- get_chat_model is mocked, no network.
+# extract_sku -- get_chat_model_with_fallback is mocked, no network.
 # ---------------------------------------------------------------------------
 
 
@@ -117,7 +117,7 @@ class _FakeModel:
 
 
 def test_extract_sku_handles_primary_call_failure_without_raising():
-    with patch("pipeline.extract.get_chat_model", return_value=_FakeModel(exc=RuntimeError("boom"))):
+    with patch("pipeline.extract.get_chat_model_with_fallback", return_value=_FakeModel(exc=RuntimeError("boom"))):
         result = extract.extract_sku("SKU-X", "title", "desc")
 
     assert result.error is not None
@@ -133,7 +133,7 @@ def test_extract_sku_keeps_primary_result_if_self_verification_fails():
             return _FakeModel(return_value=primary_attrs)
         return _FakeModel(exc=RuntimeError("self-verify boom"))
 
-    with patch("pipeline.extract.get_chat_model", side_effect=fake_get_chat_model):
+    with patch("pipeline.extract.get_chat_model_with_fallback", side_effect=fake_get_chat_model):
         result = extract.extract_sku("SKU-X", "title", "desc")
 
     assert result.error is not None
@@ -149,7 +149,7 @@ def test_extract_sku_success_runs_self_verification():
             return _FakeModel(return_value=primary_attrs)
         return _FakeModel(return_value=AttrValue(value=AccessoryType.CABLE, confidence=0.9))
 
-    with patch("pipeline.extract.get_chat_model", side_effect=fake_get_chat_model):
+    with patch("pipeline.extract.get_chat_model_with_fallback", side_effect=fake_get_chat_model):
         result = extract.extract_sku("SKU-X", "title", "desc")
 
     assert result.error is None
