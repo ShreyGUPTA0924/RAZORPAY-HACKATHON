@@ -1,0 +1,3091 @@
+[
+  {
+    "sku_id": "SKU-001",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "sony_xperia_m5"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "cable",
+      "second_value": "cable",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-001",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-002",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "headphone",
+      "second_value": "headphone",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-002",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-003",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "headphone",
+      "second_value": "headphone",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-003",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-004",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "headphone",
+      "second_value": "headphone",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-004",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-005",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "headphone",
+      "second_value": "headphone",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-005",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-006",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [],
+        "confidence": 0.95
+      },
+      "connector_type": {
+        "value": "3_5mm_jack",
+        "confidence": 1.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "headphone",
+      "second_value": "headphone",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-006",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-007",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [],
+        "confidence": 0.95
+      },
+      "connector_type": {
+        "value": "3_5mm_jack",
+        "confidence": 1.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "headphone",
+      "second_value": "headphone",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-007",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-008",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": "3_5mm_jack",
+        "confidence": 1.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "headphone",
+      "second_value": "headphone",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-008",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-009",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.2
+      },
+      "connector_type": {
+        "value": "bluetooth",
+        "confidence": 0.6
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "headphone",
+      "second_value": "headphone",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-009",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-010",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": "bluetooth",
+        "confidence": 1.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "headphone",
+      "second_value": "headphone",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-010",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-011",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": "3_5mm_jack",
+        "confidence": 0.98
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "connector_type",
+      "first_value": "3_5mm_jack",
+      "second_value": "3_5mm_jack",
+      "agreed": true,
+      "confidence_before": 0.98,
+      "confidence_after": 0.98
+    },
+    "quarantine": {
+      "sku_id": "SKU-011",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-012",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 0.99
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.1
+      },
+      "connector_type": {
+        "value": "lightning",
+        "confidence": 0.98
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "fabric_nylon",
+        "confidence": 0.68
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "cable",
+      "second_value": "cable",
+      "agreed": true,
+      "confidence_before": 0.99,
+      "confidence_after": 0.99
+    },
+    "quarantine": {
+      "sku_id": "SKU-012",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-013",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 0.98
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.1
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 0.95
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "cable",
+      "second_value": "cable",
+      "agreed": true,
+      "confidence_before": 0.98,
+      "confidence_after": 0.98
+    },
+    "quarantine": {
+      "sku_id": "SKU-013",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-014",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.1
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "case",
+      "second_value": "case",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-014",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-015",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "oppo_find_7a"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": 7.0,
+        "confidence": 1.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "case",
+      "second_value": "case",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-015",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-016",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 0.97
+      },
+      "model_compat": {
+        "value": [
+          "samsung_galaxy_note_510"
+        ],
+        "confidence": 0.95
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "pouch",
+      "second_value": "pouch",
+      "agreed": true,
+      "confidence_before": 0.97,
+      "confidence_after": 0.97
+    },
+    "quarantine": {
+      "sku_id": "SKU-016",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-017",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "power_bank",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 0.97
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": 10000,
+        "confidence": 0.98
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "capacity_mah",
+      "first_value": 10000,
+      "second_value": 10000,
+      "agreed": true,
+      "confidence_before": 0.98,
+      "confidence_after": 0.98
+    },
+    "quarantine": {
+      "sku_id": "SKU-017",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-018",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "charger",
+        "confidence": 0.9
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.1
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "charger",
+      "second_value": "charger",
+      "agreed": true,
+      "confidence_before": 0.9,
+      "confidence_after": 0.9
+    },
+    "quarantine": {
+      "sku_id": "SKU-018",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-019",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "charger",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "micromax_canvas_play_4g_q469"
+        ],
+        "confidence": 0.95
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 0.97
+      },
+      "wattage_w": {
+        "value": 10.5,
+        "confidence": 0.9
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "connector_type",
+      "first_value": "micro_usb",
+      "second_value": "micro_usb",
+      "agreed": true,
+      "confidence_before": 0.97,
+      "confidence_after": 0.97
+    },
+    "quarantine": {
+      "sku_id": "SKU-019",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-020",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 0.95
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "fabric_nylon",
+        "confidence": 0.7
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "cable",
+      "second_value": "cable",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-020",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-021",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 0.99
+      },
+      "model_compat": {
+        "value": [
+          "samsung_galaxy_j7"
+        ],
+        "confidence": 0.99
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "case",
+      "second_value": "case",
+      "agreed": true,
+      "confidence_before": 0.99,
+      "confidence_after": 0.99
+    },
+    "quarantine": {
+      "sku_id": "SKU-021",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-022",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "spice_mi_720"
+        ],
+        "confidence": 0.92
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "case",
+      "second_value": "case",
+      "agreed": true,
+      "confidence_before": 0.96,
+      "confidence_after": 0.96
+    },
+    "quarantine": {
+      "sku_id": "SKU-022",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-023",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "huawei_honor_x1"
+        ],
+        "confidence": 0.98
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "model_compat",
+      "first_value": [
+        "huawei_honor_x1"
+      ],
+      "second_value": [
+        "huawei_honor_x1"
+      ],
+      "agreed": true,
+      "confidence_before": 0.98,
+      "confidence_after": 0.98
+    },
+    "quarantine": {
+      "sku_id": "SKU-023",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-024",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 0.98
+      },
+      "model_compat": {
+        "value": [
+          "htc_one_s"
+        ],
+        "confidence": 0.99
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "plastic",
+        "confidence": 0.95
+      }
+    },
+    "self_verification": {
+      "field_checked": "model_compat",
+      "first_value": [
+        "htc_one_s"
+      ],
+      "second_value": [
+        "htc_one_s"
+      ],
+      "agreed": true,
+      "confidence_before": 0.99,
+      "confidence_after": 0.99
+    },
+    "quarantine": {
+      "sku_id": "SKU-024",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-025",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [
+          "karbonn_a37"
+        ],
+        "confidence": 0.98
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": 7.0,
+        "confidence": 0.97
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "model_compat",
+      "first_value": [
+        "karbonn_a37"
+      ],
+      "second_value": [
+        "karbonn_a37"
+      ],
+      "agreed": true,
+      "confidence_before": 0.98,
+      "confidence_after": 0.98
+    },
+    "quarantine": {
+      "sku_id": "SKU-025",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-026",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "swipe_elite_plus"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "leather",
+        "confidence": 1.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "pouch",
+      "second_value": "pouch",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-026",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-027",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "intex_aqua_lions_3g"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "leather",
+        "confidence": 0.9
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "pouch",
+      "second_value": "pouch",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-027",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-028",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "sony_xperia_m5_dual"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "pouch",
+      "second_value": "pouch",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-028",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-029",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "lenovo_s880"
+        ],
+        "confidence": 0.94
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "pouch",
+      "second_value": "pouch",
+      "agreed": true,
+      "confidence_before": 0.96,
+      "confidence_after": 0.96
+    },
+    "quarantine": {
+      "sku_id": "SKU-029",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-030",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 0.4
+      },
+      "model_compat": {
+        "value": [
+          "microsoft_lumia_1320"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "leather",
+        "confidence": 0.8
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "pouch",
+      "second_value": "case",
+      "agreed": false,
+      "confidence_before": 1.0,
+      "confidence_after": 0.4
+    },
+    "quarantine": {
+      "sku_id": "SKU-030",
+      "published": false,
+      "redacted_fields": [
+        "accessory_type"
+      ],
+      "reasons": [
+        "SKU quarantined: accessory_type confidence 0.40 < 0.5 -- accessory_type gates every other field, nothing is safe to publish",
+        "accessory_type: confidence 0.40 < 0.5 (proposed <AccessoryType.POUCH: 'pouch'>, not published)"
+      ]
+    }
+  },
+  {
+    "sku_id": "SKU-031",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 0.98
+      },
+      "model_compat": {
+        "value": [
+          "oneplus_one"
+        ],
+        "confidence": 0.99
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "leather",
+        "confidence": 0.9
+      }
+    },
+    "self_verification": {
+      "field_checked": "model_compat",
+      "first_value": [
+        "oneplus_one"
+      ],
+      "second_value": [
+        "oneplus_one"
+      ],
+      "agreed": true,
+      "confidence_before": 0.99,
+      "confidence_after": 0.99
+    },
+    "quarantine": {
+      "sku_id": "SKU-031",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-032",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "xiaomi_mi_4i"
+        ],
+        "confidence": 0.94
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 0.98
+      }
+    },
+    "self_verification": {
+      "field_checked": "material",
+      "first_value": "tempered_glass",
+      "second_value": "tempered_glass",
+      "agreed": true,
+      "confidence_before": 0.98,
+      "confidence_after": 0.98
+    },
+    "quarantine": {
+      "sku_id": "SKU-032",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-033",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "xiaomi_mi_4s"
+        ],
+        "confidence": 0.95
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 0.92
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "screen_protector",
+      "second_value": "screen_protector",
+      "agreed": true,
+      "confidence_before": 0.96,
+      "confidence_after": 0.96
+    },
+    "quarantine": {
+      "sku_id": "SKU-033",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-034",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "lenovo_k5_note"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 1.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "screen_protector",
+      "second_value": "screen_protector",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-034",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-035",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "motorola_moto_g"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 1.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "screen_protector",
+      "second_value": "screen_protector",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-035",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-036",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 0.98
+      },
+      "model_compat": {
+        "value": [
+          "apple_iphone_6s"
+        ],
+        "confidence": 0.96
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 0.97
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "screen_protector",
+      "second_value": "screen_protector",
+      "agreed": true,
+      "confidence_before": 0.98,
+      "confidence_after": 0.98
+    },
+    "quarantine": {
+      "sku_id": "SKU-036",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-037",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 0.97
+      },
+      "model_compat": {
+        "value": [
+          "htc_desire_526"
+        ],
+        "confidence": 0.96
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 0.95
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "screen_protector",
+      "second_value": "screen_protector",
+      "agreed": true,
+      "confidence_before": 0.97,
+      "confidence_after": 0.97
+    },
+    "quarantine": {
+      "sku_id": "SKU-037",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-038",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "samsung_galaxy_on5"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 1.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "screen_protector",
+      "second_value": "screen_protector",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-038",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-039",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "nokia_lumia_830"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "screen_protector",
+      "second_value": "screen_protector",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-039",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-040",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "nokia_lumia_830"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "screen_protector",
+      "second_value": "screen_protector",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
+    },
+    "quarantine": {
+      "sku_id": "SKU-040",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-041",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198447, Requested 2468. Please try again in 6m35.28s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-042",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198443, Requested 2346. Please try again in 5m40.847999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-043",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198439, Requested 2421. Please try again in 6m11.52s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-044",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198434, Requested 2572. Please try again in 7m14.592s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-045",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198430, Requested 2642. Please try again in 7m43.104s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-046",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198426, Requested 2517. Please try again in 6m47.376s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-047",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198422, Requested 2485. Please try again in 6m31.824s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-048",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198417, Requested 2624. Please try again in 7m29.712s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-049",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198412, Requested 2508. Please try again in 6m37.44s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-050",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198408, Requested 2642. Please try again in 7m33.6s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-051",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198404, Requested 2636. Please try again in 7m29.28s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-052",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198400, Requested 2725. Please try again in 8m6s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-053",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198395, Requested 2379. Please try again in 5m34.368s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-054",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198391, Requested 2529. Please try again in 6m37.44s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-055",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198387, Requested 2494. Please try again in 6m20.592s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-056",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198382, Requested 2726. Please try again in 7m58.656s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-057",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198377, Requested 2746. Please try again in 8m5.136s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-058",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198373, Requested 2826. Please try again in 8m37.968s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-059",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198369, Requested 2861. Please try again in 8m51.36s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  },
+  {
+    "sku_id": "SKU-060",
+    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198365, Requested 2460. Please try again in 5m56.4s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "attributes": {
+      "accessory_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    },
+    "self_verification": {
+      "field_checked": null,
+      "first_value": null,
+      "second_value": null,
+      "agreed": null,
+      "confidence_before": null,
+      "confidence_after": null
+    },
+    "quarantine": null
+  }
+]

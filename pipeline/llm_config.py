@@ -7,9 +7,13 @@ Two free-tier providers, split by task shape, not by whim:
   canonicalizer, compat_proposer, intent_parser. This is the work where
   getting the right value out of inconsistent prose matters more than speed.
 - Groq: high-volume / speed-sensitive work -- adversarial_generator, and
-  optionally explainer when demo latency matters. Llama 3.3 70B on Groq is
-  fast and cheap; extraction-quality is a lower bar for "generate 100
-  adversarial attack prompts" than for "read this row correctly."
+  optionally explainer when demo latency matters. openai/gpt-oss-120b on
+  Groq is fast and cheap; extraction-quality is a lower bar for "generate
+  100 adversarial attack prompts" than for "read this row correctly."
+  (Originally speced as Llama 3.3 70B -- confirmed removed from Groq's
+  catalog as of 2026-08-27, `client.models.list()` no longer returns it.
+  Groq rotates models faster than most providers; if this default 404s
+  again, re-check `client.models.list()` rather than guessing a new name.)
 
 This module is config only -- it has no LLM SDK imports and makes no network
 calls. pipeline/llm_clients.py is what actually constructs a client from this
@@ -42,8 +46,8 @@ _DEFAULTS: dict[str, LLMComponentConfig] = {
     "canonicalizer": LLMComponentConfig(Provider.GEMINI, "gemini-2.5-flash"),
     "compat_proposer": LLMComponentConfig(Provider.GEMINI, "gemini-2.5-flash"),
     "intent_parser": LLMComponentConfig(Provider.GEMINI, "gemini-2.5-flash"),
-    "adversarial_generator": LLMComponentConfig(Provider.GROQ, "llama-3.3-70b-versatile"),
-    "explainer": LLMComponentConfig(Provider.GROQ, "llama-3.3-70b-versatile"),
+    "adversarial_generator": LLMComponentConfig(Provider.GROQ, "openai/gpt-oss-120b"),
+    "explainer": LLMComponentConfig(Provider.GROQ, "openai/gpt-oss-120b"),
 }
 
 

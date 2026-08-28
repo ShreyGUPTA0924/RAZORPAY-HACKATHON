@@ -44,3 +44,8 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 include = ["pipeline*", "surface*", "eval*", "api*"]
+
+[tool.pytest.ini_options]
+markers = [
+    "llm: makes real calls to a live LLM provider (needs GOOGLE_API_KEY/GROQ_API_KEY); skipped automatically without one, and worth excluding from a fast loop with -m 'not llm'.",
+]
