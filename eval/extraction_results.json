@@ -5,13 +5,13 @@
     "attributes": {
       "accessory_type": {
         "value": "cable",
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "model_compat": {
         "value": [
           "sony_xperia_m5"
         ],
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "connector_type": {
         "value": null,
@@ -43,8 +43,8 @@
       "first_value": "cable",
       "second_value": "cable",
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
     "quarantine": {
       "sku_id": "SKU-001",
@@ -59,7 +59,7 @@
     "attributes": {
       "accessory_type": {
         "value": "headphone",
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "model_compat": {
         "value": null,
@@ -95,8 +95,8 @@
       "first_value": "headphone",
       "second_value": "headphone",
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
     "quarantine": {
       "sku_id": "SKU-002",
@@ -111,7 +111,7 @@
     "attributes": {
       "accessory_type": {
         "value": "headphone",
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "model_compat": {
         "value": null,
@@ -147,8 +147,8 @@
       "first_value": "headphone",
       "second_value": "headphone",
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
     "quarantine": {
       "sku_id": "SKU-003",
@@ -163,7 +163,7 @@
     "attributes": {
       "accessory_type": {
         "value": "headphone",
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "model_compat": {
         "value": null,
@@ -199,8 +199,8 @@
       "first_value": "headphone",
       "second_value": "headphone",
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
     "quarantine": {
       "sku_id": "SKU-004",
@@ -215,7 +215,7 @@
     "attributes": {
       "accessory_type": {
         "value": "headphone",
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "model_compat": {
         "value": null,
@@ -251,8 +251,8 @@
       "first_value": "headphone",
       "second_value": "headphone",
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
     "quarantine": {
       "sku_id": "SKU-005",
@@ -267,7 +267,7 @@
     "attributes": {
       "accessory_type": {
         "value": "headphone",
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "model_compat": {
         "value": [],
@@ -275,7 +275,7 @@
       },
       "connector_type": {
         "value": "3_5mm_jack",
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "wattage_w": {
         "value": null,
@@ -303,8 +303,8 @@
       "first_value": "headphone",
       "second_value": "headphone",
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
     "quarantine": {
       "sku_id": "SKU-006",
@@ -319,7 +319,7 @@
     "attributes": {
       "accessory_type": {
         "value": "headphone",
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "model_compat": {
         "value": [],
@@ -327,7 +327,7 @@
       },
       "connector_type": {
         "value": "3_5mm_jack",
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "wattage_w": {
         "value": null,
@@ -355,8 +355,8 @@
       "first_value": "headphone",
       "second_value": "headphone",
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
     "quarantine": {
       "sku_id": "SKU-007",
@@ -371,7 +371,7 @@
     "attributes": {
       "accessory_type": {
         "value": "headphone",
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "model_compat": {
         "value": null,
@@ -379,7 +379,7 @@
       },
       "connector_type": {
         "value": "3_5mm_jack",
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "wattage_w": {
         "value": null,
@@ -407,8 +407,8 @@
       "first_value": "headphone",
       "second_value": "headphone",
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
     "quarantine": {
       "sku_id": "SKU-008",
@@ -426,12 +426,12 @@
         "confidence": 1.0
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.2
+        "value": [],
+        "confidence": 0.8
       },
       "connector_type": {
-        "value": "bluetooth",
-        "confidence": 0.6
+        "value": "3_5mm_jack",
+        "confidence": 0.95
       },
       "wattage_w": {
         "value": null,
@@ -478,12 +478,12 @@
         "confidence": 1.0
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [],
+        "confidence": 0.7
       },
       "connector_type": {
-        "value": "bluetooth",
-        "confidence": 1.0
+        "value": null,
+        "confidence": 0.0
       },
       "wattage_w": {
         "value": null,
@@ -527,15 +527,15 @@
     "attributes": {
       "accessory_type": {
         "value": "headphone",
-        "confidence": 0.95
+        "confidence": 1.0
       },
       "model_compat": {
         "value": [],
-        "confidence": 0.9
+        "confidence": 0.8
       },
       "connector_type": {
         "value": "3_5mm_jack",
-        "confidence": 0.98
+        "confidence": 0.95
       },
       "wattage_w": {
         "value": null,
@@ -559,12 +559,12 @@
       }
     },
     "self_verification": {
-      "field_checked": "connector_type",
-      "first_value": "3_5mm_jack",
-      "second_value": "3_5mm_jack",
+      "field_checked": "accessory_type",
+      "first_value": "headphone",
+      "second_value": "headphone",
       "agreed": true,
-      "confidence_before": 0.98,
-      "confidence_after": 0.98
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
     "quarantine": {
       "sku_id": "SKU-011",
@@ -579,15 +579,15 @@
     "attributes": {
       "accessory_type": {
         "value": "cable",
-        "confidence": 0.99
+        "confidence": 1.0
       },
       "model_compat": {
         "value": null,
-        "confidence": 0.1
+        "confidence": 0.0
       },
       "connector_type": {
         "value": "lightning",
-        "confidence": 0.98
+        "confidence": 1.0
       },
       "wattage_w": {
         "value": null,
@@ -606,8 +606,8 @@
         "confidence": 0.0
       },
       "material": {
-        "value": "fabric_nylon",
-        "confidence": 0.68
+        "value": "metal",
+        "confidence": 0.6
       }
     },
     "self_verification": {
@@ -615,8 +615,8 @@
       "first_value": "cable",
       "second_value": "cable",
       "agreed": true,
-      "confidence_before": 0.99,
-      "confidence_after": 0.99
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
     "quarantine": {
       "sku_id": "SKU-012",
@@ -631,15 +631,15 @@
     "attributes": {
       "accessory_type": {
         "value": "cable",
-        "confidence": 0.98
+        "confidence": 1.0
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.1
+        "value": [],
+        "confidence": 0.8
       },
       "connector_type": {
         "value": "micro_usb",
-        "confidence": 0.95
+        "confidence": 0.9
       },
       "wattage_w": {
         "value": null,
@@ -667,8 +667,8 @@
       "first_value": "cable",
       "second_value": "cable",
       "agreed": true,
-      "confidence_before": 0.98,
-      "confidence_after": 0.98
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
     "quarantine": {
       "sku_id": "SKU-013",
@@ -686,8 +686,10 @@
         "confidence": 1.0
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.1
+        "value": [
+          "samsung_galaxy_note"
+        ],
+        "confidence": 0.7
       },
       "connector_type": {
         "value": null,
@@ -741,7 +743,7 @@
         "value": [
           "oppo_find_7a"
         ],
-        "confidence": 1.0
+        "confidence": 0.9
       },
       "connector_type": {
         "value": null,
@@ -757,7 +759,7 @@
       },
       "screen_size_in": {
         "value": 7.0,
-        "confidence": 1.0
+        "confidence": 0.95
       },
       "wireless_charging": {
         "value": null,
@@ -789,13 +791,11 @@
     "attributes": {
       "accessory_type": {
         "value": "pouch",
-        "confidence": 0.97
+        "confidence": 1.0
       },
       "model_compat": {
-        "value": [
-          "samsung_galaxy_note_510"
-        ],
-        "confidence": 0.95
+        "value": null,
+        "confidence": 0.0
       },
       "connector_type": {
         "value": null,
@@ -827,8 +827,8 @@
       "first_value": "pouch",
       "second_value": "pouch",
       "agreed": true,
-      "confidence_before": 0.97,
-      "confidence_after": 0.97
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
     "quarantine": {
       "sku_id": "SKU-016",
@@ -843,7 +843,7 @@
     "attributes": {
       "accessory_type": {
         "value": "power_bank",
-        "confidence": 0.95
+        "confidence": 0.98
       },
       "model_compat": {
         "value": null,
@@ -859,7 +859,7 @@
       },
       "capacity_mah": {
         "value": 10000,
-        "confidence": 0.98
+        "confidence": 0.99
       },
       "screen_size_in": {
         "value": null,
@@ -879,8 +879,8 @@
       "first_value": 10000,
       "second_value": 10000,
       "agreed": true,
-      "confidence_before": 0.98,
-      "confidence_after": 0.98
+      "confidence_before": 0.99,
+      "confidence_after": 0.99
     },
     "quarantine": {
       "sku_id": "SKU-017",
@@ -895,11 +895,11 @@
     "attributes": {
       "accessory_type": {
         "value": "charger",
-        "confidence": 0.9
+        "confidence": 0.95
       },
       "model_compat": {
         "value": null,
-        "confidence": 0.1
+        "confidence": 0.0
       },
       "connector_type": {
         "value": null,
@@ -931,8 +931,8 @@
       "first_value": "charger",
       "second_value": "charger",
       "agreed": true,
-      "confidence_before": 0.9,
-      "confidence_after": 0.9
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
     "quarantine": {
       "sku_id": "SKU-018",
@@ -953,15 +953,15 @@
         "value": [
           "micromax_canvas_play_4g_q469"
         ],
-        "confidence": 0.95
+        "confidence": 0.9
       },
       "connector_type": {
         "value": "micro_usb",
-        "confidence": 0.97
+        "confidence": 0.96
       },
       "wattage_w": {
-        "value": 10.5,
-        "confidence": 0.9
+        "value": null,
+        "confidence": 0.0
       },
       "capacity_mah": {
         "value": null,
@@ -981,12 +981,12 @@
       }
     },
     "self_verification": {
-      "field_checked": "connector_type",
-      "first_value": "micro_usb",
-      "second_value": "micro_usb",
+      "field_checked": "accessory_type",
+      "first_value": "charger",
+      "second_value": "charger",
       "agreed": true,
-      "confidence_before": 0.97,
-      "confidence_after": 0.97
+      "confidence_before": 0.96,
+      "confidence_after": 0.96
     },
     "quarantine": {
       "sku_id": "SKU-019",
@@ -1001,11 +1001,11 @@
     "attributes": {
       "accessory_type": {
         "value": "cable",
-        "confidence": 1.0
+        "confidence": 0.97
       },
       "model_compat": {
         "value": [],
-        "confidence": 0.9
+        "confidence": 0.0
       },
       "connector_type": {
         "value": "micro_usb",
@@ -1029,7 +1029,7 @@
       },
       "material": {
         "value": "fabric_nylon",
-        "confidence": 0.7
+        "confidence": 0.93
       }
     },
     "self_verification": {
@@ -1037,14 +1037,18 @@
       "first_value": "cable",
       "second_value": "cable",
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.97,
+      "confidence_after": 0.97
     },
     "quarantine": {
       "sku_id": "SKU-020",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "model_compat"
+      ],
+      "reasons": [
+        "model_compat: confidence 0.00 < 0.5 (proposed [], not published)"
+      ]
     }
   },
   {
@@ -1053,67 +1057,13 @@
     "attributes": {
       "accessory_type": {
         "value": "case",
-        "confidence": 0.99
+        "confidence": 0.96
       },
       "model_compat": {
         "value": [
           "samsung_galaxy_j7"
         ],
-        "confidence": 0.99
-      },
-      "connector_type": {
-        "value": null,
-        "confidence": 0.0
-      },
-      "wattage_w": {
-        "value": null,
-        "confidence": 0.0
-      },
-      "capacity_mah": {
-        "value": null,
-        "confidence": 0.0
-      },
-      "screen_size_in": {
-        "value": null,
-        "confidence": 0.0
-      },
-      "wireless_charging": {
-        "value": null,
-        "confidence": 0.0
-      },
-      "material": {
-        "value": null,
-        "confidence": 0.0
-      }
-    },
-    "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "case",
-      "second_value": "case",
-      "agreed": true,
-      "confidence_before": 0.99,
-      "confidence_after": 0.99
-    },
-    "quarantine": {
-      "sku_id": "SKU-021",
-      "published": true,
-      "redacted_fields": [],
-      "reasons": []
-    }
-  },
-  {
-    "sku_id": "SKU-022",
-    "error": null,
-    "attributes": {
-      "accessory_type": {
-        "value": "case",
-        "confidence": 0.96
-      },
-      "model_compat": {
-        "value": [
-          "spice_mi_720"
-        ],
-        "confidence": 0.92
+        "confidence": 0.9
       },
       "connector_type": {
         "value": null,
@@ -1149,25 +1099,25 @@
       "confidence_after": 0.96
     },
     "quarantine": {
-      "sku_id": "SKU-022",
+      "sku_id": "SKU-021",
       "published": true,
       "redacted_fields": [],
       "reasons": []
     }
   },
   {
-    "sku_id": "SKU-023",
+    "sku_id": "SKU-022",
     "error": null,
     "attributes": {
       "accessory_type": {
         "value": "case",
-        "confidence": 0.96
+        "confidence": 0.95
       },
       "model_compat": {
         "value": [
-          "huawei_honor_x1"
+          "spice_mi_720"
         ],
-        "confidence": 0.98
+        "confidence": 0.9
       },
       "connector_type": {
         "value": null,
@@ -1190,21 +1140,71 @@
         "confidence": 0.0
       },
       "material": {
-        "value": null,
-        "confidence": 0.0
+        "value": "other",
+        "confidence": 0.7
       }
     },
     "self_verification": {
-      "field_checked": "model_compat",
-      "first_value": [
-        "huawei_honor_x1"
-      ],
-      "second_value": [
-        "huawei_honor_x1"
-      ],
+      "field_checked": "accessory_type",
+      "first_value": "case",
+      "second_value": "case",
       "agreed": true,
-      "confidence_before": 0.98,
-      "confidence_after": 0.98
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
+    },
+    "quarantine": {
+      "sku_id": "SKU-022",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
+  },
+  {
+    "sku_id": "SKU-023",
+    "error": null,
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [
+          "huawei_honor_x1"
+        ],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "other",
+        "confidence": 0.7
+      }
+    },
+    "self_verification": {
+      "field_checked": "accessory_type",
+      "first_value": "case",
+      "second_value": "case",
+      "agreed": true,
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
     "quarantine": {
       "sku_id": "SKU-023",
@@ -1219,13 +1219,13 @@
     "attributes": {
       "accessory_type": {
         "value": "case",
-        "confidence": 0.98
+        "confidence": 0.96
       },
       "model_compat": {
         "value": [
           "htc_one_s"
         ],
-        "confidence": 0.99
+        "confidence": 0.9
       },
       "connector_type": {
         "value": null,
@@ -1253,16 +1253,12 @@
       }
     },
     "self_verification": {
-      "field_checked": "model_compat",
-      "first_value": [
-        "htc_one_s"
-      ],
-      "second_value": [
-        "htc_one_s"
-      ],
+      "field_checked": "accessory_type",
+      "first_value": "case",
+      "second_value": "case",
       "agreed": true,
-      "confidence_before": 0.99,
-      "confidence_after": 0.99
+      "confidence_before": 0.96,
+      "confidence_after": 0.96
     },
     "quarantine": {
       "sku_id": "SKU-024",
@@ -1277,13 +1273,13 @@
     "attributes": {
       "accessory_type": {
         "value": "case",
-        "confidence": 0.95
+        "confidence": 1.0
       },
       "model_compat": {
         "value": [
           "karbonn_a37"
         ],
-        "confidence": 0.98
+        "confidence": 1.0
       },
       "connector_type": {
         "value": null,
@@ -1299,7 +1295,7 @@
       },
       "screen_size_in": {
         "value": 7.0,
-        "confidence": 0.97
+        "confidence": 1.0
       },
       "wireless_charging": {
         "value": null,
@@ -1311,16 +1307,12 @@
       }
     },
     "self_verification": {
-      "field_checked": "model_compat",
-      "first_value": [
-        "karbonn_a37"
-      ],
-      "second_value": [
-        "karbonn_a37"
-      ],
+      "field_checked": "accessory_type",
+      "first_value": "case",
+      "second_value": "case",
       "agreed": true,
-      "confidence_before": 0.98,
-      "confidence_after": 0.98
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
     "quarantine": {
       "sku_id": "SKU-025",
@@ -1419,7 +1411,7 @@
       },
       "material": {
         "value": "leather",
-        "confidence": 0.9
+        "confidence": 1.0
       }
     },
     "self_verification": {
@@ -1472,8 +1464,8 @@
         "confidence": 0.0
       },
       "material": {
-        "value": null,
-        "confidence": 0.0
+        "value": "other",
+        "confidence": 0.9
       }
     },
     "self_verification": {
@@ -1497,13 +1489,13 @@
     "attributes": {
       "accessory_type": {
         "value": "pouch",
-        "confidence": 0.96
+        "confidence": 1.0
       },
       "model_compat": {
         "value": [
           "lenovo_s880"
         ],
-        "confidence": 0.94
+        "confidence": 1.0
       },
       "connector_type": {
         "value": null,
@@ -1535,8 +1527,8 @@
       "first_value": "pouch",
       "second_value": "pouch",
       "agreed": true,
-      "confidence_before": 0.96,
-      "confidence_after": 0.96
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
     "quarantine": {
       "sku_id": "SKU-029",
@@ -1551,7 +1543,7 @@
     "attributes": {
       "accessory_type": {
         "value": "pouch",
-        "confidence": 0.4
+        "confidence": 1.0
       },
       "model_compat": {
         "value": [
@@ -1581,27 +1573,22 @@
       },
       "material": {
         "value": "leather",
-        "confidence": 0.8
+        "confidence": 1.0
       }
     },
     "self_verification": {
       "field_checked": "accessory_type",
       "first_value": "pouch",
-      "second_value": "case",
-      "agreed": false,
+      "second_value": "pouch",
+      "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 0.4
+      "confidence_after": 1.0
     },
     "quarantine": {
       "sku_id": "SKU-030",
-      "published": false,
-      "redacted_fields": [
-        "accessory_type"
-      ],
-      "reasons": [
-        "SKU quarantined: accessory_type confidence 0.40 < 0.5 -- accessory_type gates every other field, nothing is safe to publish",
-        "accessory_type: confidence 0.40 < 0.5 (proposed <AccessoryType.POUCH: 'pouch'>, not published)"
-      ]
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
     }
   },
   {
@@ -1610,13 +1597,13 @@
     "attributes": {
       "accessory_type": {
         "value": "pouch",
-        "confidence": 0.98
+        "confidence": 1.0
       },
       "model_compat": {
         "value": [
           "oneplus_one"
         ],
-        "confidence": 0.99
+        "confidence": 1.0
       },
       "connector_type": {
         "value": null,
@@ -1640,20 +1627,16 @@
       },
       "material": {
         "value": "leather",
-        "confidence": 0.9
+        "confidence": 1.0
       }
     },
     "self_verification": {
-      "field_checked": "model_compat",
-      "first_value": [
-        "oneplus_one"
-      ],
-      "second_value": [
-        "oneplus_one"
-      ],
+      "field_checked": "accessory_type",
+      "first_value": "pouch",
+      "second_value": "pouch",
       "agreed": true,
-      "confidence_before": 0.99,
-      "confidence_after": 0.99
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
     "quarantine": {
       "sku_id": "SKU-031",
@@ -1668,13 +1651,13 @@
     "attributes": {
       "accessory_type": {
         "value": "screen_protector",
-        "confidence": 0.96
+        "confidence": 1.0
       },
       "model_compat": {
         "value": [
           "xiaomi_mi_4i"
         ],
-        "confidence": 0.94
+        "confidence": 1.0
       },
       "connector_type": {
         "value": null,
@@ -1698,16 +1681,16 @@
       },
       "material": {
         "value": "tempered_glass",
-        "confidence": 0.98
+        "confidence": 1.0
       }
     },
     "self_verification": {
-      "field_checked": "material",
-      "first_value": "tempered_glass",
-      "second_value": "tempered_glass",
+      "field_checked": "accessory_type",
+      "first_value": "screen_protector",
+      "second_value": "screen_protector",
       "agreed": true,
-      "confidence_before": 0.98,
-      "confidence_after": 0.98
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
     "quarantine": {
       "sku_id": "SKU-032",
@@ -1722,13 +1705,13 @@
     "attributes": {
       "accessory_type": {
         "value": "screen_protector",
-        "confidence": 0.96
+        "confidence": 1.0
       },
       "model_compat": {
         "value": [
           "xiaomi_mi_4s"
         ],
-        "confidence": 0.95
+        "confidence": 1.0
       },
       "connector_type": {
         "value": null,
@@ -1752,7 +1735,7 @@
       },
       "material": {
         "value": "tempered_glass",
-        "confidence": 0.92
+        "confidence": 1.0
       }
     },
     "self_verification": {
@@ -1760,8 +1743,8 @@
       "first_value": "screen_protector",
       "second_value": "screen_protector",
       "agreed": true,
-      "confidence_before": 0.96,
-      "confidence_after": 0.96
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
     "quarantine": {
       "sku_id": "SKU-033",
@@ -1884,13 +1867,13 @@
     "attributes": {
       "accessory_type": {
         "value": "screen_protector",
-        "confidence": 0.98
+        "confidence": 1.0
       },
       "model_compat": {
         "value": [
           "apple_iphone_6s"
         ],
-        "confidence": 0.96
+        "confidence": 1.0
       },
       "connector_type": {
         "value": null,
@@ -1914,7 +1897,7 @@
       },
       "material": {
         "value": "tempered_glass",
-        "confidence": 0.97
+        "confidence": 1.0
       }
     },
     "self_verification": {
@@ -1922,8 +1905,8 @@
       "first_value": "screen_protector",
       "second_value": "screen_protector",
       "agreed": true,
-      "confidence_before": 0.98,
-      "confidence_after": 0.98
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
     "quarantine": {
       "sku_id": "SKU-036",
@@ -1938,13 +1921,13 @@
     "attributes": {
       "accessory_type": {
         "value": "screen_protector",
-        "confidence": 0.97
+        "confidence": 1.0
       },
       "model_compat": {
         "value": [
           "htc_desire_526"
         ],
-        "confidence": 0.96
+        "confidence": 1.0
       },
       "connector_type": {
         "value": null,
@@ -1968,7 +1951,7 @@
       },
       "material": {
         "value": "tempered_glass",
-        "confidence": 0.95
+        "confidence": 1.0
       }
     },
     "self_verification": {
@@ -1976,8 +1959,8 @@
       "first_value": "screen_protector",
       "second_value": "screen_protector",
       "agreed": true,
-      "confidence_before": 0.97,
-      "confidence_after": 0.97
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
     "quarantine": {
       "sku_id": "SKU-037",
@@ -2150,15 +2133,17 @@
   },
   {
     "sku_id": "SKU-041",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198447, Requested 2468. Please try again in 6m35.28s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "screen_protector",
+        "confidence": 1.0
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "samsung_galaxy_s5_mini"
+        ],
+        "confidence": 1.0
       },
       "connector_type": {
         "value": null,
@@ -2181,31 +2166,38 @@
         "confidence": 0.0
       },
       "material": {
-        "value": null,
-        "confidence": 0.0
+        "value": "tempered_glass",
+        "confidence": 1.0
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "screen_protector",
+      "second_value": "screen_protector",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-041",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-042",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198443, Requested 2346. Please try again in 5m40.847999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "screen_protector",
+        "confidence": 1.0
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "blackberry_z3"
+        ],
+        "confidence": 1.0
       },
       "connector_type": {
         "value": null,
@@ -2233,26 +2225,33 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "screen_protector",
+      "second_value": "screen_protector",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-042",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-043",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198439, Requested 2421. Please try again in 6m11.52s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "screen_protector",
+        "confidence": 1.0
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "huawei_honor_6"
+        ],
+        "confidence": 1.0
       },
       "connector_type": {
         "value": null,
@@ -2275,35 +2274,42 @@
         "confidence": 0.0
       },
       "material": {
-        "value": null,
-        "confidence": 0.0
+        "value": "tempered_glass",
+        "confidence": 1.0
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "screen_protector",
+      "second_value": "screen_protector",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-043",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-044",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198434, Requested 2572. Please try again in 7m14.592s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "charger",
+        "confidence": 1.0
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "htc_desire_vc"
+        ],
+        "confidence": 1.0
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "micro_usb",
+        "confidence": 1.0
       },
       "wattage_w": {
         "value": null,
@@ -2327,30 +2333,37 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "charger",
+      "second_value": "charger",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-044",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-045",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198430, Requested 2642. Please try again in 7m43.104s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "charger",
+        "confidence": 1.0
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "moto_x_2nd_gen"
+        ],
+        "confidence": 1.0
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "micro_usb",
+        "confidence": 1.0
       },
       "wattage_w": {
         "value": null,
@@ -2374,30 +2387,37 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "charger",
+      "second_value": "charger",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-045",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-046",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198426, Requested 2517. Please try again in 6m47.376s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "charger",
+        "confidence": 1.0
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "lenovo_vibe_p1m"
+        ],
+        "confidence": 1.0
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "micro_usb",
+        "confidence": 1.0
       },
       "wattage_w": {
         "value": null,
@@ -2421,34 +2441,39 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "charger",
+      "second_value": "charger",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-046",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-047",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198422, Requested 2485. Please try again in 6m31.824s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "charger",
+        "confidence": 1.0
       },
       "model_compat": {
         "value": null,
         "confidence": 0.0
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "micro_usb",
+        "confidence": 1.0
       },
       "wattage_w": {
-        "value": null,
-        "confidence": 0.0
+        "value": 10.5,
+        "confidence": 0.7
       },
       "capacity_mah": {
         "value": null,
@@ -2468,34 +2493,41 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "charger",
+      "second_value": "charger",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-047",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-048",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198417, Requested 2624. Please try again in 7m29.712s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "charger",
+        "confidence": 1.0
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "huawei_honor_4x"
+        ],
+        "confidence": 1.0
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "micro_usb",
+        "confidence": 1.0
       },
       "wattage_w": {
-        "value": null,
-        "confidence": 0.0
+        "value": 10.5,
+        "confidence": 0.7
       },
       "capacity_mah": {
         "value": null,
@@ -2515,34 +2547,39 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "charger",
+      "second_value": "charger",
+      "agreed": true,
+      "confidence_before": 1.0,
+      "confidence_after": 1.0
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-048",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-049",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198412, Requested 2508. Please try again in 6m37.44s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "charger",
+        "confidence": 0.95
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [],
+        "confidence": 0.9
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "micro_usb",
+        "confidence": 0.9
       },
       "wattage_w": {
-        "value": null,
-        "confidence": 0.0
+        "value": 6.0,
+        "confidence": 0.9
       },
       "capacity_mah": {
         "value": null,
@@ -2562,30 +2599,37 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "charger",
+      "second_value": "charger",
+      "agreed": true,
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-049",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-050",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198408, Requested 2642. Please try again in 7m33.6s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "cable",
+        "confidence": 0.95
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "xiaomi_mi4"
+        ],
+        "confidence": 0.9
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "micro_usb",
+        "confidence": 0.8
       },
       "wattage_w": {
         "value": null,
@@ -2609,30 +2653,37 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "cable",
+      "second_value": "cable",
+      "agreed": true,
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-050",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-051",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198404, Requested 2636. Please try again in 7m29.28s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "cable",
+        "confidence": 0.95
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "blackberry_priv"
+        ],
+        "confidence": 0.9
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "micro_usb",
+        "confidence": 0.8
       },
       "wattage_w": {
         "value": null,
@@ -2656,30 +2707,42 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "cable",
+      "second_value": "cable",
+      "agreed": true,
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-051",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-052",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198400, Requested 2725. Please try again in 8m6s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "cable",
+        "confidence": 0.96
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "iphone_6",
+          "iphone_6_plus",
+          "iphone_5s",
+          "iphone_5c",
+          "iphone_5",
+          "iphone_6s"
+        ],
+        "confidence": 0.9
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "lightning",
+        "confidence": 0.95
       },
       "wattage_w": {
         "value": null,
@@ -2703,30 +2766,40 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "cable",
+      "second_value": "cable",
+      "agreed": true,
+      "confidence_before": 0.96,
+      "confidence_after": 0.96
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-052",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-053",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198395, Requested 2379. Please try again in 5m34.368s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "cable",
+        "confidence": 0.95
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "oneplus_two",
+          "oneplus_one",
+          "nexus_6p",
+          "nexus_5x"
+        ],
+        "confidence": 0.7
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "usb_c",
+        "confidence": 0.9
       },
       "wattage_w": {
         "value": null,
@@ -2750,30 +2823,37 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "cable",
+      "second_value": "cable",
+      "agreed": true,
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-053",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-054",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198391, Requested 2529. Please try again in 6m37.44s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "cable",
+        "confidence": 0.96
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "alcatel_one_touch_idol_x_plus"
+        ],
+        "confidence": 0.9
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "micro_usb",
+        "confidence": 0.9
       },
       "wattage_w": {
         "value": null,
@@ -2792,35 +2872,42 @@
         "confidence": 0.0
       },
       "material": {
-        "value": null,
-        "confidence": 0.0
+        "value": "other",
+        "confidence": 0.8
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "cable",
+      "second_value": "cable",
+      "agreed": true,
+      "confidence_before": 0.96,
+      "confidence_after": 0.96
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-054",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-055",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198387, Requested 2494. Please try again in 6m20.592s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "charger",
+        "confidence": 0.94
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "letv_1s"
+        ],
+        "confidence": 0.85
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "usb_a",
+        "confidence": 0.7
       },
       "wattage_w": {
         "value": null,
@@ -2844,30 +2931,37 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "charger",
+      "second_value": "charger",
+      "agreed": true,
+      "confidence_before": 0.94,
+      "confidence_after": 0.94
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-055",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-056",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198382, Requested 2726. Please try again in 7m58.656s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "headphone",
+        "confidence": 0.96
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "samsung_galaxy_s_advance_i9070"
+        ],
+        "confidence": 0.9
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "3_5mm_jack",
+        "confidence": 0.95
       },
       "wattage_w": {
         "value": null,
@@ -2891,30 +2985,38 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "headphone",
+      "second_value": "headphone",
+      "agreed": true,
+      "confidence_before": 0.96,
+      "confidence_after": 0.96
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-056",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-057",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198377, Requested 2746. Please try again in 8m5.136s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "headphone",
+        "confidence": 0.95
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "xiaomi_redmi_mi4",
+          "xiaomi_redmi_mi4i"
+        ],
+        "confidence": 0.9
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "3_5mm_jack",
+        "confidence": 0.98
       },
       "wattage_w": {
         "value": null,
@@ -2938,30 +3040,42 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "connector_type",
+      "first_value": "3_5mm_jack",
+      "second_value": "3_5mm_jack",
+      "agreed": true,
+      "confidence_before": 0.98,
+      "confidence_after": 0.98
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-057",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-058",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198373, Requested 2826. Please try again in 8m37.968s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "headphone",
+        "confidence": 0.96
       },
       "model_compat": {
-        "value": null,
-        "confidence": 0.0
+        "value": [
+          "apple_iphone_4",
+          "apple_iphone_4s",
+          "apple_iphone_4g",
+          "apple_iphone_5",
+          "apple_iphone_5c",
+          "apple_iphone_5s"
+        ],
+        "confidence": 0.92
       },
       "connector_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "3_5mm_jack",
+        "confidence": 0.97
       },
       "wattage_w": {
         "value": null,
@@ -2985,22 +3099,27 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "connector_type",
+      "first_value": "3_5mm_jack",
+      "second_value": "3_5mm_jack",
+      "agreed": true,
+      "confidence_before": 0.97,
+      "confidence_after": 0.97
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-058",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-059",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198369, Requested 2861. Please try again in 8m51.36s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "power_bank",
+        "confidence": 0.99
       },
       "model_compat": {
         "value": null,
@@ -3011,20 +3130,20 @@
         "confidence": 0.0
       },
       "wattage_w": {
-        "value": null,
-        "confidence": 0.0
+        "value": 10.5,
+        "confidence": 0.6
       },
       "capacity_mah": {
-        "value": null,
-        "confidence": 0.0
+        "value": 10000,
+        "confidence": 0.99
       },
       "screen_size_in": {
         "value": null,
         "confidence": 0.0
       },
       "wireless_charging": {
-        "value": null,
-        "confidence": 0.0
+        "value": true,
+        "confidence": 0.95
       },
       "material": {
         "value": null,
@@ -3032,22 +3151,27 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "power_bank",
+      "second_value": "power_bank",
+      "agreed": true,
+      "confidence_before": 0.99,
+      "confidence_after": 0.99
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-059",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   },
   {
     "sku_id": "SKU-060",
-    "error": "extraction call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k9bqvgnrebhvc5ctvggs8qjx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198365, Requested 2460. Please try again in 5m56.4s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "error": null,
     "attributes": {
       "accessory_type": {
-        "value": null,
-        "confidence": 0.0
+        "value": "power_bank",
+        "confidence": 0.99
       },
       "model_compat": {
         "value": null,
@@ -3062,8 +3186,8 @@
         "confidence": 0.0
       },
       "capacity_mah": {
-        "value": null,
-        "confidence": 0.0
+        "value": 12000,
+        "confidence": 0.99
       },
       "screen_size_in": {
         "value": null,
@@ -3079,13 +3203,18 @@
       }
     },
     "self_verification": {
-      "field_checked": null,
-      "first_value": null,
-      "second_value": null,
-      "agreed": null,
-      "confidence_before": null,
-      "confidence_after": null
+      "field_checked": "accessory_type",
+      "first_value": "power_bank",
+      "second_value": "power_bank",
+      "agreed": true,
+      "confidence_before": 0.99,
+      "confidence_after": 0.99
     },
-    "quarantine": null
+    "quarantine": {
+      "sku_id": "SKU-060",
+      "published": true,
+      "redacted_fields": [],
+      "reasons": []
+    }
   }
 ]
