@@ -280,8 +280,10 @@ def extract_primary_batch(rows: list[tuple[str, str, str]], batch_size: int = DE
     as an error by the caller, never silently defaulted to empty attributes.
     """
     results: dict[str, ProductAttributes | None] = {}
-    for chunk in _chunks(rows, batch_size):
+    chunks = list(_chunks(rows, batch_size))
+    for i, chunk in enumerate(chunks):
         sku_ids = [r[0] for r in chunk]
+        print(f"  [batch {i + 1}/{len(chunks)}] {sku_ids[0]}..{sku_ids[-1]} ({len(chunk)} SKUs)", flush=True)
         model = get_chat_model_with_fallback("extractor", output_schema=BatchExtractionResponse)
         response = model.invoke(
             [
@@ -511,28 +513,33 @@ def run_batch(
             to_process.append((row, description, key))
 
     if results:
-        print(f"{len(results)}/{len(catalog)} SKUs served from cache (zero quota spent)")
-    print(f"{len(to_process)}/{len(catalog)} SKUs to extract")
+        print(f"{len(results)}/{len(catalog)} SKUs served from cache (zero quota spent)", flush=True)
+    print(f"{len(to_process)}/{len(catalog)} SKUs to extract", flush=True)
 
     if batching and to_process:
         batch_rows = [(row["sku_id"], row["product_name"], description) for row, description, _ in to_process]
-        print(f"  batching {len(batch_rows)} SKUs, {batch_size} per request "
-              f"({-(-len(batch_rows) // batch_size)} requests instead of {len(batch_rows)})")
+        print(
+            f"  batching {len(batch_rows)} SKUs, {batch_size} per request "
+            f"({-(-len(batch_rows) // batch_size)} requests instead of {len(batch_rows)})",
+            flush=True,
+        )
         primary = extract_primary_batch(batch_rows, batch_size=batch_size)
-        for row, description, key in to_process:
+        print(f"  primary batch extraction done -- running self-verification on {len(to_process)} SKUs (1 call each)", flush=True)
+        for i, (row, description, key) in enumerate(to_process):
             sku_id = row["sku_id"]
+            print(f"  [self-verify {i + 1}/{len(to_process)}] {sku_id}", flush=True)
             result = finish_with_self_verification(sku_id, row["product_name"], description, primary.get(sku_id))
             if result.error:
-                print(f"    ERROR {sku_id}: {result.error}")
+                print(f"    ERROR {sku_id}: {result.error}", flush=True)
             results[sku_id] = result
             if use_cache and not result.error:
                 extract_cache.put(key, _result_to_cache_entry(result))
     else:
         for i, (row, description, key) in enumerate(to_process):
-            print(f"[{i + 1}/{len(to_process)}] {row['sku_id']}: {row['product_name'][:60]}")
+            print(f"[{i + 1}/{len(to_process)}] {row['sku_id']}: {row['product_name'][:60]}", flush=True)
             result = extract_sku(row["sku_id"], row["product_name"], description)
             if result.error:
-                print(f"    ERROR: {result.error}")
+                print(f"    ERROR: {result.error}", flush=True)
             results[row["sku_id"]] = result
             if use_cache and not result.error:
                 extract_cache.put(key, _result_to_cache_entry(result))
