@@ -4,7 +4,7 @@
     "raw_title": "Generix OTG for Sony Xperia M5 OTG Cable",
     "raw_description": "Buy Generix OTG for Sony Xperia M5 OTG Cable only for Rs. 199 from Flipkart.com. Only Genuine Products. 30 Day Replacement Guarantee. Free Shipping. Cash On Delivery!",
     "labels": {
-      "accessory_type": "cable",
+      "accessory_type": null,
       "model_compat": null,
       "connector_type": null,
       "wattage_w": null,
@@ -13,19 +13,19 @@
       "wireless_charging": null,
       "material": null
     },
+    "scorable": false,
     "suggested_fields": [],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Buy Generix OTG for Sony Xperia M5 OTG Cable only for Rs. 199 from Flipkart.com. Only Genuine Products. 30 Day Replacement Guarantee. Free Shipping. Cash On Delivery!",
-    "prose_restated_fields": [
-      "accessory_type"
-    ]
+    "prose_restated_fields": []
   },
   {
     "sku_id": "SKU-002",
     "raw_title": "Sound Logic Soundlogic Dynabass Foldable Headphones Headphones",
     "raw_description": "Specifications of Sound Logic Soundlogic Dynabass Foldable Headphones Headphones (Multicolor) General Brand Sound Logic Model ID Soundlogic Dynabass Foldable Headphones Color Multicolor",
     "labels": {
-      "accessory_type": "headphone",
+      "accessory_type": null,
       "model_compat": null,
       "connector_type": null,
       "wattage_w": null,
@@ -34,7 +34,9 @@
       "wireless_charging": null,
       "material": null
     },
+    "scorable": false,
     "suggested_fields": [],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "",
     "prose_restated_fields": []
@@ -45,9 +47,7 @@
     "raw_description": "Key Features of snjmart Gold Note 4 Stereo Dynamic Earphone Wired Headphones Design: Canalphone Noise Cancellation Inline Remote,snjmart Gold Note 4 Stereo Dynamic Earphone Wired Headphones (White, In the Ear) Price: Rs. 299 Snjmart presents Samsung Unbeatable sound output, Sweat proof, Big speakers Earphone just for you...Heavy Magnet earphone gives you superior sound quality...just plug into your Phone and feel that Amazing Sound.,Specifications of snjmart Gold Note 4 Stereo Dynamic Earphone Wired Headphones (White, In the Ear) Performance Features Noise Cancellation Yes General Headset Design Canalphone Brand snjmart Designed For All Smart Phones Wired/Wireless Wired Compatible Devices Mobile, Tablet Headphone Type In the Ear Model ID Gold Note 4 Color White In Sales Package 1 Earphone Warranty Covered in Warranty Manufacture defect only Warranty Summary 10 Days replacement Warranty Service Type Seller replacement Not Covered in Warranty Damage, Broken Connectivity Headphone Jack 3.5mm Cord Type 1.3 m Additional Features Sweat Proof Yes Flatwire No Foldable/Collapsible Yes",
     "labels": {
       "accessory_type": "headphone",
-      "model_compat": [
-        "All Smart Phones"
-      ],
+      "model_compat": null,
       "connector_type": "3_5mm_jack",
       "wattage_w": null,
       "capacity_mah": null,
@@ -55,7 +55,16 @@
       "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "connector_type"
+    ],
+    "rejected_category_values": [
+      "All Smart Phones",
+      "Mobile",
+      "Tablet"
+    ],
     "verified": false,
     "extractor_eval_description": "Key Features of snjmart Gold Note 4 Stereo Dynamic Earphone Wired Headphones Design: Canalphone Noise Cancellation Inline Remote,snjmart Gold Note 4 Stereo Dynamic Earphone Wired Headphones (White, In the Ear) Price: Rs. 299 Snjmart presents Samsung Unbeatable sound output, Sweat proof, Big speakers Earphone just for you...Heavy Magnet earphone gives you superior sound quality...just plug into your Phone and feel that Amazing Sound.,",
     "prose_restated_fields": [
@@ -68,9 +77,7 @@
     "raw_description": "Key Features of Lexel High Quality Braided Metal Head Pure Copper Fast Charging 1.5 Meter Long for Iphone & Ipad Lightning Cable 1 Woven Fabric Nylon Cord data sync usb charging cable.2 High accurate mold of connectors, make perfect connection.3 Support USB2.0 high speed charging & Sync.4 For Charging and Sync with your computer.5 Nylon Woven Fabric Design!.6 Durable surface and not easy to get damage or dirty.,Lexel High Quality Braided Metal Head Pure Copper Fast Charging 1.5 Meter Long for Iphone & Ipad Lightning Cable (Black) Price: Rs. 399 High Quality Braided USB Metal Charging cable,Specifications of Lexel High Quality Braided Metal Head Pure Copper Fast Charging 1.5 Meter Long for Iphone & Ipad Lightning Cable (Black) In The Box Number of Contents in Sales Package 1 Sales Package 1 USB Cable General Brand Lexel Suitable For MOBILE, TABLET Cable Length 1.5 m Model High Quality Braided Metal Head Pure Copper Fast Charging 1.5 Meter Long for Iphone & Ipad Cable Type High Speed Cable 480 Mbps Speed Compatible Devices Mobile Type Lightning Cable Cable Round Part Number LX-M15 Connector 2 USB Connector 1 Lighting Color Black Warranty Covered in Warranty Warranty Of The Product Is Limited To Manufacturing Defects Only Warranty Summary 6 Months Manufacture Warranty Not Covered in Warranty Warranty Does Not Cover Any External Accessories (Such As Battery, Cable, Carrying Bag), Damage Caused To The Product Due To Improper Installation By Customer, Normal Wear And Tear To Magnetic Heads, Audio, Video, Laser Pick-Ups And Tv Picture Tubes, Pane",
     "labels": {
       "accessory_type": "cable",
-      "model_compat": [
-        "Mobile"
-      ],
+      "model_compat": null,
       "connector_type": null,
       "wattage_w": null,
       "capacity_mah": null,
@@ -78,7 +85,15 @@
       "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type"
+    ],
+    "rejected_category_values": [
+      "MOBILE",
+      "Mobile",
+      "TABLET"
+    ],
     "verified": false,
     "extractor_eval_description": "Key Features of Lexel High Quality Braided Metal Head Pure Copper Fast Charging 1.5 Meter Long for Iphone & Ipad Lightning Cable 1 Woven Fabric Nylon Cord data sync usb charging cable.2 High accurate mold of connectors, make perfect connection.3 Support USB2.0 high speed charging & Sync.4 For Charging and Sync with your computer.5 Nylon Woven Fabric Design!.6 Durable surface and not easy to get damage or dirty.,Lexel High Quality Braided Metal Head Pure Copper Fast Charging 1.5 Meter Long for Iphone & Ipad Lightning Cable (Black) Price: Rs. 399 High Quality Braided USB Metal Charging cable,",
     "prose_restated_fields": [
@@ -98,10 +113,15 @@
       "wattage_w": null,
       "capacity_mah": null,
       "screen_size_in": null,
-      "wireless_charging": false,
+      "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "model_compat"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Buy Dicapac Grip Back Cover for Galaxy Note only for Rs. 0.0 from Flipkart.com. Only Genuine Products. 30 Day Replacement Guarantee. Free Shipping. Cash On Delivery!",
     "prose_restated_fields": [
@@ -119,10 +139,15 @@
       "wattage_w": null,
       "capacity_mah": null,
       "screen_size_in": null,
-      "wireless_charging": false,
+      "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "connector_type"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Key Features of D'clair Micromax Canvas Play 4G Q469 Battery Charger Dual USB Compatible Compact Durable,D'clair Micromax Canvas Play 4G Q469 Battery Charger (Black) Price: Rs. 400 DUAL USB Car Charger Easy and convenient way to charger the phone battery in a vehicle, for operation, safety, care and maintenance, see phone's user guide. Bilitong enhancements enable the best possible operation of your mobile phone. Please check the compatibility of your mobile phone and this enhancement with your dealer. Performance Illustration: Input: DC 12V-24V Output: DC 5V/2.1A Dual Channel Keeping high output Support fast charging Dual USB Can work simultaneously High efficiency IC inside to control the circuit Multi set to protect the circuit Brief fashion design,",
     "prose_restated_fields": [
@@ -142,10 +167,16 @@
       "wattage_w": null,
       "capacity_mah": null,
       "screen_size_in": null,
-      "wireless_charging": false,
+      "wireless_charging": null,
       "material": "plastic"
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "model_compat",
+      "material"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Buy Fuson Back Cover for Samsung Galaxy J7 only for Rs. 599 from Flipkart.com. Only Genuine Products. 30 Day Replacement Guarantee. Free Shipping. Cash On Delivery!",
     "prose_restated_fields": [
@@ -165,10 +196,16 @@
       "wattage_w": null,
       "capacity_mah": null,
       "screen_size_in": null,
-      "wireless_charging": false,
+      "wireless_charging": null,
       "material": "plastic"
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "model_compat",
+      "material"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Instyles Back Cover for HTC One S (Multicolor)\n                         Price: Rs. 594\n\t\t\t\t\n\t\t\tDesigned For Phone Owners Who Prefer Minimalist-style Protection. 3d Design Back Cover Is A Sleek For Mobile-fitted Plastic Shell That Aims To Protect Your Phone From Everyday Wear And Tear. It's Surface Is Treated With Plastic Coating Which Provides A Slip-free Grip. 3d Design Adds A Unique Style To Your Mobile Phone.\nDesigned For Phone Owners Who Prefer Minimalist-style Protection. 3d Design Back Cover Is A Sleek For Mobile-fitted Plastic Shell That Aims To Protect Your Phone From Everyday Wear And Tear. It's Surface Is Treated With Plastic Coating Which Provides A Slip-free Grip. 3d Design Adds A Unique Style To Your Mobile Phone.",
     "prose_restated_fields": [
@@ -192,7 +229,13 @@
       "wireless_charging": null,
       "material": "leather"
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "model_compat",
+      "material"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Key Features of ACM Pouch for Swipe Elite Plus Acm Branded,ACM Pouch for Swipe Elite Plus (Black) Price: Rs. 339 Keep Your Item Safe In Rich Premium Style In The Leather Soft Pouch Case For Your Item.Ultimate Protection For Your Item. Protect Your Item's Screen From Harm Without Impacting It's Super Slim Profile. Protect The Front Of Your Item From Scratches, Scrapes And Front-On Impacts With The Cover. This Cover Takes Your Device Inside It Fully. This Means That The Most Important Part Of The Item, The Screen, Is Protected From Harm Without The Added Thickness And Weight Normally Associated With Other Cases. It Is Designed Specifically For Use With The Item, So Offers A Perfect Fit. Made From High Quality Synthetic Leather Materials, This Cover Will Keep Your Item's Screen Looking Good As New. The Cover Is Tough Enough To Withstand Day-To-Day Punishment Without Blemishing, So Both Your Item And Cover Will Stay Looking Sharp For Long.This Is Pouch As Described And Not Flip Cover And It Is Closed Pouch With Magnetic Closer.,",
     "prose_restated_fields": [
@@ -217,7 +260,13 @@
       "wireless_charging": null,
       "material": "leather"
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "model_compat",
+      "material"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Key Features of kits kart Pouch for Microsoft Lumia 1320 Durable Protective Light Weight Easy To Use,kits kart Pouch for Microsoft Lumia 1320 (Red) Price: Rs. 454 Product Description for : Microsoft Lumia 1320 - HDPRD60#1234 - Keeps your Mobile safe in executive style in the Leather case. Ultimate protection for your mobile. Protects your Mobile from any harm without impacting its super slim profile. Protects the screen of your mobile from Scratches & Cracks. This cover slides your device completely inside. Your Mobile screen is strongly protected without adding any thickness and weight normally associated with other cases. Made from high quality Leather & would help you will keep your Mobile looking good as new. The cover is tough enough to withstand day-to-day hassles without and strain, and helps your phone stay well for long. Product at Glimpse 1) Exclusively designed for your smartphone. 2) Light weight and durable construction. 3) Extremely tough, durable case molds perfectly to your phones shape. 4) Easy to Use, durable construction and premium quality\"PLEASE LEAVE A GOOD POSITIVE FEEDBACK WITH 5 DETAILED SELLER RATING ONCE YOU ARE SATISFIED\" If your not satisfied with our product or any other issues regarding the product and you are feeling to give an negative remark, We humbly request you to give us a call or mail us so that we could promptly resolve your issue. You could call us @ 9176695600 or mail us at kitskart@gmail.com,",
     "prose_restated_fields": [
@@ -242,7 +291,12 @@
       "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "model_compat"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Key Features of Newworld RTNE Pack Of One -583 Tempered Glass for Xiaomi Mi 4i Premium quality Long Lasting Perfect fit Durable,",
     "prose_restated_fields": [
@@ -265,7 +319,12 @@
       "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "model_compat"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Key Features of TRINK 6S Tempered Glass for APPLE IPHONE 6S High Strength,TRINK 6S Tempered Glass for APPLE IPHONE 6S Price: Rs. 399 Screen Protector is made of chemical processed film which has excellent window display high sensitivity and comfortable touch feeling, A.S.F. Anti-Shattered film (highly silicone coated). Absorbs 5 times more impact energy than normal screen protector.,Related video of TRINK 6S Tempered Glass for APPLE IPHONE 6S,",
     "prose_restated_fields": [
@@ -288,7 +347,12 @@
       "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "model_compat"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Buy Nillkin 654 Tempered Glass for Samsung Galaxy S5 Mini only for Rs. 585 from Flipkart.com. Only Genuine Products. 30 Day Replacement Guarantee. Free Shipping. Cash On Delivery!",
     "prose_restated_fields": [
@@ -308,10 +372,16 @@
       "wattage_w": null,
       "capacity_mah": null,
       "screen_size_in": null,
-      "wireless_charging": false,
+      "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "model_compat",
+      "connector_type"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Key Features of Furst USB Adapter with Cable For Dzire VC Battery Charger For HTC Desire VC 1.25A. Wall Charger Universal Voltage Detachable USB Cable,Furst USB Adapter with Cable For Dzire VC Battery Charger (White) Price: Rs. 249 Furst Detachable USB Charger with Indicator Has Competitive Price & High Quality.It Is Easily Portable & Small Enough To Carry In Your Pocket With New Fast Charge Technology.,",
     "prose_restated_fields": [
@@ -330,10 +400,15 @@
       "wattage_w": null,
       "capacity_mah": null,
       "screen_size_in": null,
-      "wireless_charging": false,
+      "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "connector_type"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Key Features of D'clair Micromax A46 Battery Charger Dual USB Compatible Compact Durable,D'clair Micromax A46 Battery Charger (Black) Price: Rs. 400 DUAL USB Car Charger Easy and convenient way to charger the phone battery in a vehicle, for operation, safety, care and maintenance, see phone's user guide. Bilitong enhancements enable the best possible operation of your mobile phone. Please check the compatibility of your mobile phone and this enhancement with your dealer. Performance Illustration: Input: DC 12V-24V Output: DC 5V/2.1A Dual Channel Keeping high output Support fast charging Dual USB Can work simultaneously High efficiency IC inside to control the circuit Multi set to protect the circuit Brief fashion design,",
     "prose_restated_fields": [
@@ -347,7 +422,7 @@
     "labels": {
       "accessory_type": "cable",
       "model_compat": [
-        "Mobile"
+        "One Plus Two Mobile Phones"
       ],
       "connector_type": "usb_c",
       "wattage_w": null,
@@ -356,7 +431,16 @@
       "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "model_compat",
+      "connector_type"
+    ],
+    "rejected_category_values": [
+      "Mobile Phones",
+      "Tables"
+    ],
     "verified": false,
     "extractor_eval_description": "Acromax Type C for One Plus Two USB C Type Cable (Red)\n                         Price: Rs. 888\n\t\t\t\t\n\t\t\tCharge your Nexus 6P, Nexus 5x, One Plus Two, One Plus One phone using this high quality Type C Cable\nCharge your Nexus 6P, Nexus 5x, One Plus Two, One Plus One phone using this high quality Type C Cable",
     "prose_restated_fields": [
@@ -369,9 +453,7 @@
     "raw_description": "Key Features of DEBOCK DEBOCK Earphone For Samsung galaxy s advance i9070 Stereo Dynamic Headphone Wired Headphones 3D Sound Clear Vocals Genuine Output Best Quality 100% Compatible,DEBOCK DEBOCK Earphone For Samsung galaxy s advance i9070 Stereo Dynamic Headphone Wired Headphones (Pink, In the Ear) Price: Rs. 320 High quality Headphone for a disturbance free experince with 3D Sound. Maximum comfort and superb performance. Excellenct for interactive games, internet telephony and personal music player and mobile phones with clear vocals. Acoustically and ergonomically designed for a superior listening experience.,Specifications of DEBOCK DEBOCK Earphone For Samsung galaxy s advance i9070 Stereo Dynamic Headphone Wired Headphones (Pink, In the Ear) General Headset Design Earbud Brand DEBOCK Number of Pins 1 Wired/Wireless Wired Designed For Mobile Controls Track Control, Volume Control Compatible Devices Mobile Headphone Type In the Ear Model ID DEBOCK Earphone For Samsung galaxy s advance i9070 In Sales Package Headphone Color Pink Performance Features Other Performance Features Clear Base and Trable Noise Cancellation Yes Deep Bass No Bluetooth Bluetooth No Warranty Covered in Warranty Manufacturing Defects Only Warranty Summary 6 Months Warranty Service Type Demage Warranty Not Covered in Warranty Cable Connectivity Headphone Jack 3.5mm Additional Features Sweat Proof Yes Flatwire Yes Foldable/Collapsible Yes",
     "labels": {
       "accessory_type": "headphone",
-      "model_compat": [
-        "Mobile"
-      ],
+      "model_compat": null,
       "connector_type": "3_5mm_jack",
       "wattage_w": null,
       "capacity_mah": null,
@@ -379,12 +461,18 @@
       "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "connector_type"
+    ],
+    "rejected_category_values": [
+      "Mobile"
+    ],
     "verified": false,
     "extractor_eval_description": "Key Features of DEBOCK DEBOCK Earphone For Samsung galaxy s advance i9070 Stereo Dynamic Headphone Wired Headphones 3D Sound Clear Vocals Genuine Output Best Quality 100% Compatible,DEBOCK DEBOCK Earphone For Samsung galaxy s advance i9070 Stereo Dynamic Headphone Wired Headphones (Pink, In the Ear) Price: Rs. 320 High quality Headphone for a disturbance free experince with 3D Sound. Maximum comfort and superb performance. Excellenct for interactive games, internet telephony and personal music player and mobile phones with clear vocals. Acoustically and ergonomically designed for a superior listening experience.,",
     "prose_restated_fields": [
-      "accessory_type",
-      "model_compat"
+      "accessory_type"
     ]
   },
   {
@@ -404,7 +492,13 @@
       "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "model_compat",
+      "connector_type"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Key Features of CONVENIENCE vm46 headphone for XIOMI Mi4 and Mi4i Signature vm46 Stereo Wired Headphones Stylish High Bass Sound Round Wire Sensor Mice Included,CONVENIENCE vm46 headphone for XIOMI Mi4 and Mi4i Signature vm46 Stereo Wired Headphones (MULTI COLOR, BLACK, WHITE, RED, BLUE, PURPLE, Over the Ear) Price: Rs. 249 Enjoy the most realistic and amazing sound quality with the Signature Series VM-28 Headphones. The headphones offer an incredibly loud, crisp and clear sound. You can enjoy your favourite songs from your smartphone, MP3 players devices with high sound clarity. These headphones are compatible with other smartphones also. . The flat 1.5-meter cord allows a tangle-free experience, giving an uninterrupted music on the go. MAKE SURE THAT THE COLORS ARE LIMITED AND WOULD BE SENT AS PER AVAILABILITY.,",
     "prose_restated_fields": [
@@ -425,7 +519,13 @@
       "wireless_charging": true,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "capacity_mah",
+      "wireless_charging"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Key Features of Wayona 10000mAh Wireless 10000mAh Power bank With Dual USB Output 10000 mAh Can charge up to 3 devices simultaneously,Wayona 10000mAh Wireless 10000mAh Power bank With Dual USB Output 10000 mAh (White) Price: Rs. 2,149 Wayona wireless power 10000mAh works as a Qi charging pad or a power bank on the go. Can charge up to 3 devices simultaneously.Qi CompatibleSupports wireless charging at up to 1A for devices including (but not limited to):* Samsung Galaxy Note5/S6/S6 Edge/S6 Edge+* Google Nexus 5/6/7* HTC Droid DNA, 8X* LG G3/G4, Lucid 2/3* Nokia Lumia 920/930* iPhone 5S/6/6 Plus with wireless charging case 1 micro USB cable is included for wired charging of Android devices.Slim High-Capacity Battery Built-in, custom-made 10000mAh lithium-polymer battery can recharge phones and tablets The battery can be recharged rapidly via its micro USB port in 5-6 hours with proprietary 2A rapid charging technology.Smart USB PortsEach of the two USB ports automatically detects optimal charging speed for Android or iOS devices at up to 2.1A. Intelligent protection against overcharge Note: For wireless charging, your phone must have a Qi receiver. Recharge the device using a USB adapter supporting 5V/2A output. If red LED is off, press-and-hold power button for 3 secs to turn on wireless charging. To charge phones while recharging, you may need to press the power button once. To Samsung Galaxy Note5/S6 Edge+ owners: All units in current inventory have been tested for compatibility with Note5/S6 Edge+.,",
     "prose_restated_fields": []
@@ -441,10 +541,15 @@
       "wattage_w": null,
       "capacity_mah": 12000,
       "screen_size_in": null,
-      "wireless_charging": false,
+      "wireless_charging": null,
       "material": null
     },
-    "suggested_fields": [],
+    "scorable": true,
+    "suggested_fields": [
+      "accessory_type",
+      "capacity_mah"
+    ],
+    "rejected_category_values": [],
     "verified": false,
     "extractor_eval_description": "Key Features of Zebie SPB100096 Solar 12000 MAH Power Bank 12000 mAh Battery Capacity: 12000 mAh Battery Type: Lithium Polymer Connectors: Micro, Mini,",
     "prose_restated_fields": []

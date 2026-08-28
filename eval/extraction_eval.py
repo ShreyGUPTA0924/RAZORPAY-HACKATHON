@@ -9,6 +9,16 @@ row is refused, not silently skipped-with-a-warning: scoring against a raw
 auto-suggestion would launder it as ground truth, exactly the shortcut the
 hybrid methodology exists to avoid.
 
+Also requires "scorable": true -- false means the SKU has no seller-authored
+structured anchor at all (see eval/build_ground_truth.py), so even a
+verified/hand-labeled row is pure freehand labeling with nothing to
+hybrid-verify against. Still a legitimate row (e.g. a quarantine test case),
+just excluded from the seller-anchored precision/recall this module reports.
+
+Fields with support < MIN_SUPPORT_FOR_SCORING are dropped from the printed
+report (not from the underlying metrics -- score_all() still returns every
+field) -- a P/R/F1 computed from a handful of SKUs is noise, not signal.
+
 Usage:
     python eval/extraction_eval.py                          # ground-truth stats only
     python eval/extraction_eval.py --predictions preds.json  # full P/R/F1
@@ -38,6 +48,8 @@ from pipeline.schema import ATTRIBUTE_FIELDS
 
 ROOT = Path(__file__).resolve().parent.parent
 LABELS_TEMPLATE = ROOT / "eval" / "ground_truth" / "labels_template.json"
+
+MIN_SUPPORT_FOR_SCORING = 5
 
 
 @dataclass
@@ -76,16 +88,24 @@ def values_match(predicted: Any, ground_truth: Any) -> bool:
     return _normalize(predicted) == _normalize(ground_truth)
 
 
-def load_ground_truth() -> tuple[dict[str, dict[str, Any]], list[str]]:
-    """Returns (verified ground truth {sku_id: {field: value}}, unverified sku_ids skipped)."""
+def load_ground_truth() -> tuple[dict[str, dict[str, Any]], dict[str, str]]:
+    """Returns (scorable ground truth {sku_id: {field: value}}, {sku_id: reason} for every excluded SKU).
+
+    Included only if verified AND scorable -- see module docstring. Defaults
+    missing "scorable" to False (exclude), not True: an unmarked row should
+    never silently slip into a precision/recall number.
+    """
     entries = json.loads(LABELS_TEMPLATE.read_text(encoding="utf-8"))
-    verified, skipped = {}, []
+    scorable_gt: dict[str, dict[str, Any]] = {}
+    skipped: dict[str, str] = {}
     for entry in entries:
-        if entry.get("verified"):
-            verified[entry["sku_id"]] = entry["labels"]
+        if not entry.get("verified"):
+            skipped[entry["sku_id"]] = "not verified"
+        elif not entry.get("scorable", False):
+            skipped[entry["sku_id"]] = "not scorable (no seller-authored anchor)"
         else:
-            skipped.append(entry["sku_id"])
-    return verified, skipped
+            scorable_gt[entry["sku_id"]] = entry["labels"]
+    return scorable_gt, skipped
 
 
 def load_predictions(path: Path) -> dict[str, dict[str, Any]]:
@@ -139,9 +159,9 @@ def main():
     quarantine_skus = expected_quarantine_skus(ground_truth)
 
     print("=" * 72)
-    print(f"Verified ground-truth SKUs: {len(ground_truth)}")
+    print(f"Scorable ground-truth SKUs (verified + seller-anchored): {len(ground_truth)}")
     if skipped:
-        print(f"Skipped (not yet verified, excluded from scoring): {skipped}")
+        print(f"Excluded: {skipped}")
     print(f"Expected-quarantine SKUs (all fields null): {quarantine_skus}")
 
     if not args.predictions:
@@ -152,14 +172,20 @@ def main():
 
     predictions = load_predictions(args.predictions)
     metrics = score_all(predictions, ground_truth)
+    reportable = {f: m for f, m in metrics.items() if m.support >= MIN_SUPPORT_FOR_SCORING}
+    excluded = {f: m for f, m in metrics.items() if m.support < MIN_SUPPORT_FOR_SCORING}
 
     print(f"\n{'field':<20}{'support':>8}{'precision':>12}{'recall':>10}{'f1':>8}")
-    for field, m in metrics.items():
+    for field, m in reportable.items():
         print(f"{field:<20}{m.support:>8}{_fmt(m.precision):>12}{_fmt(m.recall):>10}{_fmt(m.f1):>8}")
 
-    scored = [m.f1 for m in metrics.values() if m.f1 is not None]
+    if excluded:
+        excluded_support = {f: m.support for f, m in excluded.items()}
+        print(f"\nExcluded (support < {MIN_SUPPORT_FOR_SCORING}, not reportable): {excluded_support}")
+
+    scored = [m.f1 for m in reportable.values() if m.f1 is not None]
     if scored:
-        print(f"\nMacro-average F1 across fields with support: {sum(scored) / len(scored):.2f}")
+        print(f"\nMacro-average F1 across reportable fields: {sum(scored) / len(scored):.2f}")
     print("=" * 72)
 
 
