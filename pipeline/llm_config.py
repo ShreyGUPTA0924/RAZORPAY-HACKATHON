@@ -107,5 +107,25 @@ FALLBACK_CHAINS: dict[str, list[LLMComponentConfig]] = {
 def get_fallback_chain(component: str) -> list[LLMComponentConfig]:
     """The ordered list of (provider, model) to try for `component`. Falls
     back to a single-entry chain of just get_component_config(component)
-    for any component without an explicit chain defined above."""
-    return FALLBACK_CHAINS.get(component) or [get_component_config(component)]
+    for any component without an explicit chain defined above.
+
+    An env var override (<COMPONENT>_LLM_PROVIDER/_MODEL) is NOT ignored
+    just because a fixed chain exists for this component -- it's moved to
+    the front, with the rest of the configured chain kept behind it as a
+    safety net (deduplicated if the override already names an entry in the
+    chain). Getting this wrong once meant EXTRACTOR_LLM_PROVIDER=groq had
+    no effect at all: the code still tried gemini-2.5-flash first, retried
+    it to exhaustion, then gemini-2.5-flash-lite, before ever reaching
+    Groq -- exactly the slow dead-provider cycling the override exists to
+    skip.
+    """
+    default_chain = FALLBACK_CHAINS.get(component) or [get_component_config(component)]
+
+    env_prefix = component.upper()
+    has_override = f"{env_prefix}_LLM_PROVIDER" in os.environ or f"{env_prefix}_LLM_MODEL" in os.environ
+    if not has_override:
+        return default_chain
+
+    override = get_component_config(component)
+    rest = [cfg for cfg in default_chain if cfg != override]
+    return [override, *rest]
