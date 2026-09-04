@@ -159,6 +159,7 @@ def test_run_batch_reverifies_only_on_stale_self_verify_version(monkeypatch, tmp
     with (
         patch("pipeline.extract.extract_primary_batch") as mock_batch,
         patch("pipeline.extract.run_self_verification", return_value=fresh_sv) as mock_verify,
+        patch("pipeline.extract.run_title_only_cross_check", return_value=extract.TitleOnlyCheck(agreed=True)),
         patch("pipeline.extract.configure_tracing"),
     ):
         results = extract.run_batch(catalog_path=catalog_path)
@@ -230,6 +231,7 @@ def test_run_batch_caches_successful_new_extractions(monkeypatch, tmp_path):
     with (
         patch("pipeline.extract.extract_primary_batch", side_effect=fake_extract_primary_batch),
         patch("pipeline.extract.run_self_verification", return_value=extract.SelfVerification()),
+        patch("pipeline.extract.run_title_only_cross_check", return_value=extract.TitleOnlyCheck(agreed=True)),
         patch("pipeline.extract.configure_tracing"),
     ):
         extract.run_batch(catalog_path=catalog_path)

@@ -70,7 +70,16 @@ def evaluate(
     intent_verification: IntentVerificationResult,
     requested_items: list[RequestedItem],
     skus: dict[str, SkuAvailability],
+    previously_spent: int = 0,
 ) -> GateResult:
+    """previously_spent: paise already successfully charged under this same
+    intent.intent_mandate_id, across any PRIOR transactions -- a plain int
+    the caller fetches from surface/idempotency.py's cumulative-spend
+    record before calling evaluate() (gate.py does no I/O of its own, see
+    module docstring). Defaults to 0 for a caller that doesn't track it,
+    which is exactly the per-transaction-only behavior this parameter is
+    additive to -- see the cumulative-ceiling check below and
+    docs/what-broke.md for why per-transaction alone isn't enough."""
     if not intent_verification.valid:
         return GateResult(decision=GateDecision.REFUSE, refusal=intent_verification.refusal)
 
@@ -141,6 +150,21 @@ def evaluate(
                 code=RefusalCode.OVER_PRICE_CEILING,
                 detail=f"cart total {total} > ceiling {intent.max_amount}",
                 context={"total": total, "ceiling": intent.max_amount},
+            ),
+            cart_total=total,
+        )
+
+    cumulative_total = previously_spent + total
+    if cumulative_total > intent.max_amount:
+        return GateResult(
+            decision=GateDecision.REFUSE,
+            refusal=Refusal(
+                code=RefusalCode.CUMULATIVE_CEILING_EXCEEDED,
+                detail=(
+                    f"cart total {total} + already-spent {previously_spent} = {cumulative_total} "
+                    f"> ceiling {intent.max_amount}, even though this cart alone is under it"
+                ),
+                context={"total": total, "previously_spent": previously_spent, "cumulative_total": cumulative_total, "ceiling": intent.max_amount},
             ),
             cart_total=total,
         )

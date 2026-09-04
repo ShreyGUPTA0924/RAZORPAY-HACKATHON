@@ -222,6 +222,111 @@ def test_add_second_verification_is_a_no_op_if_nothing_was_ever_checked():
 
 
 # ---------------------------------------------------------------------------
+# run_title_only_cross_check -- the mandatory, unconditional accessory_type
+# defense. Unlike SelfVerification, this runs regardless of confidence: it
+# exists specifically because a real adversarial attack relabeled a cable
+# "power_bank" via the description alone, at HIGH confidence (0.9+) -- a
+# case the lowest-confidence self-verification check structurally cannot
+# reach, since accessory_type is rarely the lowest-confidence field. See
+# docs/what-broke.md.
+# ---------------------------------------------------------------------------
+
+
+def test_title_only_agreement_leaves_confidence_unchanged():
+    attrs = ProductAttributes(accessory_type=AttrValue(value=AccessoryType.CABLE, confidence=0.95))
+    with patch("pipeline.extract.self_verify_field", return_value=AccessoryType.CABLE):
+        check = extract.run_title_only_cross_check("SKU-X", "title", attrs)
+    assert check.agreed is True
+    assert attrs.accessory_type.confidence == 0.95
+    assert check.confidence_after == 0.95
+
+
+def test_title_only_disagreement_hard_drops_confidence_regardless_of_how_high_it_was():
+    """The exact scenario this check was built to catch: a HIGH-confidence
+    claim (0.95) that a title-only read contradicts. A multiplicative
+    factor (0.95 * 0.4 = 0.38) would already clear most reasonable
+    thresholds by luck; the hard floor doesn't leave that to arithmetic."""
+    attrs = ProductAttributes(accessory_type=AttrValue(value=AccessoryType.POWER_BANK, confidence=0.95))
+    with patch("pipeline.extract.self_verify_field", return_value=AccessoryType.CABLE):
+        check = extract.run_title_only_cross_check("SKU-X", "Generix OTG for Sony Xperia M5 OTG Cable", attrs)
+    assert check.agreed is False
+    assert attrs.accessory_type.confidence == extract.TITLE_ONLY_HARD_DROP_CONFIDENCE
+    assert check.confidence_after == extract.TITLE_ONLY_HARD_DROP_CONFIDENCE
+    assert check.confidence_before == 0.95
+    assert check.title_only_value == AccessoryType.CABLE
+    assert check.full_text_value == AccessoryType.POWER_BANK
+
+
+def test_title_only_check_skipped_when_accessory_type_is_null():
+    attrs = ProductAttributes()  # accessory_type never determined
+    with patch("pipeline.extract.self_verify_field") as mock_verify:
+        check = extract.run_title_only_cross_check("SKU-X", "title", attrs)
+    mock_verify.assert_not_called()
+    assert check.agreed is None
+
+
+def test_title_only_check_uses_title_alone_no_description():
+    """Confirms the whole point of the check: self_verify_field is called
+    with an empty description, so a poisoned or misleading description
+    cannot influence this specific call."""
+    attrs = ProductAttributes(accessory_type=AttrValue(value=AccessoryType.CABLE, confidence=0.9))
+    with patch("pipeline.extract.self_verify_field", return_value=AccessoryType.CABLE) as mock_verify:
+        extract.run_title_only_cross_check("SKU-X", "My Title", attrs)
+    mock_verify.assert_called_once_with("SKU-X", "My Title", "", "accessory_type")
+
+
+def test_finish_with_self_verification_runs_both_checks_and_preserves_both_results():
+    attrs = ProductAttributes(accessory_type=AttrValue(value=AccessoryType.CABLE, confidence=0.9))
+    with patch("pipeline.extract.self_verify_field", return_value=AccessoryType.CABLE):
+        result = extract.finish_with_self_verification("SKU-X", "title", "desc", attrs)
+    assert result.error is None
+    assert result.self_verification.field_checked == "accessory_type"
+    assert result.title_only_check.agreed is True
+
+
+def test_finish_with_self_verification_title_only_disagreement_quarantine_worthy():
+    """End-to-end: a description-driven mislabel survives self-verification
+    (which never looks at accessory_type here, since it's the SKU's only
+    field and self-verification would pick it too -- so this test forces a
+    second, DIFFERENT field to be primary-checked) but gets caught by the
+    title-only cross-check and pushed below any reasonable quarantine
+    threshold."""
+    attrs = ProductAttributes(
+        accessory_type=AttrValue(value=AccessoryType.POWER_BANK, confidence=0.95),
+        connector_type=AttrValue(value=ConnectorType.USB_C, confidence=0.5),  # lowest -- self-verification picks this instead
+    )
+
+    def fake_self_verify(sku_id, title, description, field_name):
+        if field_name == "connector_type":
+            return ConnectorType.USB_C  # agrees -- self-verification alone finds nothing wrong
+        return AccessoryType.CABLE  # the title-only check's independent read
+
+    with patch("pipeline.extract.self_verify_field", side_effect=fake_self_verify):
+        result = extract.finish_with_self_verification("SKU-X", "Generix OTG Cable", "desc", attrs)
+
+    assert result.self_verification.agreed is True  # self-verification alone missed it
+    assert result.title_only_check.agreed is False  # title-only check caught it
+    assert result.attributes.accessory_type.confidence == extract.TITLE_ONLY_HARD_DROP_CONFIDENCE
+
+
+def test_title_only_disagreement_actually_quarantines_the_sku():
+    """The real, tangible security outcome, not just a confidence number:
+    feeding the post-check attributes through the ACTUAL
+    pipeline.quarantine.evaluate() must quarantine the whole SKU. This is
+    the fix for a confirmed adversarial finding -- a cable relabeled
+    power_bank via the description alone survived at 0.9+ confidence
+    before this check existed; see docs/what-broke.md."""
+    from pipeline.quarantine import evaluate as quarantine_evaluate
+
+    attrs = ProductAttributes(accessory_type=AttrValue(value=AccessoryType.POWER_BANK, confidence=0.95))
+    with patch("pipeline.extract.self_verify_field", return_value=AccessoryType.CABLE):
+        extract.run_title_only_cross_check("SKU-054", "Generix OTG for Sony Xperia M5 OTG Cable", attrs)
+
+    decision = quarantine_evaluate("SKU-054", attrs)
+    assert decision.published is False
+
+
+# ---------------------------------------------------------------------------
 # extract_sku -- get_chat_model_with_fallback is mocked, no network.
 # ---------------------------------------------------------------------------
 

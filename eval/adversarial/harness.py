@@ -63,7 +63,13 @@ from pipeline.schema import ATTRIBUTE_FIELDS
 from surface import mcp_server
 from surface.gate import GateDecision, RequestedItem, SkuAvailability
 from surface.gate import evaluate as gate_evaluate
-from surface.idempotency import cart_hash, claim, record_receipt
+from surface.idempotency import (
+    cart_hash,
+    claim,
+    get_cumulative_spent,
+    record_receipt,
+    record_spend,
+)
 from surface.mandate import (
     CartLineItem,
     IntentMandate,
@@ -354,7 +360,8 @@ def run_mandate_attack(attack: Attack, published: dict, redis_client) -> AttackR
 
         items = [RequestedItem(sku_id=i.sku_id, quantity=i.quantity) for i in sub.requested_items]
         verification = verify_intent_mandate(intent, redis_client, now=now)
-        result = gate_evaluate(intent, verification, items, skus)
+        previously_spent = get_cumulative_spent(redis_client, intent_id)
+        result = gate_evaluate(intent, verification, items, skus, previously_spent=previously_spent)
 
         charged_amount = None
         if result.decision is GateDecision.ALLOW:
@@ -370,6 +377,7 @@ def run_mandate_attack(attack: Attack, published: dict, redis_client) -> AttackR
                 )
                 receipt = execute_payment_behind_gate(razorpay_client, cart, result, order["id"], f"pay-adv-{intent_id}-{sub.nonce}")
                 record_receipt(redis_client, cart.intent_mandate_id, key_hash, receipt.__dict__)
+                record_spend(redis_client, cart.intent_mandate_id, receipt.amount)
                 charged_amount = receipt.amount
                 total_charged += receipt.amount
                 charge_events += 1

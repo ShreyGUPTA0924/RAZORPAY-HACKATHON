@@ -16,6 +16,7 @@ Every refusal `surface/gate.py` produces carries one of these codes, a specific 
 | code | description |
 |---|---|
 | `over_price_ceiling` | The proposed cart total exceeds the Intent Mandate's max_amount. |
+| `cumulative_ceiling_exceeded` | Combined with prior successful transactions already recorded under this intent_mandate_id, this cart would exceed the Intent Mandate's max_amount -- each individual transaction was under the ceiling, but the running total is not. |
 | `category_not_allowed` | A requested SKU's category is outside the Intent Mandate's allowed_categories. |
 
 ## compatibility

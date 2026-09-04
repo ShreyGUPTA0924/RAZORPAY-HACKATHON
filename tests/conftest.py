@@ -29,5 +29,7 @@ def redis_client():
         client.delete(key)
     for key in client.scan_iter("agentfront:idempotency:*"):
         client.delete(key)
+    for key in client.scan_iter("agentfront:cumulative_spend:*"):
+        client.delete(key)
 
     yield client

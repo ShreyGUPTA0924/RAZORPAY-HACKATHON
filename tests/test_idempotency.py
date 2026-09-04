@@ -1,4 +1,12 @@
-from surface.idempotency import cart_hash, claim, idempotency_key, record_receipt
+from surface.idempotency import (
+    cart_hash,
+    claim,
+    cumulative_spend_key,
+    get_cumulative_spent,
+    idempotency_key,
+    record_receipt,
+    record_spend,
+)
 
 
 def test_first_claim_succeeds(redis_client):
@@ -59,3 +67,43 @@ def test_cart_hash_changes_with_content():
 def test_idempotency_key_is_namespaced():
     key = idempotency_key("intent-1", "hash-1")
     assert key.startswith("agentfront:idempotency:")
+
+
+# ---------------------------------------------------------------------------
+# Cumulative spend -- closes the bypass documented in docs/what-broke.md:
+# nonce replay and per-cart idempotency each guard the transaction they were
+# built to guard, but neither tracked running spend across several distinct
+# transactions under one intent_mandate_id.
+# ---------------------------------------------------------------------------
+
+
+def test_cumulative_spend_key_is_namespaced():
+    assert cumulative_spend_key("intent-1").startswith("agentfront:cumulative_spend:")
+
+
+def test_get_cumulative_spent_is_zero_before_any_spend(redis_client):
+    assert get_cumulative_spent(redis_client, "intent-1") == 0
+
+
+def test_record_spend_accumulates_across_calls(redis_client):
+    record_spend(redis_client, "intent-1", 3_000)
+    record_spend(redis_client, "intent-1", 2_000)
+    assert get_cumulative_spent(redis_client, "intent-1") == 5_000
+
+
+def test_record_spend_returns_the_new_total(redis_client):
+    record_spend(redis_client, "intent-1", 3_000)
+    assert record_spend(redis_client, "intent-1", 2_000) == 5_000
+
+
+def test_cumulative_spend_is_isolated_per_intent_mandate_id(redis_client):
+    record_spend(redis_client, "intent-A", 3_000)
+    record_spend(redis_client, "intent-B", 7_000)
+    assert get_cumulative_spent(redis_client, "intent-A") == 3_000
+    assert get_cumulative_spent(redis_client, "intent-B") == 7_000
+
+
+def test_record_spend_sets_an_expiry_not_a_permanent_key(redis_client):
+    record_spend(redis_client, "intent-1", 1_000)
+    ttl = redis_client.ttl(cumulative_spend_key("intent-1"))
+    assert ttl > 0

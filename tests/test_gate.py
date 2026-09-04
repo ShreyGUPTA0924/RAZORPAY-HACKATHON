@@ -130,6 +130,50 @@ def test_multi_item_cart_second_item_failure_is_still_caught():
     assert result.refusal.context["sku_id"] == "SKU-2"
 
 
+def test_refuses_over_cumulative_ceiling_even_though_this_cart_alone_is_under_it():
+    """This cart alone (8_000) is under the ceiling (10_000), but combined
+    with what's already been spent under this same intent_mandate_id
+    (5_000), the running total exceeds it. This is the additive check that
+    closes the cumulative-ceiling bypass -- see docs/what-broke.md."""
+    result = evaluate(
+        make_intent(max_amount=10_000), VALID, [ITEM], {"SKU-1": make_sku(unit_amount=8_000)}, previously_spent=5_000
+    )
+    assert result.decision is GateDecision.REFUSE
+    assert result.refusal.code is RefusalCode.CUMULATIVE_CEILING_EXCEEDED
+    assert result.refusal.context == {"total": 8_000, "previously_spent": 5_000, "cumulative_total": 13_000, "ceiling": 10_000}
+
+
+def test_allows_when_cumulative_total_stays_within_ceiling():
+    """The fix is additive, not more restrictive than before: two
+    transactions that together still fit under the ceiling must both be
+    allowed, not just the first."""
+    result = evaluate(
+        make_intent(max_amount=10_000), VALID, [ITEM], {"SKU-1": make_sku(unit_amount=3_000)}, previously_spent=5_000
+    )
+    assert result.decision is GateDecision.ALLOW
+    assert result.cart_total == 3_000
+
+
+def test_previously_spent_defaults_to_zero_for_callers_that_dont_pass_it():
+    """Backward compatible: a caller that never fetches cumulative spend
+    (previously_spent omitted) gets exactly the old per-transaction-only
+    behavior, not an unexpected refusal."""
+    result = evaluate(make_intent(max_amount=10_000), VALID, [ITEM], {"SKU-1": make_sku(unit_amount=9_000)})
+    assert result.decision is GateDecision.ALLOW
+
+
+def test_per_transaction_ceiling_check_still_fires_before_cumulative_check():
+    """The original per-transaction check is untouched by the additive
+    fix -- a single cart over the ceiling on its own is still
+    OVER_PRICE_CEILING, not CUMULATIVE_CEILING_EXCEEDED, even with prior
+    spend on record."""
+    result = evaluate(
+        make_intent(max_amount=10_000), VALID, [ITEM], {"SKU-1": make_sku(unit_amount=15_000)}, previously_spent=5_000
+    )
+    assert result.decision is GateDecision.REFUSE
+    assert result.refusal.code is RefusalCode.OVER_PRICE_CEILING
+
+
 def test_checks_run_in_documented_order_sku_not_published_before_category():
     """A SKU that's both quarantined AND outside allowed_categories should
     surface as SKU_NOT_PUBLISHED (checked first), not CATEGORY_NOT_ALLOWED --

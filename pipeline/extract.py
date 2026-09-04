@@ -67,17 +67,19 @@ from pipeline.tracing import configure_tracing
 # misses the cache instead of serving a stale pre-change result.
 PROMPT_VERSION = "v2-batch-trim-fallback"
 
-# Separate from PROMPT_VERSION: self-verification result (which field got
-# checked, agreement, confidence knockdown) is stored bundled with attrs in
-# the same cache entry, but which field to check is a decision made
-# entirely on our side, not part of what's sent to the LLM -- bumping
-# PROMPT_VERSION over a self-verify logic change would force a wasteful
-# full primary re-extraction just to get a different field spot-checked.
-# This version is compared against what's stored in a cache HIT: a
-# mismatch means the attrs are still valid (reuse, zero quota) but the
-# self-verification that rode along with them used old logic and must be
-# redone -- see run_batch()'s cache-hit handling.
-SELF_VERIFY_VERSION = "v2-lowest-confidence"
+# Separate from PROMPT_VERSION: verification results (self-verification's
+# field check, and the mandatory title-only accessory_type cross-check) are
+# stored bundled with attrs in the same cache entry, but which checks to
+# run and how are decisions made entirely on our side, not part of what's
+# sent to the primary extraction call -- bumping PROMPT_VERSION over a
+# verification-logic change would force a wasteful full primary
+# re-extraction just to get a check re-run. This version is compared
+# against what's stored in a cache HIT: a mismatch means the attrs are
+# still valid (reuse, zero quota) but the verification that rode along
+# with them used old logic (or, for entries cached before the title-only
+# check existed at all, is simply missing it) and must be redone -- see
+# run_batch()'s cache-hit handling.
+SELF_VERIFY_VERSION = "v3-title-only-cross-check"
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "data" / "catalog.json"
@@ -346,14 +348,44 @@ class SelfVerification:
 
 
 @dataclass
+class TitleOnlyCheck:
+    """A mandatory, unconditional cross-check on accessory_type -- separate
+    from SelfVerification above, which only ever spot-checks the LOWEST-
+    confidence field and so structurally never reaches accessory_type: it's
+    the model's most reliable field, essentially never the lowest-confidence
+    one. That left a real gap a HIGH-confidence claim could walk through
+    undetected -- a real adversarial run relabeled a cable "power_bank" via
+    the description alone, at 0.9+ confidence, while the SKU's actual title
+    said "Cable" twice. This check re-derives accessory_type from the TITLE
+    ALONE, no description at all, so a misleading or poisoned description
+    literally cannot influence it -- see run_title_only_cross_check and
+    docs/what-broke.md."""
+
+    title_only_value: Any = None
+    full_text_value: Any = None
+    agreed: bool | None = None
+    confidence_before: float | None = None
+    confidence_after: float | None = None
+
+
+@dataclass
 class ExtractionResult:
     sku_id: str
     attributes: ProductAttributes
     self_verification: SelfVerification = field(default_factory=SelfVerification)
+    title_only_check: TitleOnlyCheck = field(default_factory=TitleOnlyCheck)
     error: str | None = None
 
 
 DISAGREEMENT_CONFIDENCE_FACTOR = 0.4
+# Not a factor, a hard floor: disagreement here means the TITLE ITSELF
+# contradicts the full-text category call -- unlike a generic disagreement
+# (DISAGREEMENT_CONFIDENCE_FACTOR above), there's no "still plausible, just
+# less certain" reading of that. The gating field must quarantine, not just
+# get less confident, regardless of how high the original confidence was
+# (0.9 * DISAGREEMENT_CONFIDENCE_FACTOR would still clear a low enough
+# CONFIDENCE_THRESHOLD in principle; this doesn't leave that to arithmetic).
+TITLE_ONLY_HARD_DROP_CONFIDENCE = 0.0
 
 
 def _values_match(a: Any, b: Any) -> bool:
@@ -447,6 +479,49 @@ def self_verify_field(sku_id: str, title: str, description: str, field_name: str
     return result.value
 
 
+def verify_accessory_type_title_only(sku_id: str, title: str) -> Any:
+    """Independently re-derives accessory_type from the TITLE ALONE -- no
+    description passed at all, so a misleading or poisoned description
+    literally cannot reach this call. See TitleOnlyCheck's docstring for
+    why this exists as a separate, unconditional check rather than relying
+    on the general self-verification mechanism above.
+
+    Deliberately built on self_verify_field() with an empty description
+    (rather than a bespoke prompt/call) for two reasons: it's genuinely the
+    same operation -- re-derive one field, blind to the primary answer,
+    from less text than the primary call saw -- and it means every
+    existing test that mocks self_verify_field already covers this call
+    too, rather than needing a second mock target for what is, from the
+    model's perspective, the same kind of request."""
+    return self_verify_field(sku_id, title, "", "accessory_type")
+
+
+def run_title_only_cross_check(sku_id: str, title: str, attrs: ProductAttributes) -> TitleOnlyCheck:
+    """Runs unconditionally whenever accessory_type is non-null -- not
+    gated by confidence, unlike SelfVerification. Disagreement drops
+    accessory_type's confidence to TITLE_ONLY_HARD_DROP_CONFIDENCE (a hard
+    floor, not a multiplicative factor) IN PLACE on attrs, which
+    pipeline/quarantine.py then quarantines the whole SKU over, exactly as
+    intended: if the title itself doesn't support the full-text call's
+    category claim, nothing about this SKU is safe to publish."""
+    original = attrs.accessory_type
+    if original.value is None:
+        return TitleOnlyCheck()
+
+    title_only_value = verify_accessory_type_title_only(sku_id, title)
+    agreed = _values_match(original.value, title_only_value)
+    confidence_before = original.confidence
+    if not agreed:
+        original.confidence = TITLE_ONLY_HARD_DROP_CONFIDENCE
+    return TitleOnlyCheck(
+        title_only_value=title_only_value,
+        full_text_value=original.value,
+        agreed=agreed,
+        confidence_before=confidence_before,
+        confidence_after=original.confidence,
+    )
+
+
 def _run_field_check(sku_id: str, title: str, description: str, attrs: ProductAttributes, field_name: str) -> FieldCheck:
     """Independently re-derives one field and applies the disagreement
     confidence knockdown IN PLACE on attrs. Shared by the primary
@@ -514,16 +589,36 @@ def finish_with_self_verification(
 ) -> ExtractionResult:
     """Shared tail end of both extraction paths (single-call and batched):
     given the primary call's attributes (or None if it's missing -- e.g. a
-    SKU absent from a batch response), run self-verification and wrap the
-    result. Used directly by extract_sku() and by the batch orchestrator in
-    run_batch()."""
+    SKU absent from a batch response), runs TWO independent checks --
+    general self-verification (lowest-confidence field) and the mandatory
+    title-only accessory_type cross-check -- and wraps the result. Used
+    directly by extract_sku() and by the batch orchestrator in run_batch().
+
+    The two checks are wrapped in SEPARATE try/excepts, not one: a
+    transient failure in either shouldn't discard a good primary
+    extraction OR the other, independent check's result -- the same
+    reasoning that already applied to self-verification alone, now applied
+    symmetrically to both."""
     if attrs is None:
         return ExtractionResult(sku_id=sku_id, attributes=ProductAttributes(), error="no attributes returned (missing from batch response)")
+
+    errors: list[str] = []
     try:
         sv = run_self_verification(sku_id, title, description, attrs, verify_second_field=verify_second_field)
-    except Exception as e:  # noqa: BLE001 -- self-verification failure shouldn't discard a good primary extraction
-        return ExtractionResult(sku_id=sku_id, attributes=attrs, error=f"self-verification call failed: {e}")
-    return ExtractionResult(sku_id=sku_id, attributes=attrs, self_verification=sv)
+    except Exception as e:  # noqa: BLE001 -- a failed check shouldn't discard a good primary extraction
+        sv = SelfVerification()
+        errors.append(f"self-verification call failed: {e}")
+
+    try:
+        title_check = run_title_only_cross_check(sku_id, title, attrs)
+    except Exception as e:  # noqa: BLE001 -- a failed check shouldn't discard a good primary extraction
+        title_check = TitleOnlyCheck()
+        errors.append(f"title-only cross-check failed: {e}")
+
+    return ExtractionResult(
+        sku_id=sku_id, attributes=attrs, self_verification=sv, title_only_check=title_check,
+        error="; ".join(errors) if errors else None,
+    )
 
 
 def extract_sku(sku_id: str, title: str, description: str, verify_second_field: bool = False) -> ExtractionResult:
@@ -562,11 +657,24 @@ def _self_verification_from_dict(data: dict) -> SelfVerification:
     )
 
 
+def _title_only_check_from_dict(data: dict | None) -> TitleOnlyCheck:
+    if not data:
+        return TitleOnlyCheck()
+    return TitleOnlyCheck(
+        title_only_value=data.get("title_only_value"),
+        full_text_value=data.get("full_text_value"),
+        agreed=data.get("agreed"),
+        confidence_before=data.get("confidence_before"),
+        confidence_after=data.get("confidence_after"),
+    )
+
+
 def _cache_entry_to_result(sku_id: str, entry: dict) -> ExtractionResult:
     return ExtractionResult(
         sku_id=sku_id,
         attributes=ProductAttributes.model_validate(entry["attributes"]),
         self_verification=_self_verification_from_dict(entry["self_verification"]),
+        title_only_check=_title_only_check_from_dict(entry.get("title_only_check")),
     )
 
 
@@ -574,6 +682,7 @@ def _result_to_cache_entry(result: ExtractionResult) -> dict:
     return {
         "attributes": result.attributes.model_dump(mode="json"),
         "self_verification": asdict(result.self_verification),
+        "title_only_check": asdict(result.title_only_check),
         "self_verify_version": SELF_VERIFY_VERSION,
     }
 
@@ -794,6 +903,15 @@ def print_report(results: list[ExtractionResult], decisions: dict[str, Any]) -> 
                 fname = r.self_verification.extra_check.field_checked
                 by_field[fname] = by_field.get(fname, 0) + 1
             print(f"  Disagreements by field: {by_field}")
+
+    title_checked = [r for r in ok if r.title_only_check.agreed is not None]
+    title_disagreements = [r for r in title_checked if r.title_only_check.agreed is False]
+    if title_checked:
+        print(f"\nTitle-only accessory_type cross-check: checked on {len(title_checked)}/{len(ok)} SKUs, disagreed on {len(title_disagreements)}")
+        if title_disagreements:
+            print("  Disagreements (title-only value vs. full-text value, now quarantined):")
+            for r in title_disagreements:
+                print(f"    {r.sku_id}: {r.title_only_check.title_only_value!r} vs {r.title_only_check.full_text_value!r}")
 
     print("=" * 72)
 

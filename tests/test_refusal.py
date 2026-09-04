@@ -13,8 +13,10 @@ def test_refusal_codes_table_covers_every_code_exactly_once():
     assert codes_in_table == {c.value for c in RefusalCode}
 
 
-def test_twelve_codes_across_six_categories():
-    assert len(list(RefusalCode)) == 12
+def test_thirteen_codes_across_six_categories():
+    # 12 original + CUMULATIVE_CEILING_EXCEEDED, added to close the
+    # cumulative-ceiling bypass -- see docs/what-broke.md.
+    assert len(list(RefusalCode)) == 13
     assert len(list(RefusalCategory)) == 6
 
 

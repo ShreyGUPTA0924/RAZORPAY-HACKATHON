@@ -24,6 +24,8 @@ from typing import Any, Protocol
 class RedisLike(Protocol):
     def set(self, key: str, value: str, nx: bool = False, ex: int | None = None) -> Any: ...
     def get(self, key: str) -> Any: ...
+    def incrby(self, key: str, amount: int) -> Any: ...
+    def expire(self, key: str, ttl: int) -> Any: ...
 
 
 # A day is generous for a demo; a real deployment would tune this to
@@ -72,3 +74,42 @@ def record_receipt(redis_client: RedisLike, intent_mandate_id: str, cart_hash_va
     ever call this."""
     key = idempotency_key(intent_mandate_id, cart_hash_value)
     redis_client.set(key, json.dumps(receipt), ex=IDEMPOTENCY_TTL_S)
+
+
+# ---------------------------------------------------------------------------
+# Cumulative spend per intent_mandate_id.
+#
+# Nonce replay (surface/mandate.py) blocks reusing the SAME nonce; the
+# per-cart key above blocks reusing the SAME cart. Neither stops several
+# DIFFERENT successful transactions under one intent_mandate_id -- each
+# individually under max_amount -- from summing past it. This is a separate,
+# additive guard: surface/gate.py checks the running total against
+# max_amount on every call (a plain int argument, fetched by the caller so
+# gate.py stays a pure function with no I/O of its own -- see its docstring),
+# and the caller records the new total here only after a payment actually,
+# successfully completes. Found and reproduced by the independent
+# adversarial red-team -- see docs/what-broke.md.
+# ---------------------------------------------------------------------------
+
+
+def cumulative_spend_key(intent_mandate_id: str) -> str:
+    return "agentfront:cumulative_spend:" + hashlib.sha256(intent_mandate_id.encode("utf-8")).hexdigest()
+
+
+def get_cumulative_spent(redis_client: RedisLike, intent_mandate_id: str) -> int:
+    """Total paise already successfully charged under this intent_mandate_id
+    across all prior transactions. 0 if none yet."""
+    raw = redis_client.get(cumulative_spend_key(intent_mandate_id))
+    return int(raw) if raw else 0
+
+
+def record_spend(redis_client: RedisLike, intent_mandate_id: str, amount: int, ttl: int = IDEMPOTENCY_TTL_S) -> int:
+    """Atomically adds `amount` to the running total for this
+    intent_mandate_id. Only ever called after a payment has ACTUALLY,
+    successfully completed -- this is what the next transaction's gate
+    check compares against, so recording a charge that didn't really
+    happen would create a false ceiling. Returns the new total."""
+    key = cumulative_spend_key(intent_mandate_id)
+    new_total = redis_client.incrby(key, amount)
+    redis_client.expire(key, ttl)
+    return new_total

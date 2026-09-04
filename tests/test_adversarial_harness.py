@@ -84,11 +84,17 @@ def test_over_ceiling_single_submission_is_correctly_refused(redis_client):
     assert result.submissions[0].charged_amount is None
 
 
-def test_cumulative_multi_submission_ceiling_bypass_is_detected(redis_client):
-    """The core finding this harness is built to catch: nonce replay
-    protection stops an EXACT repeat, but multiple DIFFERENT submissions
-    under one intent_mandate_id, each individually under the ceiling, can
-    cumulatively exceed it."""
+def test_cumulative_multi_submission_ceiling_bypass_is_now_blocked(redis_client):
+    """Regression test for a real finding from a live adversarial run,
+    reproduced and originally left as a confirmed bypass (nonce replay
+    stops an EXACT repeat, but multiple DIFFERENT submissions under one
+    intent_mandate_id, each individually under the ceiling, could
+    cumulatively exceed it -- see docs/what-broke.md). Now fixed:
+    surface/gate.py checks the running total (surface/idempotency.py's
+    cumulative-spend record) on every call, not just the current cart. The
+    first submission still succeeds (10000, under the 15000 ceiling on its
+    own); the second is REFUSED for CUMULATIVE_CEILING_EXCEEDED (10000 +
+    8000 = 18000 > 15000), and only the first charge ever executes."""
     attack = _attack(
         max_amount=15000,  # each item (10000, 8000) is individually under this, but together they exceed it
         submissions=[
@@ -97,9 +103,13 @@ def test_cumulative_multi_submission_ceiling_bypass_is_detected(redis_client):
         ],
     )
     result = harness.run_mandate_attack(attack, _published(), redis_client)
-    assert result.succeeded is True
-    assert "CUMULATIVE" in result.finding
-    assert sum(s.charged_amount or 0 for s in result.submissions) == 18000
+    assert result.succeeded is False
+    assert result.submissions[0].decision == "allow"
+    assert result.submissions[0].charged_amount == 10000
+    assert result.submissions[1].decision == "refuse"
+    assert result.submissions[1].refusal_code == "cumulative_ceiling_exceeded"
+    assert result.submissions[1].charged_amount is None
+    assert sum(s.charged_amount or 0 for s in result.submissions) == 10000
 
 
 def test_exact_nonce_reuse_is_still_blocked_by_replay_protection(redis_client):

@@ -38,6 +38,7 @@ class RefusalCode(str, Enum):
 
     # --- policy: the mandate checks out, but the request violates its own stated limits ---
     OVER_PRICE_CEILING = "over_price_ceiling"
+    CUMULATIVE_CEILING_EXCEEDED = "cumulative_ceiling_exceeded"
     CATEGORY_NOT_ALLOWED = "category_not_allowed"
 
     # --- compatibility: a requested item's fit-for-purpose claim doesn't hold up ---
@@ -61,6 +62,7 @@ _CATEGORY_OF: dict[RefusalCode, RefusalCategory] = {
     RefusalCode.INVALID_SIGNATURE: RefusalCategory.AUTH,
     RefusalCode.MANDATE_EXPIRED: RefusalCategory.AUTH,
     RefusalCode.OVER_PRICE_CEILING: RefusalCategory.POLICY,
+    RefusalCode.CUMULATIVE_CEILING_EXCEEDED: RefusalCategory.POLICY,
     RefusalCode.CATEGORY_NOT_ALLOWED: RefusalCategory.POLICY,
     RefusalCode.INCOMPATIBLE_ITEM: RefusalCategory.COMPATIBILITY,
     RefusalCode.UNVERIFIED_COMPATIBILITY: RefusalCategory.COMPATIBILITY,
@@ -76,6 +78,11 @@ _DESCRIPTION_OF: dict[RefusalCode, str] = {
     RefusalCode.INVALID_SIGNATURE: "The Intent Mandate's Ed25519 signature does not verify against its claimed public key.",
     RefusalCode.MANDATE_EXPIRED: "The Intent Mandate's expiry timestamp has passed.",
     RefusalCode.OVER_PRICE_CEILING: "The proposed cart total exceeds the Intent Mandate's max_amount.",
+    RefusalCode.CUMULATIVE_CEILING_EXCEEDED: (
+        "Combined with prior successful transactions already recorded under this intent_mandate_id, "
+        "this cart would exceed the Intent Mandate's max_amount -- each individual transaction was "
+        "under the ceiling, but the running total is not."
+    ),
     RefusalCode.CATEGORY_NOT_ALLOWED: "A requested SKU's category is outside the Intent Mandate's allowed_categories.",
     RefusalCode.INCOMPATIBLE_ITEM: "pipeline/verify.py could not verify a claimed compatibility relationship for a requested item.",
     RefusalCode.UNVERIFIED_COMPATIBILITY: "A compatibility claim exists but carries no machine-checkable proof (e.g. the underlying attribute is quarantined).",
