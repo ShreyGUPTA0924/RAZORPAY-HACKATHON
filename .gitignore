@@ -20,6 +20,7 @@ frontend/.vite/
 # data / local state
 chroma_data/
 data/extraction_cache/
+data/growth_ab_cache/
 *.log
 
 # editor / OS

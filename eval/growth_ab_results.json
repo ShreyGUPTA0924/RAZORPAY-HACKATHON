@@ -1,0 +1,673 @@
+{
+  "seed": 20260904,
+  "n_intents": 40,
+  "intents": [
+    {
+      "intent_id": "intent-001",
+      "text": "I want to buy a headphones with a 3.5mm jack connector.",
+      "source_sku_id": "SKU-008",
+      "category": "headphone",
+      "model": null,
+      "min_wattage": null,
+      "connector": "3_5mm_jack"
+    },
+    {
+      "intent_id": "intent-002",
+      "text": "I want to buy a charging cable with a Micro-USB connector.",
+      "source_sku_id": "SKU-013",
+      "category": "cable",
+      "model": null,
+      "min_wattage": null,
+      "connector": "micro_usb"
+    },
+    {
+      "intent_id": "intent-003",
+      "text": "I want to buy a phone pouch that works with my Swipe Elite Plus.",
+      "source_sku_id": "SKU-026",
+      "category": "pouch",
+      "model": "swipe_elite_plus",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-004",
+      "text": "I want to buy a charger.",
+      "source_sku_id": "SKU-018",
+      "category": "charger",
+      "model": null,
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-005",
+      "text": "I want to buy a headphones that works with my Samsung Galaxy S Advance I9070 with a 3.5mm jack connector.",
+      "source_sku_id": "SKU-056",
+      "category": "headphone",
+      "model": "samsung_galaxy_s_advance_i9070",
+      "min_wattage": null,
+      "connector": "3_5mm_jack"
+    },
+    {
+      "intent_id": "intent-006",
+      "text": "I want to buy a screen protector that works with my Xiaomi Mi 4S.",
+      "source_sku_id": "SKU-033",
+      "category": "screen_protector",
+      "model": "xiaomi_mi_4s",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-007",
+      "text": "I want to buy a phone pouch.",
+      "source_sku_id": "SKU-016",
+      "category": "pouch",
+      "model": null,
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-008",
+      "text": "I want to buy a charging cable that works with my Alcatel One Touch Idol X Plus with a Micro-USB connector.",
+      "source_sku_id": "SKU-054",
+      "category": "cable",
+      "model": "alcatel_one_touch_idol_x_plus",
+      "min_wattage": null,
+      "connector": "micro_usb"
+    },
+    {
+      "intent_id": "intent-009",
+      "text": "I want to buy a charging cable that works with my Xiaomi Mi4 with a Micro-USB connector.",
+      "source_sku_id": "SKU-050",
+      "category": "cable",
+      "model": "xiaomi_mi4",
+      "min_wattage": null,
+      "connector": "micro_usb"
+    },
+    {
+      "intent_id": "intent-010",
+      "text": "I want to buy a screen protector that works with my Xiaomi Mi 4I.",
+      "source_sku_id": "SKU-032",
+      "category": "screen_protector",
+      "model": "xiaomi_mi_4i",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-011",
+      "text": "I want to buy a headphones with a 3.5mm jack connector.",
+      "source_sku_id": "SKU-009",
+      "category": "headphone",
+      "model": null,
+      "min_wattage": null,
+      "connector": "3_5mm_jack"
+    },
+    {
+      "intent_id": "intent-012",
+      "text": "I want to buy a charging cable that works with my Sony Xperia M5.",
+      "source_sku_id": "SKU-001",
+      "category": "cable",
+      "model": "sony_xperia_m5",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-013",
+      "text": "I want to buy a headphones with a 3.5mm jack connector.",
+      "source_sku_id": "SKU-057",
+      "category": "headphone",
+      "model": null,
+      "min_wattage": null,
+      "connector": "3_5mm_jack"
+    },
+    {
+      "intent_id": "intent-014",
+      "text": "I want to buy a charger that works with my Htc Desire Vc with a Micro-USB connector.",
+      "source_sku_id": "SKU-044",
+      "category": "charger",
+      "model": "htc_desire_vc",
+      "min_wattage": null,
+      "connector": "micro_usb"
+    },
+    {
+      "intent_id": "intent-015",
+      "text": "I want to buy a phone case that works with my Htc One S.",
+      "source_sku_id": "SKU-024",
+      "category": "case",
+      "model": "htc_one_s",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-016",
+      "text": "I want to buy a phone pouch that works with my Oneplus One.",
+      "source_sku_id": "SKU-031",
+      "category": "pouch",
+      "model": "oneplus_one",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-017",
+      "text": "I want to buy a screen protector that works with my Lenovo K5 Note.",
+      "source_sku_id": "SKU-034",
+      "category": "screen_protector",
+      "model": "lenovo_k5_note",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-018",
+      "text": "I want to buy a charger supporting at least 10.5W charging with a Micro-USB connector.",
+      "source_sku_id": "SKU-048",
+      "category": "charger",
+      "model": null,
+      "min_wattage": 10.5,
+      "connector": "micro_usb"
+    },
+    {
+      "intent_id": "intent-019",
+      "text": "I want to buy a phone case that works with my Oppo Find 7A.",
+      "source_sku_id": "SKU-015",
+      "category": "case",
+      "model": "oppo_find_7a",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-020",
+      "text": "I want to buy a screen protector that works with my Motorola Moto G.",
+      "source_sku_id": "SKU-035",
+      "category": "screen_protector",
+      "model": "motorola_moto_g",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-021",
+      "text": "I want to buy a screen protector that works with my Huawei Honor 6.",
+      "source_sku_id": "SKU-043",
+      "category": "screen_protector",
+      "model": "huawei_honor_6",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-022",
+      "text": "I want to buy a headphones.",
+      "source_sku_id": "SKU-004",
+      "category": "headphone",
+      "model": null,
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-023",
+      "text": "I want to buy a charging cable that works with my Iphone 5S with a Lightning connector.",
+      "source_sku_id": "SKU-052",
+      "category": "cable",
+      "model": "iphone_5s",
+      "min_wattage": null,
+      "connector": "lightning"
+    },
+    {
+      "intent_id": "intent-024",
+      "text": "I want to buy a headphones with a 3.5mm jack connector.",
+      "source_sku_id": "SKU-006",
+      "category": "headphone",
+      "model": null,
+      "min_wattage": null,
+      "connector": "3_5mm_jack"
+    },
+    {
+      "intent_id": "intent-025",
+      "text": "I want to buy a charger that works with my Lenovo Vibe P1M with a Micro-USB connector.",
+      "source_sku_id": "SKU-046",
+      "category": "charger",
+      "model": "lenovo_vibe_p1m",
+      "min_wattage": null,
+      "connector": "micro_usb"
+    },
+    {
+      "intent_id": "intent-026",
+      "text": "I want to buy a charging cable with a Micro-USB connector.",
+      "source_sku_id": "SKU-020",
+      "category": "cable",
+      "model": null,
+      "min_wattage": null,
+      "connector": "micro_usb"
+    },
+    {
+      "intent_id": "intent-027",
+      "text": "I want to buy a charging cable that works with my Blackberry Priv with a Micro-USB connector.",
+      "source_sku_id": "SKU-051",
+      "category": "cable",
+      "model": "blackberry_priv",
+      "min_wattage": null,
+      "connector": "micro_usb"
+    },
+    {
+      "intent_id": "intent-028",
+      "text": "I want to buy a screen protector that works with my Nokia Lumia 830.",
+      "source_sku_id": "SKU-039",
+      "category": "screen_protector",
+      "model": "nokia_lumia_830",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-029",
+      "text": "I want to buy a power bank.",
+      "source_sku_id": "SKU-059",
+      "category": "power_bank",
+      "model": null,
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-030",
+      "text": "I want to buy a phone case that works with my Huawei Honor X1.",
+      "source_sku_id": "SKU-023",
+      "category": "case",
+      "model": "huawei_honor_x1",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-031",
+      "text": "I want to buy a phone pouch that works with my Microsoft Lumia 1320.",
+      "source_sku_id": "SKU-030",
+      "category": "pouch",
+      "model": "microsoft_lumia_1320",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-032",
+      "text": "I want to buy a phone case.",
+      "source_sku_id": "SKU-014",
+      "category": "case",
+      "model": null,
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-033",
+      "text": "I want to buy a phone pouch that works with my Intex Aqua Lions 3G.",
+      "source_sku_id": "SKU-027",
+      "category": "pouch",
+      "model": "intex_aqua_lions_3g",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-034",
+      "text": "I want to buy a screen protector that works with my Samsung Galaxy On5.",
+      "source_sku_id": "SKU-038",
+      "category": "screen_protector",
+      "model": "samsung_galaxy_on5",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-035",
+      "text": "I want to buy a charger supporting at least 6W charging with a Micro-USB connector.",
+      "source_sku_id": "SKU-049",
+      "category": "charger",
+      "model": null,
+      "min_wattage": 6.0,
+      "connector": "micro_usb"
+    },
+    {
+      "intent_id": "intent-036",
+      "text": "I want to buy a screen protector that works with my Htc Desire 526.",
+      "source_sku_id": "SKU-037",
+      "category": "screen_protector",
+      "model": "htc_desire_526",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-037",
+      "text": "I want to buy a charger that works with my Micromax Canvas Play 4G Q469 with a Micro-USB connector.",
+      "source_sku_id": "SKU-019",
+      "category": "charger",
+      "model": "micromax_canvas_play_4g_q469",
+      "min_wattage": null,
+      "connector": "micro_usb"
+    },
+    {
+      "intent_id": "intent-038",
+      "text": "I want to buy a phone case that works with my Samsung Galaxy J7.",
+      "source_sku_id": "SKU-021",
+      "category": "case",
+      "model": "samsung_galaxy_j7",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-039",
+      "text": "I want to buy a phone pouch that works with my Sony Xperia M5 Dual.",
+      "source_sku_id": "SKU-028",
+      "category": "pouch",
+      "model": "sony_xperia_m5_dual",
+      "min_wattage": null,
+      "connector": null
+    },
+    {
+      "intent_id": "intent-040",
+      "text": "I want to buy a screen protector that works with my Apple Iphone 6S.",
+      "source_sku_id": "SKU-036",
+      "category": "screen_protector",
+      "model": "apple_iphone_6s",
+      "min_wattage": null,
+      "connector": null
+    }
+  ],
+  "ground_truth": {
+    "intent-001": [
+      "SKU-006",
+      "SKU-007",
+      "SKU-008",
+      "SKU-009",
+      "SKU-011",
+      "SKU-056",
+      "SKU-057",
+      "SKU-058"
+    ],
+    "intent-002": [
+      "SKU-013",
+      "SKU-020",
+      "SKU-050",
+      "SKU-051",
+      "SKU-054"
+    ],
+    "intent-003": [
+      "SKU-026"
+    ],
+    "intent-004": [
+      "SKU-018",
+      "SKU-019",
+      "SKU-044",
+      "SKU-045",
+      "SKU-046",
+      "SKU-047",
+      "SKU-048",
+      "SKU-049",
+      "SKU-055"
+    ],
+    "intent-005": [
+      "SKU-006",
+      "SKU-007",
+      "SKU-009",
+      "SKU-011",
+      "SKU-056"
+    ],
+    "intent-006": [
+      "SKU-033"
+    ],
+    "intent-007": [
+      "SKU-016",
+      "SKU-026",
+      "SKU-027",
+      "SKU-028",
+      "SKU-029",
+      "SKU-030",
+      "SKU-031"
+    ],
+    "intent-008": [
+      "SKU-013",
+      "SKU-054"
+    ],
+    "intent-009": [
+      "SKU-013",
+      "SKU-050"
+    ],
+    "intent-010": [
+      "SKU-032"
+    ],
+    "intent-011": [
+      "SKU-006",
+      "SKU-007",
+      "SKU-008",
+      "SKU-009",
+      "SKU-011",
+      "SKU-056",
+      "SKU-057",
+      "SKU-058"
+    ],
+    "intent-012": [
+      "SKU-001",
+      "SKU-013"
+    ],
+    "intent-013": [
+      "SKU-006",
+      "SKU-007",
+      "SKU-008",
+      "SKU-009",
+      "SKU-011",
+      "SKU-056",
+      "SKU-057",
+      "SKU-058"
+    ],
+    "intent-014": [
+      "SKU-044",
+      "SKU-049"
+    ],
+    "intent-015": [
+      "SKU-024"
+    ],
+    "intent-016": [
+      "SKU-031"
+    ],
+    "intent-017": [
+      "SKU-034"
+    ],
+    "intent-018": [
+      "SKU-048"
+    ],
+    "intent-019": [
+      "SKU-015"
+    ],
+    "intent-020": [
+      "SKU-035"
+    ],
+    "intent-021": [
+      "SKU-043"
+    ],
+    "intent-022": [
+      "SKU-002",
+      "SKU-003",
+      "SKU-004",
+      "SKU-005",
+      "SKU-006",
+      "SKU-007",
+      "SKU-008",
+      "SKU-009",
+      "SKU-010",
+      "SKU-011",
+      "SKU-056",
+      "SKU-057",
+      "SKU-058"
+    ],
+    "intent-023": [
+      "SKU-052"
+    ],
+    "intent-024": [
+      "SKU-006",
+      "SKU-007",
+      "SKU-008",
+      "SKU-009",
+      "SKU-011",
+      "SKU-056",
+      "SKU-057",
+      "SKU-058"
+    ],
+    "intent-025": [
+      "SKU-046",
+      "SKU-049"
+    ],
+    "intent-026": [
+      "SKU-013",
+      "SKU-020",
+      "SKU-050",
+      "SKU-051",
+      "SKU-054"
+    ],
+    "intent-027": [
+      "SKU-013",
+      "SKU-051"
+    ],
+    "intent-028": [
+      "SKU-039",
+      "SKU-040"
+    ],
+    "intent-029": [
+      "SKU-017",
+      "SKU-059",
+      "SKU-060"
+    ],
+    "intent-030": [
+      "SKU-023"
+    ],
+    "intent-031": [
+      "SKU-030"
+    ],
+    "intent-032": [
+      "SKU-014",
+      "SKU-015",
+      "SKU-021",
+      "SKU-022",
+      "SKU-023",
+      "SKU-024",
+      "SKU-025"
+    ],
+    "intent-033": [
+      "SKU-027"
+    ],
+    "intent-034": [
+      "SKU-038"
+    ],
+    "intent-035": [
+      "SKU-048",
+      "SKU-049"
+    ],
+    "intent-036": [
+      "SKU-037"
+    ],
+    "intent-037": [
+      "SKU-019",
+      "SKU-049"
+    ],
+    "intent-038": [
+      "SKU-021"
+    ],
+    "intent-039": [
+      "SKU-028"
+    ],
+    "intent-040": [
+      "SKU-036"
+    ]
+  },
+  "picks_a": {
+    "intent-001": "SKU-006",
+    "intent-002": null,
+    "intent-003": "SKU-026",
+    "intent-004": "SKU-018",
+    "intent-005": "SKU-056",
+    "intent-006": "SKU-033",
+    "intent-007": null,
+    "intent-008": "SKU-054",
+    "intent-009": null,
+    "intent-010": "SKU-032",
+    "intent-011": "SKU-006",
+    "intent-012": null,
+    "intent-013": "SKU-007",
+    "intent-014": "SKU-044",
+    "intent-015": "SKU-024",
+    "intent-016": "SKU-031",
+    "intent-017": "SKU-034",
+    "intent-018": null,
+    "intent-019": "SKU-015",
+    "intent-020": "SKU-035",
+    "intent-021": "SKU-043",
+    "intent-022": null,
+    "intent-023": "SKU-012",
+    "intent-024": "SKU-006",
+    "intent-025": "SKU-046",
+    "intent-026": null,
+    "intent-027": "SKU-051",
+    "intent-028": "SKU-039",
+    "intent-029": "SKU-059",
+    "intent-030": "SKU-023",
+    "intent-031": "SKU-030",
+    "intent-032": null,
+    "intent-033": "SKU-027",
+    "intent-034": "SKU-038",
+    "intent-035": "SKU-044",
+    "intent-036": "SKU-037",
+    "intent-037": "SKU-019",
+    "intent-038": "SKU-021",
+    "intent-039": "SKU-028",
+    "intent-040": "SKU-036"
+  },
+  "picks_b": {
+    "intent-001": "SKU-006",
+    "intent-002": "SKU-013",
+    "intent-003": "SKU-026",
+    "intent-004": "SKU-018",
+    "intent-005": "SKU-006",
+    "intent-006": "SKU-033",
+    "intent-007": "SKU-016",
+    "intent-008": "SKU-013",
+    "intent-009": "SKU-013",
+    "intent-010": "SKU-032",
+    "intent-011": "SKU-006",
+    "intent-012": "SKU-001",
+    "intent-013": "SKU-006",
+    "intent-014": "SKU-044",
+    "intent-015": "SKU-024",
+    "intent-016": "SKU-031",
+    "intent-017": "SKU-034",
+    "intent-018": "SKU-048",
+    "intent-019": "SKU-015",
+    "intent-020": "SKU-035",
+    "intent-021": "SKU-043",
+    "intent-022": "SKU-002",
+    "intent-023": "SKU-052",
+    "intent-024": "SKU-006",
+    "intent-025": "SKU-046",
+    "intent-026": "SKU-013",
+    "intent-027": "SKU-013",
+    "intent-028": "SKU-039",
+    "intent-029": "SKU-017",
+    "intent-030": "SKU-023",
+    "intent-031": "SKU-030",
+    "intent-032": "SKU-014",
+    "intent-033": "SKU-027",
+    "intent-034": "SKU-038",
+    "intent-035": "SKU-048",
+    "intent-036": "SKU-037",
+    "intent-037": "SKU-019",
+    "intent-038": "SKU-021",
+    "intent-039": "SKU-028",
+    "intent-040": "SKU-036"
+  },
+  "metrics_a": {
+    "n": 40,
+    "completions": 30,
+    "wrong_items": 2,
+    "dead_ends": 8,
+    "completion_rate": 0.75,
+    "wrong_item_rate": 0.05,
+    "dead_end_rate": 0.2
+  },
+  "metrics_b": {
+    "n": 40,
+    "completions": 40,
+    "wrong_items": 0,
+    "dead_ends": 0,
+    "completion_rate": 1.0,
+    "wrong_item_rate": 0.0,
+    "dead_end_rate": 0.0
+  }
+}
