@@ -454,9 +454,14 @@ def _verification_schema(field_name: str) -> type[BaseModel]:
     )
 
 
-def self_verify_field(sku_id: str, title: str, description: str, field_name: str) -> Any:
-    """Independently re-derive ONE field's value from source text alone,
-    blind to whatever the primary extraction call already produced."""
+def self_verify_field_with_confidence(sku_id: str, title: str, description: str, field_name: str) -> tuple[Any, float]:
+    """Independently re-derive ONE field's value AND confidence from source
+    text alone, blind to whatever the primary extraction call already
+    produced. self_verify_field() below is the original, narrower
+    interface (value only) that every existing caller uses unchanged; this
+    is purely additive, added for callers (the injection-demo API) that
+    need to show both sides' confidence, not just the primary field's
+    before/after knockdown."""
     value_type = FIELD_VALUE_TYPES[field_name]
     schema_field = ProductAttributes.model_fields[field_name]
     verify_model = get_chat_model_with_fallback("extractor", output_schema=_verification_schema(field_name))
@@ -476,7 +481,14 @@ def self_verify_field(sku_id: str, title: str, description: str, field_name: str
         prompt,
         config={"run_name": f"self_verify:{sku_id}:{field_name}", "tags": ["self_verification", sku_id, field_name]},
     )
-    return result.value
+    return result.value, result.confidence
+
+
+def self_verify_field(sku_id: str, title: str, description: str, field_name: str) -> Any:
+    """Independently re-derive ONE field's value from source text alone,
+    blind to whatever the primary extraction call already produced."""
+    value, _confidence = self_verify_field_with_confidence(sku_id, title, description, field_name)
+    return value
 
 
 def verify_accessory_type_title_only(sku_id: str, title: str) -> Any:

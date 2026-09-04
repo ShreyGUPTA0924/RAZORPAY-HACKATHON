@@ -29,6 +29,19 @@ services:
       timeout: 5s
       retries: 10
 
+  api:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    depends_on:
+      redis:
+        condition: service_healthy
+
 volumes:
   agentfront_postgres_data:
   agentfront_redis_data:

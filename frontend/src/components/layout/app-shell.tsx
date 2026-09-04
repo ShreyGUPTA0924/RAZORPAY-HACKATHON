@@ -3,6 +3,7 @@ import { LogoMark } from '@/components/layout/logo-mark'
 import { type Step, Stepper } from '@/components/layout/stepper'
 import { ThemeToggle } from '@/components/layout/theme-toggle'
 import { Badge } from '@/components/ui/badge'
+import { useBackendMode } from '@/hooks/use-backend-mode'
 
 interface AppShellProps {
   steps: Step[]
@@ -13,6 +14,8 @@ interface AppShellProps {
 }
 
 export function AppShell({ steps, activeStepId, completedStepIds, onSelectStep, children }: AppShellProps) {
+  const backendLive = useBackendMode()
+
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md">
@@ -26,7 +29,11 @@ export function AppShell({ steps, activeStepId, completedStepIds, onSelectStep, 
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <Badge variant="brand">Replaying from cache</Badge>
+            {backendLive ? (
+              <Badge variant="success">Live backend</Badge>
+            ) : (
+              <Badge variant="secondary">Cached replay</Badge>
+            )}
             <Badge variant="secondary">Razorpay test mode</Badge>
           </div>
 
