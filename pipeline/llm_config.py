@@ -75,29 +75,33 @@ def get_component_config(component: str) -> LLMComponentConfig:
 
 # ---------------------------------------------------------------------------
 # Fallback chains -- free-tier quotas are per (provider, model), not just
-# per provider: Gemini's gemini-2.5-flash and gemini-2.5-flash-lite are
+# per provider: Gemini's gemini-2.5-flash and gemini-3.1-flash-lite are
 # separate daily buckets, and so is every individual Groq model. A chain
 # lets one component exhaust its primary bucket and keep working against
 # the next one instead of stopping for the day.
 #
 # Every model name below was confirmed to exist via a live models.list()
-# call on 2026-08-27 -- both providers rotate their catalogs faster than
-# expected (gemini-2.0-flash and llama-3.3-70b-versatile were both already
-# gone by then). Re-verify with client.models.list() before trusting this
-# chain again after any gap, rather than assuming it's still accurate.
+# call on 2026-09-04 -- both providers rotate their catalogs faster than
+# expected. Re-verify with client.models.list() before trusting this chain
+# again after any gap, rather than assuming it's still accurate.
 #
-# gemini-2.5-flash-lite: spot-checked (not the full synthetic suite) on
-# 3 obvious-answer cases on 2026-08-27 -- correct on all 3, including
-# correctly abstaining on the deliberately-uninformative listing. That's a
-# positive signal, not a full validation; it stays a fallback link rather
-# than replacing gemini-2.5-flash as primary until it's run against the
-# full tests/test_extract_llm.py suite.
+# gemini-2.5-flash-lite (the entry here until 2026-09-04) was found dead
+# during that day's adversarial-harness work: it's still listed by
+# models.list() but 404s on an actual generateContent call with "no longer
+# available to new users" -- a per-ACCOUNT gate, not a full catalog removal,
+# which is why listing the model doesn't catch it and only an actual call
+# does. Replaced with gemini-3.1-flash-lite, confirmed working the same day
+# (including under adversarial-framed prompts, not just benign ones).
+# Spot-checked only (not the full synthetic suite) -- correct on obvious
+# cases, a positive signal but not a full validation; it stays a fallback
+# link rather than replacing gemini-2.5-flash as primary until it's run
+# against the full tests/test_extract_llm.py suite.
 # ---------------------------------------------------------------------------
 
 FALLBACK_CHAINS: dict[str, list[LLMComponentConfig]] = {
     "extractor": [
         LLMComponentConfig(Provider.GEMINI, "gemini-2.5-flash"),
-        LLMComponentConfig(Provider.GEMINI, "gemini-2.5-flash-lite"),
+        LLMComponentConfig(Provider.GEMINI, "gemini-3.1-flash-lite"),
         LLMComponentConfig(Provider.GROQ, "openai/gpt-oss-120b"),
         LLMComponentConfig(Provider.GROQ, "openai/gpt-oss-20b"),
     ],
