@@ -1,0 +1,401 @@
+[
+  {
+    "target_model": "alcatel_one_touch_idol_x_plus",
+    "sku_id": "SKU-054",
+    "claimed_model": "Alcatel One Touch Idol X+",
+    "verified": false,
+    "reason": "'Alcatel One Touch Idol X+' not found in extracted model_compat ['alcatel_one_touch_idol_x_plus']"
+  },
+  {
+    "target_model": "apple_iphone_4",
+    "sku_id": "SKU-058",
+    "claimed_model": "Iphone 4",
+    "verified": false,
+    "reason": "'Iphone 4' not found in extracted model_compat ['apple_iphone_4', 'apple_iphone_4s', 'apple_iphone_4g', 'apple_iphone_5', 'apple_iphone_5c', 'apple_iphone_5s']"
+  },
+  {
+    "target_model": "apple_iphone_4g",
+    "sku_id": "SKU-058",
+    "claimed_model": "Iphone 4g",
+    "verified": false,
+    "reason": "'Iphone 4g' not found in extracted model_compat ['apple_iphone_4', 'apple_iphone_4s', 'apple_iphone_4g', 'apple_iphone_5', 'apple_iphone_5c', 'apple_iphone_5s']"
+  },
+  {
+    "target_model": "apple_iphone_4s",
+    "sku_id": "SKU-058",
+    "claimed_model": "Iphone 4s",
+    "verified": false,
+    "reason": "'Iphone 4s' not found in extracted model_compat ['apple_iphone_4', 'apple_iphone_4s', 'apple_iphone_4g', 'apple_iphone_5', 'apple_iphone_5c', 'apple_iphone_5s']"
+  },
+  {
+    "target_model": "apple_iphone_5",
+    "sku_id": "SKU-058",
+    "claimed_model": "Iphone 5",
+    "verified": false,
+    "reason": "'Iphone 5' not found in extracted model_compat ['apple_iphone_4', 'apple_iphone_4s', 'apple_iphone_4g', 'apple_iphone_5', 'apple_iphone_5c', 'apple_iphone_5s']"
+  },
+  {
+    "target_model": "apple_iphone_5c",
+    "sku_id": "SKU-058",
+    "claimed_model": "Iphone 5c",
+    "verified": false,
+    "reason": "'Iphone 5c' not found in extracted model_compat ['apple_iphone_4', 'apple_iphone_4s', 'apple_iphone_4g', 'apple_iphone_5', 'apple_iphone_5c', 'apple_iphone_5s']"
+  },
+  {
+    "target_model": "apple_iphone_5s",
+    "sku_id": "SKU-058",
+    "claimed_model": "Iphone 5s",
+    "verified": false,
+    "reason": "'Iphone 5s' not found in extracted model_compat ['apple_iphone_4', 'apple_iphone_4s', 'apple_iphone_4g', 'apple_iphone_5', 'apple_iphone_5c', 'apple_iphone_5s']"
+  },
+  {
+    "target_model": "apple_iphone_6s",
+    "sku_id": "SKU-036",
+    "claimed_model": "APPLE IPHONE 6S",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "blackberry_priv",
+    "sku_id": "SKU-051",
+    "claimed_model": "Blackberry Priv",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "blackberry_z3",
+    "sku_id": "SKU-042",
+    "claimed_model": "Blackberry Z3",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "htc_desire_526",
+    "sku_id": "SKU-037",
+    "claimed_model": "HTC desire 526",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "htc_desire_vc",
+    "sku_id": "SKU-044",
+    "claimed_model": "HTC Desire VC",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "htc_one_s",
+    "sku_id": "SKU-024",
+    "claimed_model": "HTC One S",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "huawei_honor_4x",
+    "sku_id": "SKU-048",
+    "claimed_model": "Huwai Honor 4X",
+    "verified": false,
+    "reason": "'Huwai Honor 4X' not found in extracted model_compat ['huawei_honor_4x']"
+  },
+  {
+    "target_model": "huawei_honor_6",
+    "sku_id": "SKU-043",
+    "claimed_model": "Huawei Honor 6",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "huawei_honor_x1",
+    "sku_id": "SKU-023",
+    "claimed_model": "Huawei Honor X1",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "intex_aqua_lions_3g",
+    "sku_id": "SKU-027",
+    "claimed_model": "Intex Aqua Lions 3g",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "iphone_5",
+    "sku_id": "SKU-058",
+    "claimed_model": "Iphone 4/4s/4g/5/5c/5s",
+    "verified": false,
+    "reason": "'Iphone 4/4s/4g/5/5c/5s' not found in extracted model_compat ['apple_iphone_4', 'apple_iphone_4s', 'apple_iphone_4g', 'apple_iphone_5', 'apple_iphone_5c', 'apple_iphone_5s']"
+  },
+  {
+    "target_model": "iphone_5c",
+    "sku_id": "SKU-058",
+    "claimed_model": "Iphone 4/4s/4g/5/5c/5s",
+    "verified": false,
+    "reason": "'Iphone 4/4s/4g/5/5c/5s' not found in extracted model_compat ['apple_iphone_4', 'apple_iphone_4s', 'apple_iphone_4g', 'apple_iphone_5', 'apple_iphone_5c', 'apple_iphone_5s']"
+  },
+  {
+    "target_model": "iphone_5s",
+    "sku_id": "SKU-058",
+    "claimed_model": "Iphone 4/4s/4g/5/5c/5s",
+    "verified": false,
+    "reason": "'Iphone 4/4s/4g/5/5c/5s' not found in extracted model_compat ['apple_iphone_4', 'apple_iphone_4s', 'apple_iphone_4g', 'apple_iphone_5', 'apple_iphone_5c', 'apple_iphone_5s']"
+  },
+  {
+    "target_model": "iphone_6",
+    "sku_id": "SKU-052",
+    "claimed_model": "Iphone 6",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "iphone_6s",
+    "sku_id": "SKU-036",
+    "claimed_model": "APPLE IPHONE 6S",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "karbonn_a37",
+    "sku_id": "SKU-025",
+    "claimed_model": "Karbonn A37",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "lenovo_k5_note",
+    "sku_id": "SKU-034",
+    "claimed_model": "Lenovo K5 Note",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "lenovo_s880",
+    "sku_id": "SKU-029",
+    "claimed_model": "Lenovo S880",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "lenovo_vibe_p1m",
+    "sku_id": "SKU-046",
+    "claimed_model": "Lenovo Vibe P1M",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "letv_1s",
+    "sku_id": "SKU-055",
+    "claimed_model": "LETV 1S",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "micromax_canvas_play_4g_q469",
+    "sku_id": "SKU-019",
+    "claimed_model": "Micromax Canvas Play 4G Q469",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "microsoft_lumia_1320",
+    "sku_id": "SKU-030",
+    "claimed_model": "Microsoft Lumia 1320",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "moto_x_2nd_gen",
+    "sku_id": "SKU-045",
+    "claimed_model": "Moto X 2nd Gen",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "motorola_moto_g",
+    "sku_id": "SKU-035",
+    "claimed_model": "Motorola Moto G",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "nexus_5x",
+    "sku_id": "SKU-053",
+    "claimed_model": "Nexus 5x",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "nexus_6p",
+    "sku_id": "SKU-053",
+    "claimed_model": "Nexus 6P",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "nokia_lumia_830",
+    "sku_id": "SKU-039",
+    "claimed_model": "Nokia Lumia 830",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "nokia_lumia_830",
+    "sku_id": "SKU-040",
+    "claimed_model": "Nokia Lumia 830",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "oneplus_one",
+    "sku_id": "SKU-031",
+    "claimed_model": "OnePlus One",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "oneplus_one",
+    "sku_id": "SKU-053",
+    "claimed_model": "One Plus One",
+    "verified": false,
+    "reason": "'One Plus One' not found in extracted model_compat ['oneplus_two', 'oneplus_one', 'nexus_6p', 'nexus_5x']"
+  },
+  {
+    "target_model": "oneplus_two",
+    "sku_id": "SKU-053",
+    "claimed_model": "One Plus Two",
+    "verified": false,
+    "reason": "'One Plus Two' not found in extracted model_compat ['oneplus_two', 'oneplus_one', 'nexus_6p', 'nexus_5x']"
+  },
+  {
+    "target_model": "oppo_find_7a",
+    "sku_id": "SKU-015",
+    "claimed_model": "Oppo Find 7A",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "samsung_galaxy_j7",
+    "sku_id": "SKU-021",
+    "claimed_model": "Samsung Galaxy J7",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "samsung_galaxy_note",
+    "sku_id": "SKU-014",
+    "claimed_model": "Galaxy Note",
+    "verified": false,
+    "reason": "'Galaxy Note' not found in extracted model_compat ['samsung_galaxy_note']"
+  },
+  {
+    "target_model": "samsung_galaxy_on5",
+    "sku_id": "SKU-038",
+    "claimed_model": "Samsung Galaxy on5",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "samsung_galaxy_s5_mini",
+    "sku_id": "SKU-041",
+    "claimed_model": "Samsung Galaxy S5 Mini",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "samsung_galaxy_s_advance_i9070",
+    "sku_id": "SKU-056",
+    "claimed_model": "Samsung galaxy s advance i9070",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "sony_xperia_m5",
+    "sku_id": "SKU-001",
+    "claimed_model": "Sony Xperia M5",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "sony_xperia_m5_dual",
+    "sku_id": "SKU-028",
+    "claimed_model": "Sony Xperia M5 Dual",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "spice_mi_720",
+    "sku_id": "SKU-022",
+    "claimed_model": "Spice Mi-720",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "swipe_elite_plus",
+    "sku_id": "SKU-026",
+    "claimed_model": "Swipe Elite Plus",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "xiaomi_mi4",
+    "sku_id": "SKU-050",
+    "claimed_model": "Xiaomi Mi4",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "xiaomi_mi4",
+    "sku_id": "SKU-057",
+    "claimed_model": "XIOMI Mi4",
+    "verified": false,
+    "reason": "'XIOMI Mi4' not found in extracted model_compat ['xiaomi_redmi_mi4', 'xiaomi_redmi_mi4i']"
+  },
+  {
+    "target_model": "xiaomi_mi_4i",
+    "sku_id": "SKU-032",
+    "claimed_model": "Xiaomi Mi 4i",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "xiaomi_mi_4i",
+    "sku_id": "SKU-057",
+    "claimed_model": "XIOMI Mi4 and Mi4i",
+    "verified": false,
+    "reason": "'XIOMI Mi4 and Mi4i' not found in extracted model_compat ['xiaomi_redmi_mi4', 'xiaomi_redmi_mi4i']"
+  },
+  {
+    "target_model": "xiaomi_mi_4s",
+    "sku_id": "SKU-033",
+    "claimed_model": "Xiaomi Mi 4S",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "xiaomi_redmi_mi4",
+    "sku_id": "SKU-050",
+    "claimed_model": "Xiaomi Mi4",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "xiaomi_redmi_mi4",
+    "sku_id": "SKU-057",
+    "claimed_model": "XIOMI Mi4 and Mi4i",
+    "verified": false,
+    "reason": "'XIOMI Mi4 and Mi4i' not found in extracted model_compat ['xiaomi_redmi_mi4', 'xiaomi_redmi_mi4i']"
+  },
+  {
+    "target_model": "xiaomi_redmi_mi4i",
+    "sku_id": "SKU-032",
+    "claimed_model": "Xiaomi Mi 4i",
+    "verified": true,
+    "reason": "verified"
+  },
+  {
+    "target_model": "xiaomi_redmi_mi4i",
+    "sku_id": "SKU-057",
+    "claimed_model": "XIOMI Mi4 and Mi4i",
+    "verified": false,
+    "reason": "'XIOMI Mi4 and Mi4i' not found in extracted model_compat ['xiaomi_redmi_mi4', 'xiaomi_redmi_mi4i']"
+  }
+]
