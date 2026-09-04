@@ -23,8 +23,10 @@ dependencies = [
     # parsing. Groq: high-volume/speed-sensitive work (adversarial gen, explainer).
     "langchain-google-genai>=2.0",
     "langchain-groq>=0.2",
-    # MCP surface
-    "mcp>=1.0",
+    # MCP surface -- surface/mcp_server.py uses mcp 2.x's MCPServer (FastMCP
+    # was renamed/removed in 2.x); a >=1.0 floor could resolve to a 1.x
+    # release that doesn't have it, so the floor must stay at 2.0+.
+    "mcp>=2.0",
     # crypto (Ed25519 mandate signing) -- never hand-roll this
     "pynacl>=1.5",
     # payments, test mode only
