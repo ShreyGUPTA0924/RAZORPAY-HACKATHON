@@ -52,12 +52,16 @@ def test_values_match_enum_by_value():
 # ---------------------------------------------------------------------------
 
 
-def test_pick_field_to_verify_chooses_highest_confidence():
+def test_pick_field_to_verify_chooses_lowest_confidence():
+    """Not the highest -- a field the model is already very sure of gets
+    the same answer again on a second independent pass almost every time,
+    so disagreement (the only thing that can trigger quarantine) never
+    fires there. See _pick_field_to_verify's docstring."""
     attrs = ProductAttributes(
         accessory_type=AttrValue(value=AccessoryType.CHARGER, confidence=0.6),
         connector_type=AttrValue(value=ConnectorType.USB_C, confidence=0.95),
     )
-    assert extract._pick_field_to_verify(attrs) == "connector_type"
+    assert extract._pick_field_to_verify(attrs) == "accessory_type"
 
 
 def test_pick_field_to_verify_ignores_null_fields():
@@ -67,6 +71,33 @@ def test_pick_field_to_verify_ignores_null_fields():
 
 def test_pick_field_to_verify_returns_none_when_everything_null():
     assert extract._pick_field_to_verify(ProductAttributes()) is None
+
+
+# ---------------------------------------------------------------------------
+# _pick_second_field_to_verify
+# ---------------------------------------------------------------------------
+
+
+def test_pick_second_field_to_verify_excludes_the_given_field():
+    attrs = ProductAttributes(
+        accessory_type=AttrValue(value=AccessoryType.CHARGER, confidence=0.6),
+        connector_type=AttrValue(value=ConnectorType.USB_C, confidence=0.95),
+    )
+    picked = extract._pick_second_field_to_verify(attrs, exclude="connector_type")
+    assert picked == "accessory_type"
+
+
+def test_pick_second_field_to_verify_none_when_no_other_candidates():
+    attrs = ProductAttributes(accessory_type=AttrValue(value=AccessoryType.CHARGER, confidence=0.6))
+    assert extract._pick_second_field_to_verify(attrs, exclude="accessory_type") is None
+
+
+def test_pick_second_field_to_verify_ignores_null_fields():
+    attrs = ProductAttributes(
+        accessory_type=AttrValue(value=AccessoryType.CHARGER, confidence=0.6),
+        connector_type=AttrValue(value=None, confidence=0.0),
+    )
+    assert extract._pick_second_field_to_verify(attrs, exclude="accessory_type") is None
 
 
 # ---------------------------------------------------------------------------
@@ -98,6 +129,96 @@ def test_self_verification_skipped_when_nothing_to_check():
     sv = extract.run_self_verification("SKU-X", "title", "desc", ProductAttributes())
     assert sv.field_checked is None
     assert sv.agreed is None
+
+
+# ---------------------------------------------------------------------------
+# run_self_verification(verify_second_field=True) / add_second_verification
+# -- the fallback for when quarantine stays 0 despite real disagreements,
+# because accessory_type (the only field quarantine looks at) is essentially
+# never the lowest-confidence field.
+# ---------------------------------------------------------------------------
+
+
+def test_verify_second_field_checks_a_different_field_from_the_primary():
+    attrs = ProductAttributes(
+        accessory_type=AttrValue(value=AccessoryType.CHARGER, confidence=0.95),
+        connector_type=AttrValue(value=ConnectorType.USB_C, confidence=0.6),  # lowest -- primary pick
+    )
+    with patch("pipeline.extract.self_verify_field", side_effect=[ConnectorType.USB_C, AccessoryType.CHARGER]):
+        sv = extract.run_self_verification("SKU-X", "title", "desc", attrs, verify_second_field=True)
+
+    assert sv.field_checked == "connector_type"
+    assert sv.extra_check is not None
+    assert sv.extra_check.field_checked == "accessory_type"
+
+
+def test_verify_second_field_disagreement_lowers_that_fields_confidence_independently():
+    attrs = ProductAttributes(
+        accessory_type=AttrValue(value=AccessoryType.CHARGER, confidence=0.95),
+        connector_type=AttrValue(value=ConnectorType.USB_C, confidence=0.6),
+    )
+    with patch("pipeline.extract.self_verify_field", side_effect=[ConnectorType.USB_C, AccessoryType.CASE]):
+        sv = extract.run_self_verification("SKU-X", "title", "desc", attrs, verify_second_field=True)
+
+    assert sv.agreed is True  # primary (connector_type) still agreed
+    assert attrs.connector_type.confidence == 0.6  # unchanged
+    assert sv.extra_check.agreed is False
+    assert attrs.accessory_type.confidence == pytest.approx(0.95 * extract.DISAGREEMENT_CONFIDENCE_FACTOR)
+
+
+def test_verify_second_field_skipped_when_no_other_non_null_field_exists():
+    attrs = ProductAttributes(connector_type=AttrValue(value=ConnectorType.USB_C, confidence=0.6))
+    with patch("pipeline.extract.self_verify_field", return_value=ConnectorType.USB_C):
+        sv = extract.run_self_verification("SKU-X", "title", "desc", attrs, verify_second_field=True)
+    assert sv.extra_check is None
+
+
+def test_verify_second_field_defaults_to_off():
+    attrs = ProductAttributes(
+        accessory_type=AttrValue(value=AccessoryType.CHARGER, confidence=0.95),
+        connector_type=AttrValue(value=ConnectorType.USB_C, confidence=0.6),
+    )
+    with patch("pipeline.extract.self_verify_field", return_value=ConnectorType.USB_C):
+        sv = extract.run_self_verification("SKU-X", "title", "desc", attrs)
+    assert sv.extra_check is None
+
+
+def test_add_second_verification_upgrades_an_existing_primary_check():
+    attrs = ProductAttributes(
+        accessory_type=AttrValue(value=AccessoryType.CHARGER, confidence=0.95),
+        connector_type=AttrValue(value=ConnectorType.USB_C, confidence=0.6),
+    )
+    sv = extract.SelfVerification(field_checked="connector_type", first_value="usb_c", agreed=True, confidence_before=0.6, confidence_after=0.6)
+    with patch("pipeline.extract.self_verify_field", return_value=AccessoryType.CHARGER) as mock_verify:
+        updated = extract.add_second_verification("SKU-X", "title", "desc", attrs, sv)
+
+    mock_verify.assert_called_once()
+    assert updated.extra_check.field_checked == "accessory_type"
+    assert updated.extra_check.agreed is True
+
+
+def test_add_second_verification_is_a_no_op_if_already_has_extra_check():
+    """Guards against re-spending quota on a re-run: an entry that already
+    has a second check must not be checked again."""
+    existing = extract.FieldCheck(
+        field_checked="accessory_type", first_value="charger", second_value="charger",
+        agreed=True, confidence_before=0.95, confidence_after=0.95,
+    )
+    sv = extract.SelfVerification(field_checked="connector_type", agreed=True, extra_check=existing)
+    attrs = ProductAttributes(connector_type=AttrValue(value=ConnectorType.USB_C, confidence=0.6))
+    with patch("pipeline.extract.self_verify_field") as mock_verify:
+        updated = extract.add_second_verification("SKU-X", "title", "desc", attrs, sv)
+
+    mock_verify.assert_not_called()
+    assert updated.extra_check is existing
+
+
+def test_add_second_verification_is_a_no_op_if_nothing_was_ever_checked():
+    sv = extract.SelfVerification()  # field_checked is None -- nothing to upgrade
+    with patch("pipeline.extract.self_verify_field") as mock_verify:
+        updated = extract.add_second_verification("SKU-X", "title", "desc", ProductAttributes(), sv)
+    mock_verify.assert_not_called()
+    assert updated.extra_check is None
 
 
 # ---------------------------------------------------------------------------

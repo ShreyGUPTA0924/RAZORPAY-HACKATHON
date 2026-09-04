@@ -44,7 +44,19 @@
       "second_value": "cable",
       "agreed": true,
       "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "confidence_after": 0.95,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "sony_xperia_m5"
+        ],
+        "second_value": [
+          "sony_xperia_m5"
+        ],
+        "agreed": true,
+        "confidence_before": 0.95,
+        "confidence_after": 0.95
+      }
     },
     "quarantine": {
       "sku_id": "SKU-001",
@@ -96,7 +108,8 @@
       "second_value": "headphone",
       "agreed": true,
       "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "confidence_after": 0.95,
+      "extra_check": null
     },
     "quarantine": {
       "sku_id": "SKU-002",
@@ -148,7 +161,8 @@
       "second_value": "headphone",
       "agreed": true,
       "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "confidence_after": 0.95,
+      "extra_check": null
     },
     "quarantine": {
       "sku_id": "SKU-003",
@@ -200,7 +214,8 @@
       "second_value": "headphone",
       "agreed": true,
       "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "confidence_after": 0.95,
+      "extra_check": null
     },
     "quarantine": {
       "sku_id": "SKU-004",
@@ -252,7 +267,8 @@
       "second_value": "headphone",
       "agreed": true,
       "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "confidence_after": 0.95,
+      "extra_check": null
     },
     "quarantine": {
       "sku_id": "SKU-005",
@@ -304,7 +320,15 @@
       "second_value": "headphone",
       "agreed": true,
       "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "confidence_after": 0.95,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [],
+        "second_value": [],
+        "agreed": true,
+        "confidence_before": 0.95,
+        "confidence_after": 0.95
+      }
     },
     "quarantine": {
       "sku_id": "SKU-006",
@@ -356,7 +380,15 @@
       "second_value": "headphone",
       "agreed": true,
       "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "confidence_after": 0.95,
+      "extra_check": {
+        "field_checked": "connector_type",
+        "first_value": "3_5mm_jack",
+        "second_value": "3_5mm_jack",
+        "agreed": true,
+        "confidence_before": 0.95,
+        "confidence_after": 0.95
+      }
     },
     "quarantine": {
       "sku_id": "SKU-007",
@@ -408,7 +440,15 @@
       "second_value": "headphone",
       "agreed": true,
       "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "confidence_after": 0.95,
+      "extra_check": {
+        "field_checked": "connector_type",
+        "first_value": "3_5mm_jack",
+        "second_value": "3_5mm_jack",
+        "agreed": true,
+        "confidence_before": 0.95,
+        "confidence_after": 0.95
+      }
     },
     "quarantine": {
       "sku_id": "SKU-008",
@@ -455,12 +495,20 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "headphone",
-      "second_value": "headphone",
+      "field_checked": "model_compat",
+      "first_value": [],
+      "second_value": [],
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.8,
+      "confidence_after": 0.8,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "headphone",
+        "second_value": "headphone",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-009",
@@ -507,12 +555,20 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "headphone",
-      "second_value": "headphone",
+      "field_checked": "model_compat",
+      "first_value": [],
+      "second_value": [],
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.7,
+      "confidence_after": 0.7,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "headphone",
+        "second_value": "headphone",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-010",
@@ -559,12 +615,20 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "headphone",
-      "second_value": "headphone",
+      "field_checked": "model_compat",
+      "first_value": [],
+      "second_value": [],
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.8,
+      "confidence_after": 0.8,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "headphone",
+        "second_value": "headphone",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-011",
@@ -607,22 +671,34 @@
       },
       "material": {
         "value": "metal",
-        "confidence": 0.6
+        "confidence": 0.24
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "cable",
-      "second_value": "cable",
-      "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "field_checked": "material",
+      "first_value": "metal",
+      "second_value": "fabric_nylon",
+      "agreed": false,
+      "confidence_before": 0.6,
+      "confidence_after": 0.24,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "cable",
+        "second_value": "cable",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-012",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "material"
+      ],
+      "reasons": [
+        "material: confidence 0.24 < 0.5 (proposed <Material.METAL: 'metal'>, not published)"
+      ]
     }
   },
   {
@@ -663,12 +739,20 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "cable",
-      "second_value": "cable",
+      "field_checked": "model_compat",
+      "first_value": [],
+      "second_value": [],
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.8,
+      "confidence_after": 0.8,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "cable",
+        "second_value": "cable",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-013",
@@ -689,7 +773,7 @@
         "value": [
           "samsung_galaxy_note"
         ],
-        "confidence": 0.7
+        "confidence": 0.28
       },
       "connector_type": {
         "value": null,
@@ -717,18 +801,32 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "case",
-      "second_value": "case",
-      "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "field_checked": "model_compat",
+      "first_value": [
+        "samsung_galaxy_note"
+      ],
+      "second_value": null,
+      "agreed": false,
+      "confidence_before": 0.7,
+      "confidence_after": 0.28,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "case",
+        "second_value": "case",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-014",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "model_compat"
+      ],
+      "reasons": [
+        "model_compat: confidence 0.28 < 0.5 (proposed ['samsung_galaxy_note'], not published)"
+      ]
     }
   },
   {
@@ -771,12 +869,24 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "case",
-      "second_value": "case",
+      "field_checked": "model_compat",
+      "first_value": [
+        "oppo_find_7a"
+      ],
+      "second_value": [
+        "oppo_find_7a"
+      ],
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.9,
+      "confidence_after": 0.9,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "case",
+        "second_value": "case",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-015",
@@ -828,7 +938,8 @@
       "second_value": "pouch",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": null
     },
     "quarantine": {
       "sku_id": "SKU-016",
@@ -875,12 +986,20 @@
       }
     },
     "self_verification": {
-      "field_checked": "capacity_mah",
-      "first_value": 10000,
-      "second_value": 10000,
+      "field_checked": "connector_type",
+      "first_value": "micro_usb",
+      "second_value": "micro_usb",
       "agreed": true,
-      "confidence_before": 0.99,
-      "confidence_after": 0.99
+      "confidence_before": 0.97,
+      "confidence_after": 0.97,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "power_bank",
+        "second_value": "power_bank",
+        "agreed": true,
+        "confidence_before": 0.98,
+        "confidence_after": 0.98
+      }
     },
     "quarantine": {
       "sku_id": "SKU-017",
@@ -932,7 +1051,8 @@
       "second_value": "charger",
       "agreed": true,
       "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "confidence_after": 0.95,
+      "extra_check": null
     },
     "quarantine": {
       "sku_id": "SKU-018",
@@ -981,12 +1101,24 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "charger",
-      "second_value": "charger",
+      "field_checked": "model_compat",
+      "first_value": [
+        "micromax_canvas_play_4g_q469"
+      ],
+      "second_value": [
+        "micromax_canvas_play_4g_q469"
+      ],
       "agreed": true,
-      "confidence_before": 0.96,
-      "confidence_after": 0.96
+      "confidence_before": 0.9,
+      "confidence_after": 0.9,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "charger",
+        "second_value": "charger",
+        "agreed": true,
+        "confidence_before": 0.96,
+        "confidence_after": 0.96
+      }
     },
     "quarantine": {
       "sku_id": "SKU-019",
@@ -1033,12 +1165,20 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "cable",
-      "second_value": "cable",
+      "field_checked": "model_compat",
+      "first_value": [],
+      "second_value": [],
       "agreed": true,
-      "confidence_before": 0.97,
-      "confidence_after": 0.97
+      "confidence_before": 0.0,
+      "confidence_after": 0.0,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "cable",
+        "second_value": "cable",
+        "agreed": true,
+        "confidence_before": 0.97,
+        "confidence_after": 0.97
+      }
     },
     "quarantine": {
       "sku_id": "SKU-020",
@@ -1091,12 +1231,24 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "case",
-      "second_value": "case",
+      "field_checked": "model_compat",
+      "first_value": [
+        "samsung_galaxy_j7"
+      ],
+      "second_value": [
+        "samsung_galaxy_j7"
+      ],
       "agreed": true,
-      "confidence_before": 0.96,
-      "confidence_after": 0.96
+      "confidence_before": 0.9,
+      "confidence_after": 0.9,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "case",
+        "second_value": "case",
+        "agreed": true,
+        "confidence_before": 0.96,
+        "confidence_after": 0.96
+      }
     },
     "quarantine": {
       "sku_id": "SKU-021",
@@ -1141,22 +1293,38 @@
       },
       "material": {
         "value": "other",
-        "confidence": 0.7
+        "confidence": 0.28
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "case",
-      "second_value": "case",
-      "agreed": true,
-      "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "field_checked": "material",
+      "first_value": "other",
+      "second_value": null,
+      "agreed": false,
+      "confidence_before": 0.7,
+      "confidence_after": 0.28,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "spice_mi_720"
+        ],
+        "second_value": [
+          "spice_mi_720"
+        ],
+        "agreed": true,
+        "confidence_before": 0.9,
+        "confidence_after": 0.9
+      }
     },
     "quarantine": {
       "sku_id": "SKU-022",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "material"
+      ],
+      "reasons": [
+        "material: confidence 0.28 < 0.5 (proposed <Material.OTHER: 'other'>, not published)"
+      ]
     }
   },
   {
@@ -1195,22 +1363,38 @@
       },
       "material": {
         "value": "other",
-        "confidence": 0.7
+        "confidence": 0.28
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "case",
-      "second_value": "case",
-      "agreed": true,
-      "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "field_checked": "material",
+      "first_value": "other",
+      "second_value": null,
+      "agreed": false,
+      "confidence_before": 0.7,
+      "confidence_after": 0.28,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "huawei_honor_x1"
+        ],
+        "second_value": [
+          "huawei_honor_x1"
+        ],
+        "agreed": true,
+        "confidence_before": 0.9,
+        "confidence_after": 0.9
+      }
     },
     "quarantine": {
       "sku_id": "SKU-023",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "material"
+      ],
+      "reasons": [
+        "material: confidence 0.28 < 0.5 (proposed <Material.OTHER: 'other'>, not published)"
+      ]
     }
   },
   {
@@ -1253,12 +1437,24 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "case",
-      "second_value": "case",
+      "field_checked": "model_compat",
+      "first_value": [
+        "htc_one_s"
+      ],
+      "second_value": [
+        "htc_one_s"
+      ],
       "agreed": true,
-      "confidence_before": 0.96,
-      "confidence_after": 0.96
+      "confidence_before": 0.9,
+      "confidence_after": 0.9,
+      "extra_check": {
+        "field_checked": "material",
+        "first_value": "plastic",
+        "second_value": "plastic",
+        "agreed": true,
+        "confidence_before": 0.95,
+        "confidence_after": 0.95
+      }
     },
     "quarantine": {
       "sku_id": "SKU-024",
@@ -1312,7 +1508,15 @@
       "second_value": "case",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "screen_size_in",
+        "first_value": 7.0,
+        "second_value": 7.0,
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-025",
@@ -1366,7 +1570,15 @@
       "second_value": "pouch",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "material",
+        "first_value": "leather",
+        "second_value": "leather",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-026",
@@ -1420,7 +1632,19 @@
       "second_value": "pouch",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "intex_aqua_lions_3g"
+        ],
+        "second_value": [
+          "intex_aqua_lions_3g"
+        ],
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-027",
@@ -1465,22 +1689,38 @@
       },
       "material": {
         "value": "other",
-        "confidence": 0.9
+        "confidence": 0.36
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "pouch",
-      "second_value": "pouch",
-      "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "field_checked": "material",
+      "first_value": "other",
+      "second_value": null,
+      "agreed": false,
+      "confidence_before": 0.9,
+      "confidence_after": 0.36,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "sony_xperia_m5_dual"
+        ],
+        "second_value": [
+          "sony_xperia_m5_dual"
+        ],
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-028",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "material"
+      ],
+      "reasons": [
+        "material: confidence 0.36 < 0.5 (proposed <Material.OTHER: 'other'>, not published)"
+      ]
     }
   },
   {
@@ -1528,7 +1768,19 @@
       "second_value": "pouch",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "lenovo_s880"
+        ],
+        "second_value": [
+          "lenovo_s880"
+        ],
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-029",
@@ -1582,7 +1834,19 @@
       "second_value": "pouch",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "microsoft_lumia_1320"
+        ],
+        "second_value": [
+          "microsoft_lumia_1320"
+        ],
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-030",
@@ -1636,7 +1900,15 @@
       "second_value": "pouch",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "material",
+        "first_value": "leather",
+        "second_value": "leather",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-031",
@@ -1690,7 +1962,15 @@
       "second_value": "screen_protector",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "material",
+        "first_value": "tempered_glass",
+        "second_value": "tempered_glass",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-032",
@@ -1744,7 +2024,15 @@
       "second_value": "screen_protector",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "material",
+        "first_value": "tempered_glass",
+        "second_value": "tempered_glass",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-033",
@@ -1798,7 +2086,15 @@
       "second_value": "screen_protector",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "material",
+        "first_value": "tempered_glass",
+        "second_value": "tempered_glass",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-034",
@@ -1852,7 +2148,19 @@
       "second_value": "screen_protector",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "motorola_moto_g"
+        ],
+        "second_value": [
+          "motorola_moto_g"
+        ],
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-035",
@@ -1906,7 +2214,19 @@
       "second_value": "screen_protector",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "apple_iphone_6s"
+        ],
+        "second_value": [
+          "apple_iphone_6s"
+        ],
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-036",
@@ -1960,7 +2280,15 @@
       "second_value": "screen_protector",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "material",
+        "first_value": "tempered_glass",
+        "second_value": "tempered_glass",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-037",
@@ -2014,7 +2342,19 @@
       "second_value": "screen_protector",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "samsung_galaxy_on5"
+        ],
+        "second_value": [
+          "samsung_galaxy_on5"
+        ],
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-038",
@@ -2068,7 +2408,19 @@
       "second_value": "screen_protector",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "nokia_lumia_830"
+        ],
+        "second_value": [
+          "nokia_lumia_830"
+        ],
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-039",
@@ -2122,7 +2474,19 @@
       "second_value": "screen_protector",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "nokia_lumia_830"
+        ],
+        "second_value": [
+          "nokia_lumia_830"
+        ],
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-040",
@@ -2176,7 +2540,15 @@
       "second_value": "screen_protector",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "material",
+        "first_value": "tempered_glass",
+        "second_value": "tempered_glass",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-041",
@@ -2230,7 +2602,19 @@
       "second_value": "screen_protector",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "blackberry_z3"
+        ],
+        "second_value": [
+          "blackberry_z3"
+        ],
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-042",
@@ -2284,7 +2668,15 @@
       "second_value": "screen_protector",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "material",
+        "first_value": "tempered_glass",
+        "second_value": "tempered_glass",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-043",
@@ -2338,7 +2730,15 @@
       "second_value": "charger",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "connector_type",
+        "first_value": "micro_usb",
+        "second_value": "micro_usb",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-044",
@@ -2392,7 +2792,19 @@
       "second_value": "charger",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "moto_x_2nd_gen"
+        ],
+        "second_value": [
+          "moto_x_2nd_gen"
+        ],
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-045",
@@ -2446,7 +2858,19 @@
       "second_value": "charger",
       "agreed": true,
       "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_after": 1.0,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "lenovo_vibe_p1m"
+        ],
+        "second_value": [
+          "lenovo_vibe_p1m"
+        ],
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-046",
@@ -2473,7 +2897,7 @@
       },
       "wattage_w": {
         "value": 10.5,
-        "confidence": 0.7
+        "confidence": 0.28
       },
       "capacity_mah": {
         "value": null,
@@ -2493,18 +2917,30 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "charger",
-      "second_value": "charger",
-      "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "field_checked": "wattage_w",
+      "first_value": 10.5,
+      "second_value": 21.0,
+      "agreed": false,
+      "confidence_before": 0.7,
+      "confidence_after": 0.28,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "charger",
+        "second_value": "charger",
+        "agreed": true,
+        "confidence_before": 1.0,
+        "confidence_after": 1.0
+      }
     },
     "quarantine": {
       "sku_id": "SKU-047",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "wattage_w"
+      ],
+      "reasons": [
+        "wattage_w: confidence 0.28 < 0.5 (proposed 10.5, not published)"
+      ]
     }
   },
   {
@@ -2519,7 +2955,7 @@
         "value": [
           "huawei_honor_4x"
         ],
-        "confidence": 1.0
+        "confidence": 0.4
       },
       "connector_type": {
         "value": "micro_usb",
@@ -2547,18 +2983,32 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "charger",
-      "second_value": "charger",
+      "field_checked": "wattage_w",
+      "first_value": 10.5,
+      "second_value": 10.5,
       "agreed": true,
-      "confidence_before": 1.0,
-      "confidence_after": 1.0
+      "confidence_before": 0.7,
+      "confidence_after": 0.7,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "huawei_honor_4x"
+        ],
+        "second_value": [],
+        "agreed": false,
+        "confidence_before": 1.0,
+        "confidence_after": 0.4
+      }
     },
     "quarantine": {
       "sku_id": "SKU-048",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "model_compat"
+      ],
+      "reasons": [
+        "model_compat: confidence 0.40 < 0.5 (proposed ['huawei_honor_4x'], not published)"
+      ]
     }
   },
   {
@@ -2599,12 +3049,20 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "charger",
-      "second_value": "charger",
+      "field_checked": "model_compat",
+      "first_value": [],
+      "second_value": [],
       "agreed": true,
-      "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "confidence_before": 0.9,
+      "confidence_after": 0.9,
+      "extra_check": {
+        "field_checked": "wattage_w",
+        "first_value": 6.0,
+        "second_value": 6.0,
+        "agreed": true,
+        "confidence_before": 0.9,
+        "confidence_after": 0.9
+      }
     },
     "quarantine": {
       "sku_id": "SKU-049",
@@ -2653,12 +3111,20 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "cable",
-      "second_value": "cable",
+      "field_checked": "connector_type",
+      "first_value": "micro_usb",
+      "second_value": "micro_usb",
       "agreed": true,
-      "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "confidence_before": 0.8,
+      "confidence_after": 0.8,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "cable",
+        "second_value": "cable",
+        "agreed": true,
+        "confidence_before": 0.95,
+        "confidence_after": 0.95
+      }
     },
     "quarantine": {
       "sku_id": "SKU-050",
@@ -2707,12 +3173,24 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "cable",
-      "second_value": "cable",
+      "field_checked": "connector_type",
+      "first_value": "micro_usb",
+      "second_value": "micro_usb",
       "agreed": true,
-      "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "confidence_before": 0.8,
+      "confidence_after": 0.8,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "blackberry_priv"
+        ],
+        "second_value": [
+          "blackberry_priv"
+        ],
+        "agreed": true,
+        "confidence_before": 0.9,
+        "confidence_after": 0.9
+      }
     },
     "quarantine": {
       "sku_id": "SKU-051",
@@ -2766,12 +3244,34 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "cable",
-      "second_value": "cable",
+      "field_checked": "model_compat",
+      "first_value": [
+        "iphone_6",
+        "iphone_6_plus",
+        "iphone_5s",
+        "iphone_5c",
+        "iphone_5",
+        "iphone_6s"
+      ],
+      "second_value": [
+        "iphone_6",
+        "iphone_6_plus",
+        "iphone_5s",
+        "iphone_5c",
+        "iphone_5",
+        "iphone_6s"
+      ],
       "agreed": true,
-      "confidence_before": 0.96,
-      "confidence_after": 0.96
+      "confidence_before": 0.9,
+      "confidence_after": 0.9,
+      "extra_check": {
+        "field_checked": "connector_type",
+        "first_value": "lightning",
+        "second_value": "lightning",
+        "agreed": true,
+        "confidence_before": 0.95,
+        "confidence_after": 0.95
+      }
     },
     "quarantine": {
       "sku_id": "SKU-052",
@@ -2795,7 +3295,7 @@
           "nexus_6p",
           "nexus_5x"
         ],
-        "confidence": 0.7
+        "confidence": 0.28
       },
       "connector_type": {
         "value": "usb_c",
@@ -2823,18 +3323,40 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "cable",
-      "second_value": "cable",
-      "agreed": true,
-      "confidence_before": 0.95,
-      "confidence_after": 0.95
+      "field_checked": "model_compat",
+      "first_value": [
+        "oneplus_two",
+        "oneplus_one",
+        "nexus_6p",
+        "nexus_5x"
+      ],
+      "second_value": [
+        "nexus_6p",
+        "nexus_5x",
+        "one_plus_two",
+        "one_plus_one"
+      ],
+      "agreed": false,
+      "confidence_before": 0.7,
+      "confidence_after": 0.28,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "cable",
+        "second_value": "cable",
+        "agreed": true,
+        "confidence_before": 0.95,
+        "confidence_after": 0.95
+      }
     },
     "quarantine": {
       "sku_id": "SKU-053",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "model_compat"
+      ],
+      "reasons": [
+        "model_compat: confidence 0.28 < 0.5 (proposed ['oneplus_two', 'oneplus_one', 'nexus_6p', 'nexus_5x'], not published)"
+      ]
     }
   },
   {
@@ -2873,22 +3395,38 @@
       },
       "material": {
         "value": "other",
-        "confidence": 0.8
+        "confidence": 0.32
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "cable",
-      "second_value": "cable",
-      "agreed": true,
-      "confidence_before": 0.96,
-      "confidence_after": 0.96
+      "field_checked": "material",
+      "first_value": "other",
+      "second_value": "plastic",
+      "agreed": false,
+      "confidence_before": 0.8,
+      "confidence_after": 0.32,
+      "extra_check": {
+        "field_checked": "model_compat",
+        "first_value": [
+          "alcatel_one_touch_idol_x_plus"
+        ],
+        "second_value": [
+          "alcatel_one_touch_idol_x_plus"
+        ],
+        "agreed": true,
+        "confidence_before": 0.9,
+        "confidence_after": 0.9
+      }
     },
     "quarantine": {
       "sku_id": "SKU-054",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "material"
+      ],
+      "reasons": [
+        "material: confidence 0.32 < 0.5 (proposed <Material.OTHER: 'other'>, not published)"
+      ]
     }
   },
   {
@@ -2931,12 +3469,20 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "charger",
-      "second_value": "charger",
+      "field_checked": "connector_type",
+      "first_value": "usb_a",
+      "second_value": "usb_a",
       "agreed": true,
-      "confidence_before": 0.94,
-      "confidence_after": 0.94
+      "confidence_before": 0.7,
+      "confidence_after": 0.7,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "charger",
+        "second_value": "charger",
+        "agreed": true,
+        "confidence_before": 0.94,
+        "confidence_after": 0.94
+      }
     },
     "quarantine": {
       "sku_id": "SKU-055",
@@ -2985,12 +3531,24 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "headphone",
-      "second_value": "headphone",
+      "field_checked": "model_compat",
+      "first_value": [
+        "samsung_galaxy_s_advance_i9070"
+      ],
+      "second_value": [
+        "samsung_galaxy_s_advance_i9070"
+      ],
       "agreed": true,
-      "confidence_before": 0.96,
-      "confidence_after": 0.96
+      "confidence_before": 0.9,
+      "confidence_after": 0.9,
+      "extra_check": {
+        "field_checked": "connector_type",
+        "first_value": "3_5mm_jack",
+        "second_value": "3_5mm_jack",
+        "agreed": true,
+        "confidence_before": 0.95,
+        "confidence_after": 0.95
+      }
     },
     "quarantine": {
       "sku_id": "SKU-056",
@@ -3012,7 +3570,7 @@
           "xiaomi_redmi_mi4",
           "xiaomi_redmi_mi4i"
         ],
-        "confidence": 0.9
+        "confidence": 0.36
       },
       "connector_type": {
         "value": "3_5mm_jack",
@@ -3040,18 +3598,36 @@
       }
     },
     "self_verification": {
-      "field_checked": "connector_type",
-      "first_value": "3_5mm_jack",
-      "second_value": "3_5mm_jack",
-      "agreed": true,
-      "confidence_before": 0.98,
-      "confidence_after": 0.98
+      "field_checked": "model_compat",
+      "first_value": [
+        "xiaomi_redmi_mi4",
+        "xiaomi_redmi_mi4i"
+      ],
+      "second_value": [
+        "xiaomi_mi4",
+        "xiaomi_mi4i"
+      ],
+      "agreed": false,
+      "confidence_before": 0.9,
+      "confidence_after": 0.36,
+      "extra_check": {
+        "field_checked": "connector_type",
+        "first_value": "3_5mm_jack",
+        "second_value": "3_5mm_jack",
+        "agreed": true,
+        "confidence_before": 0.98,
+        "confidence_after": 0.98
+      }
     },
     "quarantine": {
       "sku_id": "SKU-057",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "model_compat"
+      ],
+      "reasons": [
+        "model_compat: confidence 0.36 < 0.5 (proposed ['xiaomi_redmi_mi4', 'xiaomi_redmi_mi4i'], not published)"
+      ]
     }
   },
   {
@@ -3071,7 +3647,7 @@
           "apple_iphone_5c",
           "apple_iphone_5s"
         ],
-        "confidence": 0.92
+        "confidence": 0.368
       },
       "connector_type": {
         "value": "3_5mm_jack",
@@ -3099,18 +3675,43 @@
       }
     },
     "self_verification": {
-      "field_checked": "connector_type",
-      "first_value": "3_5mm_jack",
-      "second_value": "3_5mm_jack",
-      "agreed": true,
-      "confidence_before": 0.97,
-      "confidence_after": 0.97
+      "field_checked": "model_compat",
+      "first_value": [
+        "apple_iphone_4",
+        "apple_iphone_4s",
+        "apple_iphone_4g",
+        "apple_iphone_5",
+        "apple_iphone_5c",
+        "apple_iphone_5s"
+      ],
+      "second_value": [
+        "iphone_4",
+        "iphone_4s",
+        "iphone_5",
+        "iphone_5c",
+        "iphone_5s"
+      ],
+      "agreed": false,
+      "confidence_before": 0.92,
+      "confidence_after": 0.368,
+      "extra_check": {
+        "field_checked": "accessory_type",
+        "first_value": "headphone",
+        "second_value": "headphone",
+        "agreed": true,
+        "confidence_before": 0.96,
+        "confidence_after": 0.96
+      }
     },
     "quarantine": {
       "sku_id": "SKU-058",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "model_compat"
+      ],
+      "reasons": [
+        "model_compat: confidence 0.37 < 0.5 (proposed ['apple_iphone_4', 'apple_iphone_4s', 'apple_iphone_4g', 'apple_iphone_5', 'apple_iphone_5c', 'apple_iphone_5s'], not published)"
+      ]
     }
   },
   {
@@ -3131,7 +3732,7 @@
       },
       "wattage_w": {
         "value": 10.5,
-        "confidence": 0.6
+        "confidence": 0.24
       },
       "capacity_mah": {
         "value": 10000,
@@ -3151,18 +3752,30 @@
       }
     },
     "self_verification": {
-      "field_checked": "accessory_type",
-      "first_value": "power_bank",
-      "second_value": "power_bank",
-      "agreed": true,
-      "confidence_before": 0.99,
-      "confidence_after": 0.99
+      "field_checked": "wattage_w",
+      "first_value": 10.5,
+      "second_value": 3.15,
+      "agreed": false,
+      "confidence_before": 0.6,
+      "confidence_after": 0.24,
+      "extra_check": {
+        "field_checked": "capacity_mah",
+        "first_value": 10000,
+        "second_value": 10000,
+        "agreed": true,
+        "confidence_before": 0.99,
+        "confidence_after": 0.99
+      }
     },
     "quarantine": {
       "sku_id": "SKU-059",
       "published": true,
-      "redacted_fields": [],
-      "reasons": []
+      "redacted_fields": [
+        "wattage_w"
+      ],
+      "reasons": [
+        "wattage_w: confidence 0.24 < 0.5 (proposed 10.5, not published)"
+      ]
     }
   },
   {
@@ -3208,7 +3821,15 @@
       "second_value": "power_bank",
       "agreed": true,
       "confidence_before": 0.99,
-      "confidence_after": 0.99
+      "confidence_after": 0.99,
+      "extra_check": {
+        "field_checked": "capacity_mah",
+        "first_value": 12000,
+        "second_value": 12000,
+        "agreed": true,
+        "confidence_before": 0.99,
+        "confidence_after": 0.99
+      }
     },
     "quarantine": {
       "sku_id": "SKU-060",

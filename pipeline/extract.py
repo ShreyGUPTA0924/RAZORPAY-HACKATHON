@@ -8,13 +8,13 @@ extract_sku(sku_id, title, description) -> ExtractionResult:
      in order -- free-tier quotas are per (provider, model), so exhausting
      one doesn't stop the pipeline.
   2. Self-verification: a second, independent call re-derives ONE attribute
-     -- the one the first call was most confident about -- from the same
+     -- the one the first call was LEAST confident about -- from the same
      source text alone, blind to the first call's answer. Disagreement
      lowers that field's confidence; it never picks a winner between the
-     two answers. Spot-checking the model's most confident claim is the
-     more useful test of calibration than spot-checking a field it already
-     flagged as uncertain. Always one-SKU-at-a-time, even in batch mode --
-     see the "Batch mode" section below for why.
+     two answers. (Originally targeted the highest-confidence field instead
+     -- see _pick_field_to_verify's docstring for why that was backwards
+     and produced a 0% quarantine rate.) Always one-SKU-at-a-time, even in
+     batch mode -- see the "Batch mode" section below for why.
   3. Every call is traced through LangSmith with sku_id/field tags (see
      pipeline/tracing.py -- configure_tracing() must be called once at
      process start, which run_batch() below does).
@@ -42,6 +42,7 @@ under threshold.
 import argparse
 import functools
 import json
+import random
 import re
 import time
 from dataclasses import asdict, dataclass, field
@@ -65,6 +66,18 @@ from pipeline.tracing import configure_tracing
 # (pipeline/extract_cache.py) specifically so such a change correctly
 # misses the cache instead of serving a stale pre-change result.
 PROMPT_VERSION = "v2-batch-trim-fallback"
+
+# Separate from PROMPT_VERSION: self-verification result (which field got
+# checked, agreement, confidence knockdown) is stored bundled with attrs in
+# the same cache entry, but which field to check is a decision made
+# entirely on our side, not part of what's sent to the LLM -- bumping
+# PROMPT_VERSION over a self-verify logic change would force a wasteful
+# full primary re-extraction just to get a different field spot-checked.
+# This version is compared against what's stored in a cache HIT: a
+# mismatch means the attrs are still valid (reuse, zero quota) but the
+# self-verification that rode along with them used old logic and must be
+# redone -- see run_batch()'s cache-hit handling.
+SELF_VERIFY_VERSION = "v2-lowest-confidence"
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "data" / "catalog.json"
@@ -304,6 +317,16 @@ def extract_primary_batch(rows: list[tuple[str, str, str]], batch_size: int = DE
 
 
 @dataclass
+class FieldCheck:
+    field_checked: str
+    first_value: Any
+    second_value: Any
+    agreed: bool
+    confidence_before: float
+    confidence_after: float
+
+
+@dataclass
 class SelfVerification:
     field_checked: str | None = None
     first_value: Any = None
@@ -311,6 +334,15 @@ class SelfVerification:
     agreed: bool | None = None
     confidence_before: float | None = None
     confidence_after: float | None = None
+    # A second, randomly-chosen field check -- see _pick_second_field_to_verify
+    # for why this exists: quarantine only fires on accessory_type, and
+    # accessory_type is essentially never the LOWEST-confidence field (it's
+    # the model's most reliable call by construction), so field_checked
+    # above almost never lands on it. Whole-SKU quarantine was structurally
+    # unreachable through self-verification alone even after fixing the
+    # lowest-vs-highest bug -- a random second check gives every field,
+    # including accessory_type, a real chance of being spot-checked.
+    extra_check: FieldCheck | None = None
 
 
 @dataclass
@@ -338,14 +370,34 @@ def _values_match(a: Any, b: Any) -> bool:
 
 
 def _pick_field_to_verify(attrs: ProductAttributes) -> str | None:
-    """The non-null field the primary call was most confident about --
-    spot-checking the model's strongest claim is a sharper calibration test
-    than spot-checking one it already flagged as uncertain."""
+    """The non-null field the primary call was LEAST confident about.
+
+    Originally this picked the highest-confidence field, on the theory that
+    spot-checking the model's strongest claim was a sharper calibration
+    test. That was backwards in practice: a field the model is already very
+    sure of gets the same answer on a second independent pass almost every
+    time, so disagreement essentially never fires there -- across a real
+    60-SKU production run this produced a 0% quarantine rate, which is not
+    a believable outcome for free-tier extraction over messy listing text.
+    The model's own lowest-confidence non-null field is exactly where a
+    second independent read is most likely to genuinely disagree, which is
+    the only place self-verification's confidence knockdown can do
+    anything -- it's the field most likely to actually be wrong."""
     candidates = [(name, getattr(attrs, name)) for name in ATTRIBUTE_FIELDS]
     candidates = [(name, av) for name, av in candidates if av.value is not None]
     if not candidates:
         return None
-    return max(candidates, key=lambda pair: pair[1].confidence)[0]
+    return min(candidates, key=lambda pair: pair[1].confidence)[0]
+
+
+def _pick_second_field_to_verify(attrs: ProductAttributes, exclude: str) -> str | None:
+    """A random non-null field other than `exclude` (the field
+    _pick_field_to_verify already picked) -- see SelfVerification.extra_check
+    for why a second, randomly-chosen field matters here."""
+    candidates = [name for name in ATTRIBUTE_FIELDS if name != exclude and getattr(attrs, name).value is not None]
+    if not candidates:
+        return None
+    return random.choice(candidates)
 
 
 @functools.cache
@@ -395,30 +447,71 @@ def self_verify_field(sku_id: str, title: str, description: str, field_name: str
     return result.value
 
 
-def run_self_verification(sku_id: str, title: str, description: str, attrs: ProductAttributes) -> SelfVerification:
-    field_name = _pick_field_to_verify(attrs)
-    if field_name is None:
-        return SelfVerification()
-
+def _run_field_check(sku_id: str, title: str, description: str, attrs: ProductAttributes, field_name: str) -> FieldCheck:
+    """Independently re-derives one field and applies the disagreement
+    confidence knockdown IN PLACE on attrs. Shared by the primary
+    (lowest-confidence) check and the optional second (random) check so
+    both apply the exact same comparison and knockdown logic."""
     original = getattr(attrs, field_name)
     second_value = self_verify_field(sku_id, title, description, field_name)
     agreed = _values_match(original.value, second_value)
-
-    sv = SelfVerification(
+    confidence_before = original.confidence
+    if not agreed:
+        original.confidence = round(original.confidence * DISAGREEMENT_CONFIDENCE_FACTOR, 4)
+    return FieldCheck(
         field_checked=field_name,
         first_value=original.value,
         second_value=second_value,
         agreed=agreed,
-        confidence_before=original.confidence,
+        confidence_before=confidence_before,
+        confidence_after=original.confidence,
     )
 
-    if not agreed:
-        original.confidence = round(original.confidence * DISAGREEMENT_CONFIDENCE_FACTOR, 4)
-    sv.confidence_after = original.confidence
+
+def run_self_verification(
+    sku_id: str, title: str, description: str, attrs: ProductAttributes, verify_second_field: bool = False
+) -> SelfVerification:
+    field_name = _pick_field_to_verify(attrs)
+    if field_name is None:
+        return SelfVerification()
+
+    check = _run_field_check(sku_id, title, description, attrs, field_name)
+    sv = SelfVerification(
+        field_checked=check.field_checked,
+        first_value=check.first_value,
+        second_value=check.second_value,
+        agreed=check.agreed,
+        confidence_before=check.confidence_before,
+        confidence_after=check.confidence_after,
+    )
+
+    if verify_second_field:
+        second_field_name = _pick_second_field_to_verify(attrs, exclude=field_name)
+        if second_field_name is not None:
+            sv.extra_check = _run_field_check(sku_id, title, description, attrs, second_field_name)
+
     return sv
 
 
-def finish_with_self_verification(sku_id: str, title: str, description: str, attrs: ProductAttributes | None) -> ExtractionResult:
+def add_second_verification(
+    sku_id: str, title: str, description: str, attrs: ProductAttributes, sv: SelfVerification
+) -> SelfVerification:
+    """Upgrades an already-completed primary self_verification to two-field
+    mode WITHOUT re-deriving the primary field again -- used when a cached
+    result already has a valid lowest-confidence check and only the random
+    second check needs to be added, so re-verifying doesn't pay for the
+    (already-valid) primary field a second time."""
+    if sv.field_checked is None or sv.extra_check is not None:
+        return sv
+    second_field_name = _pick_second_field_to_verify(attrs, exclude=sv.field_checked)
+    if second_field_name is not None:
+        sv.extra_check = _run_field_check(sku_id, title, description, attrs, second_field_name)
+    return sv
+
+
+def finish_with_self_verification(
+    sku_id: str, title: str, description: str, attrs: ProductAttributes | None, verify_second_field: bool = False
+) -> ExtractionResult:
     """Shared tail end of both extraction paths (single-call and batched):
     given the primary call's attributes (or None if it's missing -- e.g. a
     SKU absent from a batch response), run self-verification and wrap the
@@ -427,13 +520,13 @@ def finish_with_self_verification(sku_id: str, title: str, description: str, att
     if attrs is None:
         return ExtractionResult(sku_id=sku_id, attributes=ProductAttributes(), error="no attributes returned (missing from batch response)")
     try:
-        sv = run_self_verification(sku_id, title, description, attrs)
+        sv = run_self_verification(sku_id, title, description, attrs, verify_second_field=verify_second_field)
     except Exception as e:  # noqa: BLE001 -- self-verification failure shouldn't discard a good primary extraction
         return ExtractionResult(sku_id=sku_id, attributes=attrs, error=f"self-verification call failed: {e}")
     return ExtractionResult(sku_id=sku_id, attributes=attrs, self_verification=sv)
 
 
-def extract_sku(sku_id: str, title: str, description: str) -> ExtractionResult:
+def extract_sku(sku_id: str, title: str, description: str, verify_second_field: bool = False) -> ExtractionResult:
     try:
         model = get_chat_model_with_fallback("extractor", output_schema=ProductAttributes)
         attrs = model.invoke(
@@ -446,7 +539,7 @@ def extract_sku(sku_id: str, title: str, description: str) -> ExtractionResult:
     except Exception as e:  # noqa: BLE001 -- batch runner must not die on one bad SKU
         return ExtractionResult(sku_id=sku_id, attributes=ProductAttributes(), error=f"extraction call failed: {e}")
 
-    return finish_with_self_verification(sku_id, title, description, attrs)
+    return finish_with_self_verification(sku_id, title, description, attrs, verify_second_field=verify_second_field)
 
 
 # ---------------------------------------------------------------------------
@@ -456,11 +549,24 @@ def extract_sku(sku_id: str, title: str, description: str) -> ExtractionResult:
 PACING_DELAY_S = 1.0  # proactive spacing between SKUs, on top of reactive retry-with-backoff
 
 
+def _self_verification_from_dict(data: dict) -> SelfVerification:
+    extra = data.get("extra_check")
+    return SelfVerification(
+        field_checked=data.get("field_checked"),
+        first_value=data.get("first_value"),
+        second_value=data.get("second_value"),
+        agreed=data.get("agreed"),
+        confidence_before=data.get("confidence_before"),
+        confidence_after=data.get("confidence_after"),
+        extra_check=FieldCheck(**extra) if extra else None,
+    )
+
+
 def _cache_entry_to_result(sku_id: str, entry: dict) -> ExtractionResult:
     return ExtractionResult(
         sku_id=sku_id,
         attributes=ProductAttributes.model_validate(entry["attributes"]),
-        self_verification=SelfVerification(**entry["self_verification"]),
+        self_verification=_self_verification_from_dict(entry["self_verification"]),
     )
 
 
@@ -468,7 +574,12 @@ def _result_to_cache_entry(result: ExtractionResult) -> dict:
     return {
         "attributes": result.attributes.model_dump(mode="json"),
         "self_verification": asdict(result.self_verification),
+        "self_verify_version": SELF_VERIFY_VERSION,
     }
+
+
+def _self_verify_stale(entry: dict) -> bool:
+    return entry.get("self_verify_version") != SELF_VERIFY_VERSION
 
 
 def run_batch(
@@ -479,6 +590,7 @@ def run_batch(
     force: bool = False,
     batching: bool = True,
     batch_size: int = DEFAULT_BATCH_SIZE,
+    verify_two_fields: bool = False,
 ) -> list[ExtractionResult]:
     """Runs extraction over data/catalog.json using the FULL raw description
     (trim_boilerplate()'d, but NOT strip_spec_block()'d -- that strip exists
@@ -491,6 +603,11 @@ def run_batch(
     Cache-checks every row first (unless force=True); only SKUs that miss
     the cache actually call an LLM, batched batch_size-at-a-time unless
     batching=False.
+
+    verify_two_fields: also spot-check a random second field per SKU (see
+    SelfVerification.extra_check). A cache hit whose primary check is still
+    valid but lacks this second check only pays for the ONE additional call,
+    not a full re-verification.
     """
     configure_tracing()
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
@@ -501,19 +618,40 @@ def run_batch(
 
     model_name = get_component_config("extractor").model  # cache key uses the configured primary model, even if a fallback ends up serving a given call
     results: dict[str, ExtractionResult] = {}
-    to_process: list[tuple[dict, str, str]] = []  # (row, trimmed_description, cache_key)
+    to_process: list[tuple[dict, str, str]] = []  # (row, trimmed_description, cache_key) -- full primary extraction needed
+    to_reverify: list[tuple[dict, str, str]] = []  # cached attrs are still valid, but self-verification used stale logic
+    to_add_second: list[tuple[dict, str, str]] = []  # primary check valid, only the second/random check is missing
 
     for row in catalog:
         description = trim_boilerplate(row["description"])
         key = extract_cache.cache_key(row["sku_id"], description, PROMPT_VERSION, model_name)
         cached = None if force else (extract_cache.get(key) if use_cache else None)
-        if cached is not None:
-            results[row["sku_id"]] = _cache_entry_to_result(row["sku_id"], cached)
-        else:
+        if cached is None:
             to_process.append((row, description, key))
+        elif _self_verify_stale(cached):
+            to_reverify.append((row, description, key))
+            results[row["sku_id"]] = _cache_entry_to_result(row["sku_id"], cached)  # placeholder, overwritten below
+        elif verify_two_fields and not cached.get("self_verification", {}).get("extra_check"):
+            to_add_second.append((row, description, key))
+            results[row["sku_id"]] = _cache_entry_to_result(row["sku_id"], cached)  # placeholder, overwritten below
+        else:
+            results[row["sku_id"]] = _cache_entry_to_result(row["sku_id"], cached)
 
-    if results:
-        print(f"{len(results)}/{len(catalog)} SKUs served from cache (zero quota spent)", flush=True)
+    fully_cached = len(catalog) - len(to_process) - len(to_reverify) - len(to_add_second)
+    if fully_cached:
+        print(f"{fully_cached}/{len(catalog)} SKUs served from cache (zero quota spent)", flush=True)
+    if to_reverify:
+        print(
+            f"{len(to_reverify)}/{len(catalog)} SKUs have valid cached attrs but stale self-verification "
+            f"(logic changed since cached) -- re-verifying only, no primary extraction spent",
+            flush=True,
+        )
+    if to_add_second:
+        print(
+            f"{len(to_add_second)}/{len(catalog)} SKUs have a valid primary check but no second-field check yet "
+            f"-- adding only the second check, primary check not re-spent",
+            flush=True,
+        )
     print(f"{len(to_process)}/{len(catalog)} SKUs to extract", flush=True)
 
     if batching and to_process:
@@ -528,7 +666,9 @@ def run_batch(
         for i, (row, description, key) in enumerate(to_process):
             sku_id = row["sku_id"]
             print(f"  [self-verify {i + 1}/{len(to_process)}] {sku_id}", flush=True)
-            result = finish_with_self_verification(sku_id, row["product_name"], description, primary.get(sku_id))
+            result = finish_with_self_verification(
+                sku_id, row["product_name"], description, primary.get(sku_id), verify_second_field=verify_two_fields
+            )
             if result.error:
                 print(f"    ERROR {sku_id}: {result.error}", flush=True)
             results[sku_id] = result
@@ -537,7 +677,7 @@ def run_batch(
     else:
         for i, (row, description, key) in enumerate(to_process):
             print(f"[{i + 1}/{len(to_process)}] {row['sku_id']}: {row['product_name'][:60]}", flush=True)
-            result = extract_sku(row["sku_id"], row["product_name"], description)
+            result = extract_sku(row["sku_id"], row["product_name"], description, verify_second_field=verify_two_fields)
             if result.error:
                 print(f"    ERROR: {result.error}", flush=True)
             results[row["sku_id"]] = result
@@ -545,6 +685,36 @@ def run_batch(
                 extract_cache.put(key, _result_to_cache_entry(result))
             if i < len(to_process) - 1:
                 time.sleep(PACING_DELAY_S)
+
+    for i, (row, description, key) in enumerate(to_reverify):
+        sku_id = row["sku_id"]
+        print(f"  [re-verify {i + 1}/{len(to_reverify)}] {sku_id}", flush=True)
+        cached_attrs = results[sku_id].attributes  # trusted, unchanged -- only self_verification is being redone
+        result = finish_with_self_verification(
+            sku_id, row["product_name"], description, cached_attrs, verify_second_field=verify_two_fields
+        )
+        if result.error:
+            print(f"    ERROR {sku_id}: {result.error}", flush=True)
+            continue  # keep the stale-but-valid-attrs cached result rather than losing it
+        results[sku_id] = result
+        if use_cache:
+            extract_cache.put(key, _result_to_cache_entry(result))
+
+    for i, (row, description, key) in enumerate(to_add_second):
+        sku_id = row["sku_id"]
+        print(f"  [add-second-check {i + 1}/{len(to_add_second)}] {sku_id}", flush=True)
+        cached_result = results[sku_id]
+        try:
+            sv = add_second_verification(
+                sku_id, row["product_name"], description, cached_result.attributes, cached_result.self_verification
+            )
+        except Exception as e:  # noqa: BLE001 -- keep the still-valid primary check rather than losing it
+            print(f"    ERROR {sku_id}: second-field verification failed: {e}", flush=True)
+            continue
+        result = ExtractionResult(sku_id=sku_id, attributes=cached_result.attributes, self_verification=sv)
+        results[sku_id] = result
+        if use_cache:
+            extract_cache.put(key, _result_to_cache_entry(result))
 
     return [results[row["sku_id"]] for row in catalog]  # preserve catalog order
 
@@ -607,11 +777,22 @@ def print_report(results: list[ExtractionResult], decisions: dict[str, Any]) -> 
     verified = [r for r in ok if r.self_verification.field_checked]
     disagreements = [r for r in verified if r.self_verification.agreed is False]
     if verified:
-        print(f"\nSelf-verification: checked on {len(verified)}/{len(ok)} SKUs, disagreed on {len(disagreements)}")
+        print(f"\nSelf-verification (primary, lowest-confidence field): checked on {len(verified)}/{len(ok)} SKUs, disagreed on {len(disagreements)}")
         if disagreements:
             by_field: dict[str, int] = {}
             for r in disagreements:
                 by_field[r.self_verification.field_checked] = by_field.get(r.self_verification.field_checked, 0) + 1
+            print(f"  Disagreements by field: {by_field}")
+
+    second_checked = [r for r in ok if r.self_verification.extra_check]
+    second_disagreements = [r for r in second_checked if r.self_verification.extra_check.agreed is False]
+    if second_checked:
+        print(f"\nSelf-verification (second, random field): checked on {len(second_checked)}/{len(ok)} SKUs, disagreed on {len(second_disagreements)}")
+        if second_disagreements:
+            by_field = {}
+            for r in second_disagreements:
+                fname = r.self_verification.extra_check.field_checked
+                by_field[fname] = by_field.get(fname, 0) + 1
             print(f"  Disagreements by field: {by_field}")
 
     print("=" * 72)
@@ -626,6 +807,17 @@ def main():
     parser.add_argument("--force", action="store_true", help="Ignore cache hits and re-extract every requested SKU.")
     parser.add_argument("--no-batch", action="store_true", help="Disable batched primary extraction; one call per SKU.")
     parser.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE)
+    parser.add_argument(
+        "--verify-two-fields",
+        action="store_true",
+        help=(
+            "Also spot-check a random second field per SKU, in addition to the "
+            "lowest-confidence one. Whole-SKU quarantine only fires on "
+            "accessory_type, which is essentially never the lowest-confidence "
+            "field -- use this if a run comes back with a suspiciously low "
+            "quarantine rate despite real self-verification disagreements."
+        ),
+    )
     args = parser.parse_args()
     out_path = args.out.resolve()
 
@@ -636,6 +828,7 @@ def main():
         force=args.force,
         batching=not args.no_batch,
         batch_size=args.batch_size,
+        verify_two_fields=args.verify_two_fields,
     )
     decisions = {r.sku_id: quarantine_evaluate(r.sku_id, r.attributes) for r in results if not r.error}
 

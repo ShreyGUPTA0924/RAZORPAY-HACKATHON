@@ -125,6 +125,7 @@ def test_run_batch_skips_llm_entirely_on_full_cache_hit(monkeypatch, tmp_path):
         {
             "attributes": cached_attrs.model_dump(mode="json"),
             "self_verification": {"field_checked": None, "first_value": None, "second_value": None, "agreed": None, "confidence_before": None, "confidence_after": None},
+            "self_verify_version": extract.SELF_VERIFY_VERSION,
         },
     )
 
@@ -133,6 +134,87 @@ def test_run_batch_skips_llm_entirely_on_full_cache_hit(monkeypatch, tmp_path):
 
     mock_batch.assert_not_called()
     assert results[0].attributes.accessory_type.value == AccessoryType.CABLE
+
+
+def test_run_batch_reverifies_only_on_stale_self_verify_version(monkeypatch, tmp_path):
+    """A cache entry from before a self-verification logic change (no
+    self_verify_version, or an old one) has trustworthy attrs but a stale
+    self_verification -- run_batch must redo ONLY self-verification (no
+    primary extraction call) and persist the corrected entry."""
+    monkeypatch.setattr(extract_cache, "CACHE_DIR", tmp_path / "cache")
+    catalog_path = _write_catalog(tmp_path, [{"sku_id": "SKU-1", "product_name": "Title", "description": "Desc"}])
+
+    cached_attrs = ProductAttributes(accessory_type=AttrValue(value=AccessoryType.CABLE, confidence=0.9))
+    key = extract_cache.cache_key("SKU-1", extract.trim_boilerplate("Desc"), extract.PROMPT_VERSION, "gemini-2.5-flash")
+    extract_cache.put(
+        key,
+        {
+            "attributes": cached_attrs.model_dump(mode="json"),
+            "self_verification": {"field_checked": None, "first_value": None, "second_value": None, "agreed": None, "confidence_before": None, "confidence_after": None},
+            "self_verify_version": "v1-highest-confidence-stale",
+        },
+    )
+
+    fresh_sv = extract.SelfVerification(field_checked="accessory_type", agreed=True)
+    with (
+        patch("pipeline.extract.extract_primary_batch") as mock_batch,
+        patch("pipeline.extract.run_self_verification", return_value=fresh_sv) as mock_verify,
+        patch("pipeline.extract.configure_tracing"),
+    ):
+        results = extract.run_batch(catalog_path=catalog_path)
+
+    mock_batch.assert_not_called()  # attrs came from cache, no primary extraction spent
+    mock_verify.assert_called_once()
+    assert results[0].attributes.accessory_type.value == AccessoryType.CABLE  # attrs preserved
+    assert results[0].self_verification.field_checked == "accessory_type"
+
+    updated = extract_cache.get(key)
+    assert updated["self_verify_version"] == extract.SELF_VERIFY_VERSION  # re-cached with current version
+
+
+def test_run_batch_adds_only_second_check_when_primary_already_valid(monkeypatch, tmp_path):
+    """verify_two_fields=True against an entry whose primary check is
+    already current (matching self_verify_version) must add ONLY the
+    second/random check -- no primary re-extraction, no full re-verify."""
+    monkeypatch.setattr(extract_cache, "CACHE_DIR", tmp_path / "cache")
+    catalog_path = _write_catalog(tmp_path, [{"sku_id": "SKU-1", "product_name": "Title", "description": "Desc"}])
+
+    cached_attrs = ProductAttributes(
+        accessory_type=AttrValue(value=AccessoryType.CABLE, confidence=0.9),
+        connector_type=AttrValue(value=ConnectorType.USB_C, confidence=0.5),
+    )
+    key = extract_cache.cache_key("SKU-1", extract.trim_boilerplate("Desc"), extract.PROMPT_VERSION, "gemini-2.5-flash")
+    extract_cache.put(
+        key,
+        {
+            "attributes": cached_attrs.model_dump(mode="json"),
+            "self_verification": {
+                "field_checked": "connector_type", "first_value": "usb_c", "second_value": "usb_c",
+                "agreed": True, "confidence_before": 0.5, "confidence_after": 0.5, "extra_check": None,
+            },
+            "self_verify_version": extract.SELF_VERIFY_VERSION,
+        },
+    )
+
+    extra = extract.FieldCheck(
+        field_checked="accessory_type", first_value="cable", second_value="cable",
+        agreed=True, confidence_before=0.9, confidence_after=0.9,
+    )
+    with (
+        patch("pipeline.extract.extract_primary_batch") as mock_batch,
+        patch("pipeline.extract.run_self_verification") as mock_run_sv,
+        patch("pipeline.extract.add_second_verification", return_value=extract.SelfVerification(field_checked="connector_type", agreed=True, extra_check=extra)) as mock_add_second,
+        patch("pipeline.extract.configure_tracing"),
+    ):
+        results = extract.run_batch(catalog_path=catalog_path, verify_two_fields=True)
+
+    mock_batch.assert_not_called()
+    mock_run_sv.assert_not_called()
+    mock_add_second.assert_called_once()
+    assert results[0].self_verification.extra_check.field_checked == "accessory_type"
+
+    updated = extract_cache.get(key)
+    assert updated["self_verification"]["extra_check"]["field_checked"] == "accessory_type"
 
 
 def test_run_batch_caches_successful_new_extractions(monkeypatch, tmp_path):
