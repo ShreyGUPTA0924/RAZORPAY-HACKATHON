@@ -23,9 +23,13 @@ Usage:
     python eval/extraction_eval.py                          # ground-truth stats only
     python eval/extraction_eval.py --predictions preds.json  # full P/R/F1
 
-predictions.json shape: {sku_id: {field_name: value, ...}, ...} -- plain
-values matching pipeline.schema field names/types, i.e. AttrValue.value
-already unwrapped, not the confidence-carrying form.
+--predictions takes pipeline/extract.py's real output file directly
+(eval/extraction_results.json): a list of {sku_id, attributes: {field:
+{value, confidence}}, ...} records. load_predictions() adapts that into
+{sku_id: {field: value}} internally -- confidence is deliberately
+unwrapped and ignored here; precision/recall is about the VALUE proposed,
+not the confidence-threshold behavior pipeline/quarantine.py is scored on
+separately.
 
 No predictions file exists yet -- pipeline/extract.py hasn't been built
 (Tier 1). This module is ready for when it is.
@@ -77,8 +81,16 @@ class FieldMetrics:
 
 
 def _normalize(value: Any) -> Any:
+    # Matches pipeline/verify.py's own _normalize() -- space/hyphen and case
+    # are formatting, not a real disagreement. Missing this made every
+    # model_compat comparison fail: ground truth is hand-labeled as
+    # human-readable text ("Samsung Galaxy J7") straight off the listing,
+    # while pipeline/extract.py emits canonical snake_case
+    # ("samsung_galaxy_j7") -- caught by getting a suspicious flat 0.00
+    # precision/recall across 13 real, non-trivial support rows and
+    # checking the actual pairs by hand rather than trusting the number.
     if isinstance(value, str):
-        return value.strip().lower()
+        return value.strip().lower().replace(" ", "_").replace("-", "_")
     if isinstance(value, list):
         return frozenset(_normalize(v) for v in value)
     return value
@@ -109,7 +121,20 @@ def load_ground_truth() -> tuple[dict[str, dict[str, Any]], dict[str, str]]:
 
 
 def load_predictions(path: Path) -> dict[str, dict[str, Any]]:
-    return json.loads(path.read_text(encoding="utf-8"))
+    """Adapts pipeline/extract.py's real output shape -- a list of
+    {sku_id, attributes: {field: {value, confidence}}, error, ...} records,
+    exactly what run_batch()/main() write to eval/extraction_results.json --
+    into the {sku_id: {field: value}} shape score_field() works with.
+    A SKU whose extraction errored has no usable prediction and is
+    skipped, same as it would never reach quarantine.py's redact() step
+    in production."""
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    predictions: dict[str, dict[str, Any]] = {}
+    for entry in raw:
+        if entry.get("error"):
+            continue
+        predictions[entry["sku_id"]] = {field: attr["value"] for field, attr in entry["attributes"].items()}
+    return predictions
 
 
 def expected_quarantine_skus(ground_truth: dict[str, dict[str, Any]]) -> list[str]:
