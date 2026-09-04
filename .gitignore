@@ -21,6 +21,7 @@ frontend/.vite/
 chroma_data/
 data/extraction_cache/
 data/growth_ab_cache/
+data/canonical_adjudication_cache/
 *.log
 
 # editor / OS

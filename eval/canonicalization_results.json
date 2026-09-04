@@ -1,0 +1,655 @@
+{
+  "unique_values": 52,
+  "clusters": [
+    [
+      "alcatel_one_touch_idol_x_plus"
+    ],
+    [
+      "apple_iphone_4",
+      "apple_iphone_4g"
+    ],
+    [
+      "apple_iphone_4s"
+    ],
+    [
+      "apple_iphone_5",
+      "iphone_5"
+    ],
+    [
+      "apple_iphone_5c",
+      "iphone_5c"
+    ],
+    [
+      "apple_iphone_5s",
+      "iphone_5s"
+    ],
+    [
+      "apple_iphone_6s",
+      "iphone_6s"
+    ],
+    [
+      "blackberry_priv"
+    ],
+    [
+      "blackberry_z3"
+    ],
+    [
+      "htc_desire_526"
+    ],
+    [
+      "htc_desire_vc"
+    ],
+    [
+      "htc_one_s"
+    ],
+    [
+      "huawei_honor_4x"
+    ],
+    [
+      "huawei_honor_6"
+    ],
+    [
+      "huawei_honor_x1"
+    ],
+    [
+      "intex_aqua_lions_3g"
+    ],
+    [
+      "iphone_6"
+    ],
+    [
+      "iphone_6_plus"
+    ],
+    [
+      "karbonn_a37"
+    ],
+    [
+      "lenovo_k5_note"
+    ],
+    [
+      "lenovo_s880"
+    ],
+    [
+      "lenovo_vibe_p1m"
+    ],
+    [
+      "letv_1s"
+    ],
+    [
+      "micromax_canvas_play_4g_q469"
+    ],
+    [
+      "microsoft_lumia_1320"
+    ],
+    [
+      "moto_x_2nd_gen"
+    ],
+    [
+      "motorola_moto_g"
+    ],
+    [
+      "nexus_5x"
+    ],
+    [
+      "nexus_6p"
+    ],
+    [
+      "nokia_lumia_830"
+    ],
+    [
+      "oneplus_one"
+    ],
+    [
+      "oneplus_two"
+    ],
+    [
+      "oppo_find_7a"
+    ],
+    [
+      "samsung_galaxy_j7"
+    ],
+    [
+      "samsung_galaxy_note"
+    ],
+    [
+      "samsung_galaxy_on5"
+    ],
+    [
+      "samsung_galaxy_s5_mini"
+    ],
+    [
+      "samsung_galaxy_s_advance_i9070"
+    ],
+    [
+      "sony_xperia_m5"
+    ],
+    [
+      "sony_xperia_m5_dual"
+    ],
+    [
+      "spice_mi_720"
+    ],
+    [
+      "swipe_elite_plus"
+    ],
+    [
+      "xiaomi_mi4"
+    ],
+    [
+      "xiaomi_mi_4i",
+      "xiaomi_redmi_mi4i"
+    ],
+    [
+      "xiaomi_mi_4s"
+    ],
+    [
+      "xiaomi_redmi_mi4"
+    ]
+  ],
+  "canonical": {
+    "alcatel_one_touch_idol_x_plus": "alcatel_one_touch_idol_x_plus",
+    "apple_iphone_4": "apple_iphone_4",
+    "apple_iphone_4g": "apple_iphone_4",
+    "apple_iphone_4s": "apple_iphone_4s",
+    "apple_iphone_5": "apple_iphone_5",
+    "iphone_5": "apple_iphone_5",
+    "apple_iphone_5c": "apple_iphone_5c",
+    "iphone_5c": "apple_iphone_5c",
+    "apple_iphone_5s": "apple_iphone_5s",
+    "iphone_5s": "apple_iphone_5s",
+    "apple_iphone_6s": "apple_iphone_6s",
+    "iphone_6s": "apple_iphone_6s",
+    "blackberry_priv": "blackberry_priv",
+    "blackberry_z3": "blackberry_z3",
+    "htc_desire_526": "htc_desire_526",
+    "htc_desire_vc": "htc_desire_vc",
+    "htc_one_s": "htc_one_s",
+    "huawei_honor_4x": "huawei_honor_4x",
+    "huawei_honor_6": "huawei_honor_6",
+    "huawei_honor_x1": "huawei_honor_x1",
+    "intex_aqua_lions_3g": "intex_aqua_lions_3g",
+    "iphone_6": "iphone_6",
+    "iphone_6_plus": "iphone_6_plus",
+    "karbonn_a37": "karbonn_a37",
+    "lenovo_k5_note": "lenovo_k5_note",
+    "lenovo_s880": "lenovo_s880",
+    "lenovo_vibe_p1m": "lenovo_vibe_p1m",
+    "letv_1s": "letv_1s",
+    "micromax_canvas_play_4g_q469": "micromax_canvas_play_4g_q469",
+    "microsoft_lumia_1320": "microsoft_lumia_1320",
+    "moto_x_2nd_gen": "moto_x_2nd_gen",
+    "motorola_moto_g": "motorola_moto_g",
+    "nexus_5x": "nexus_5x",
+    "nexus_6p": "nexus_6p",
+    "nokia_lumia_830": "nokia_lumia_830",
+    "oneplus_one": "oneplus_one",
+    "oneplus_two": "oneplus_two",
+    "oppo_find_7a": "oppo_find_7a",
+    "samsung_galaxy_j7": "samsung_galaxy_j7",
+    "samsung_galaxy_note": "samsung_galaxy_note",
+    "samsung_galaxy_on5": "samsung_galaxy_on5",
+    "samsung_galaxy_s5_mini": "samsung_galaxy_s5_mini",
+    "samsung_galaxy_s_advance_i9070": "samsung_galaxy_s_advance_i9070",
+    "sony_xperia_m5": "sony_xperia_m5",
+    "sony_xperia_m5_dual": "sony_xperia_m5_dual",
+    "spice_mi_720": "spice_mi_720",
+    "swipe_elite_plus": "swipe_elite_plus",
+    "xiaomi_mi4": "xiaomi_mi4",
+    "xiaomi_mi_4i": "xiaomi_mi_4i",
+    "xiaomi_redmi_mi4i": "xiaomi_mi_4i",
+    "xiaomi_mi_4s": "xiaomi_mi_4s",
+    "xiaomi_redmi_mi4": "xiaomi_redmi_mi4"
+  },
+  "llm_adjudications": [
+    {
+      "a": "apple_iphone_4",
+      "b": "apple_iphone_4s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 4 and iPhone 4s are distinct hardware models released in different years with different internal specifications."
+    },
+    {
+      "a": "apple_iphone_4",
+      "b": "apple_iphone_5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 4 and iPhone 5 are distinct generations of Apple smartphones with different hardware specifications."
+    },
+    {
+      "a": "apple_iphone_4",
+      "b": "apple_iphone_4g",
+      "same_device": true,
+      "confident": true,
+      "reason": "The iPhone 4 was often erroneously referred to as the iPhone 4G due to its marketing as a 4th generation device, but they refer to the exact same physical model."
+    },
+    {
+      "a": "apple_iphone_4",
+      "b": "iphone_5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 4 and iPhone 5 are two distinct generations of Apple smartphones with different hardware specifications."
+    },
+    {
+      "a": "apple_iphone_4",
+      "b": "apple_iphone_5s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 4 and iPhone 5s are distinct generations of Apple smartphones with different hardware specifications and release dates."
+    },
+    {
+      "a": "apple_iphone_4g",
+      "b": "apple_iphone_4s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 4 (often colloquially referred to as 4g in some markets, though technically iPhone 4) and the iPhone 4S are distinct hardware generations with different internal components and model numbers."
+    },
+    {
+      "a": "apple_iphone_4g",
+      "b": "apple_iphone_5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 4 and iPhone 5 are two distinct generations of smartphone models released by Apple."
+    },
+    {
+      "a": "apple_iphone_4g",
+      "b": "iphone_5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 4 and iPhone 5 are two distinct generations of hardware with different physical designs and components."
+    },
+    {
+      "a": "apple_iphone_4g",
+      "b": "iphone_6",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 4 and iPhone 6 are distinct generations of smartphones with different hardware specifications."
+    },
+    {
+      "a": "apple_iphone_4s",
+      "b": "apple_iphone_5s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 4S and iPhone 5S are distinct generations of Apple smartphones with different hardware specifications, processors, and physical designs."
+    },
+    {
+      "a": "apple_iphone_4s",
+      "b": "apple_iphone_6s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 4s and iPhone 6s are distinct generations of Apple devices released years apart with different hardware specifications."
+    },
+    {
+      "a": "apple_iphone_4s",
+      "b": "apple_iphone_5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 4s and iPhone 5 are two distinct generations of Apple smartphones with different hardware specifications, releases, and physical designs."
+    },
+    {
+      "a": "apple_iphone_5",
+      "b": "iphone_5",
+      "same_device": true,
+      "confident": true,
+      "reason": "Both identifiers refer to the Apple iPhone 5; the 'apple_' prefix in the first string is merely a brand descriptor and does not denote a different model or SKU."
+    },
+    {
+      "a": "apple_iphone_5",
+      "b": "apple_iphone_5s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5 and iPhone 5s are distinct generations of Apple hardware with different physical components and model identifiers."
+    },
+    {
+      "a": "apple_iphone_5",
+      "b": "apple_iphone_5c",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5 and the iPhone 5c are distinct hardware models released at different times with different build materials and technical specifications."
+    },
+    {
+      "a": "apple_iphone_5",
+      "b": "iphone_5s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5 and iPhone 5s are distinct generations of smartphones with different internal hardware, such as the processor and camera system."
+    },
+    {
+      "a": "apple_iphone_5c",
+      "b": "iphone_5c",
+      "same_device": true,
+      "confident": true,
+      "reason": "The identifiers 'apple_iphone_5c' and 'iphone_5c' refer to the exact same hardware model, with 'apple_' being a brand prefix and the underscore acting as a naming convention variation."
+    },
+    {
+      "a": "apple_iphone_5c",
+      "b": "apple_iphone_5s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5c and iPhone 5s were released simultaneously as distinct hardware models with different chipsets, casing materials, and physical specifications."
+    },
+    {
+      "a": "apple_iphone_5c",
+      "b": "iphone_5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5 and iPhone 5c are distinct hardware models released at different times with different build materials and internal specifications."
+    },
+    {
+      "a": "apple_iphone_5c",
+      "b": "iphone_5s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5c and iPhone 5s are distinct hardware models released simultaneously with different specifications, build materials, and internal components."
+    },
+    {
+      "a": "apple_iphone_5s",
+      "b": "iphone_5s",
+      "same_device": true,
+      "confident": true,
+      "reason": "Both identifiers refer to the Apple iPhone 5s; the 'apple_' prefix in the first identifier is a brand descriptor, not a model variant."
+    },
+    {
+      "a": "apple_iphone_5s",
+      "b": "iphone_5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5s is a distinct hardware iteration from the iPhone 5, featuring a different processor (A7 vs A6), fingerprint sensor, and camera capabilities."
+    },
+    {
+      "a": "apple_iphone_5s",
+      "b": "apple_iphone_6s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5s and iPhone 6s are distinct hardware generations released two years apart."
+    },
+    {
+      "a": "apple_iphone_6s",
+      "b": "iphone_6s",
+      "same_device": true,
+      "confident": true,
+      "reason": "The identifiers both refer to the Apple iPhone 6s; the prefix 'apple_' and the underscore are formatting variations that do not change the underlying hardware model."
+    },
+    {
+      "a": "apple_iphone_6s",
+      "b": "iphone_6",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 6 and iPhone 6s are distinct hardware models released in different years with different internal specifications."
+    },
+    {
+      "a": "apple_iphone_6s",
+      "b": "iphone_6_plus",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 6s and the iPhone 6 Plus are distinct hardware models with different specifications, release generations, and physical dimensions."
+    },
+    {
+      "a": "blackberry_priv",
+      "b": "blackberry_z3",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Blackberry Priv and the Blackberry Z3 are distinct phone models with different hardware specifications, release timelines, and form factors."
+    },
+    {
+      "a": "htc_desire_526",
+      "b": "htc_desire_vc",
+      "same_device": false,
+      "confident": true,
+      "reason": "The HTC Desire 526 and HTC Desire VC are distinct phone models with different hardware specifications and release markets."
+    },
+    {
+      "a": "htc_desire_526",
+      "b": "htc_one_s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The HTC Desire 526 and HTC One S are distinct phone models with different hardware specifications, release dates, and market segments."
+    },
+    {
+      "a": "htc_desire_vc",
+      "b": "htc_one_s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The HTC Desire VC and the HTC One S are distinct smartphone models released by HTC with different specifications, internal hardware, and market positioning."
+    },
+    {
+      "a": "huawei_honor_4x",
+      "b": "huawei_honor_x1",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Huawei Honor 4X and the Huawei Honor X1 are two distinct smartphone models released in different product lines with different hardware specifications."
+    },
+    {
+      "a": "huawei_honor_4x",
+      "b": "huawei_honor_6",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Honor 4X and Honor 6 are distinct models released in the Huawei Honor series with different specifications and hardware."
+    },
+    {
+      "a": "huawei_honor_6",
+      "b": "huawei_honor_x1",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Huawei Honor 6 and Huawei Honor X1 are distinct physical devices released as separate products in the Honor line."
+    },
+    {
+      "a": "iphone_5",
+      "b": "iphone_5s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5 and iPhone 5s are distinct generations of hardware with different processors, cameras, and physical specifications."
+    },
+    {
+      "a": "iphone_5",
+      "b": "iphone_6",
+      "same_device": false,
+      "confident": true,
+      "reason": "iPhone 5 and iPhone 6 are distinct hardware generations with different model numbers and specifications."
+    },
+    {
+      "a": "iphone_5",
+      "b": "iphone_5c",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5 and the iPhone 5c are distinct hardware models released in different years with different build materials and specifications."
+    },
+    {
+      "a": "iphone_5c",
+      "b": "iphone_5s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5c and iPhone 5s are distinct hardware models released by Apple simultaneously, featuring different materials, processors, and security features."
+    },
+    {
+      "a": "iphone_5c",
+      "b": "apple_iphone_5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5 and iPhone 5c are distinct hardware models released in the same generation; the 5c features a plastic shell and different internal build compared to the aluminum-bodied iPhone 5."
+    },
+    {
+      "a": "iphone_5c",
+      "b": "apple_iphone_5s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 5c and iPhone 5s are two distinct models released by Apple with different hardware specifications and designs."
+    },
+    {
+      "a": "iphone_5s",
+      "b": "iphone_6s",
+      "same_device": false,
+      "confident": true,
+      "reason": "iPhone 5s and iPhone 6s are distinct generations of the iPhone, released in different years with different hardware specifications."
+    },
+    {
+      "a": "iphone_6",
+      "b": "iphone_6s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 6 and iPhone 6s are distinct hardware generations released in different years with different internal components."
+    },
+    {
+      "a": "iphone_6",
+      "b": "iphone_6_plus",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 6 and iPhone 6 Plus are distinct hardware models with different screen sizes, resolutions, and battery capacities."
+    },
+    {
+      "a": "iphone_6",
+      "b": "apple_iphone_5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The identifiers refer to different generations of the iPhone, specifically the iPhone 6 and the iPhone 5."
+    },
+    {
+      "a": "iphone_6_plus",
+      "b": "iphone_6s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 6 Plus and iPhone 6s are two distinct generations of smartphones with different hardware specifications, release dates, and model identifiers."
+    },
+    {
+      "a": "iphone_6_plus",
+      "b": "iphone_5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 6 Plus and iPhone 5 are two distinct generations of smartphones with different hardware specifications and release dates."
+    },
+    {
+      "a": "iphone_6_plus",
+      "b": "apple_iphone_5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 6 Plus and the iPhone 5 are two distinct generations of Apple smartphones with different hardware specifications."
+    },
+    {
+      "a": "iphone_6s",
+      "b": "iphone_5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The iPhone 6s and iPhone 5 are two distinct generations of smartphone models released years apart with different hardware specifications."
+    },
+    {
+      "a": "microsoft_lumia_1320",
+      "b": "nokia_lumia_830",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Microsoft Lumia 1320 and Nokia Lumia 830 are distinct hardware models with different specifications, screen sizes, and internal components."
+    },
+    {
+      "a": "moto_x_2nd_gen",
+      "b": "motorola_moto_g",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Moto X 2nd Gen and the Moto G are distinct product lines released by Motorola with different hardware specifications and market positioning."
+    },
+    {
+      "a": "nexus_5x",
+      "b": "nexus_6p",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Nexus 5X and Nexus 6P are distinct smartphone models released by Google in the same year with different hardware specifications and manufacturers."
+    },
+    {
+      "a": "oneplus_one",
+      "b": "oneplus_two",
+      "same_device": false,
+      "confident": true,
+      "reason": "The OnePlus One and OnePlus Two are two distinct generations of smartphones released by OnePlus."
+    },
+    {
+      "a": "samsung_galaxy_j7",
+      "b": "samsung_galaxy_on5",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Samsung Galaxy J7 and the Samsung Galaxy On5 are distinct mobile phone models released by Samsung with different specifications and hardware."
+    },
+    {
+      "a": "samsung_galaxy_on5",
+      "b": "samsung_galaxy_s5_mini",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Samsung Galaxy On5 and Samsung Galaxy S5 Mini are distinct product lines with different hardware specifications, release years, and market positioning."
+    },
+    {
+      "a": "sony_xperia_m5",
+      "b": "sony_xperia_m5_dual",
+      "same_device": false,
+      "confident": true,
+      "reason": "The 'dual' suffix denotes a specific hardware variant of the Sony Xperia M5 that supports dual-SIM cards, which is a distinct SKU from the standard single-SIM model."
+    },
+    {
+      "a": "xiaomi_mi4",
+      "b": "xiaomi_mi_4s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Xiaomi Mi 4 and the Xiaomi Mi 4s are distinct hardware models released at different times with different specifications."
+    },
+    {
+      "a": "xiaomi_mi4",
+      "b": "xiaomi_mi_4i",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Xiaomi Mi 4 and the Xiaomi Mi 4i are two distinct smartphone models with different hardware specifications and release dates."
+    },
+    {
+      "a": "xiaomi_mi4",
+      "b": "xiaomi_redmi_mi4",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Xiaomi Mi 4 and the Xiaomi Redmi 4 are distinct product lines; the Mi series is the flagship line, while the Redmi series is the budget-oriented line, representing different hardware specifications and market segments."
+    },
+    {
+      "a": "xiaomi_mi4",
+      "b": "xiaomi_redmi_mi4i",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Xiaomi Mi 4 and the Xiaomi Redmi Mi 4i are distinct smartphone models with different specifications, release dates, and hardware components."
+    },
+    {
+      "a": "xiaomi_mi_4i",
+      "b": "xiaomi_mi_4s",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Mi 4i and Mi 4s are two distinct models in the Xiaomi Mi 4 series with different hardware specifications, processors, and release timelines."
+    },
+    {
+      "a": "xiaomi_mi_4i",
+      "b": "xiaomi_redmi_mi4i",
+      "same_device": true,
+      "confident": true,
+      "reason": "The Xiaomi Mi 4i is commonly referred to by both names; 'Redmi' is occasionally associated with the device in some regions, but they represent the exact same hardware SKU."
+    },
+    {
+      "a": "xiaomi_mi_4i",
+      "b": "xiaomi_redmi_mi4",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Xiaomi Mi 4i is a distinct mid-range variant, whereas the Xiaomi Mi 4 (often referred to as Redmi Mi4 in some markets, though primarily just Mi 4) is a separate flagship model with different internal hardware, build materials, and specifications."
+    },
+    {
+      "a": "xiaomi_mi_4s",
+      "b": "xiaomi_redmi_mi4",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Xiaomi Mi 4s and the Xiaomi Redmi Mi4 are distinct models in the Xiaomi product line. The Mi 4s is an upgraded variation of the Mi 4 series, whereas the Redmi Mi4 (or simply Redmi 4/Mi 4) belongs to a different sub-series with different hardware specifications."
+    },
+    {
+      "a": "xiaomi_mi_4s",
+      "b": "xiaomi_redmi_mi4i",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Xiaomi Mi 4s and the Xiaomi Redmi Mi4i are distinct physical models with different hardware specifications, release timelines, and target market segments."
+    },
+    {
+      "a": "xiaomi_redmi_mi4",
+      "b": "xiaomi_redmi_mi4i",
+      "same_device": false,
+      "confident": true,
+      "reason": "The Xiaomi Mi 4 and Mi 4i are distinct physical hardware models with different processors, designs, and specifications."
+    }
+  ],
+  "unmapped_low_confidence": [],
+  "contradictions_prevented": []
+}
