@@ -208,6 +208,13 @@ compatibility claim that appears nowhere in the source text, though not the
 specific "universal compatibility" claim the attacker asked for) that this
 fix doesn't address (it's a `model_compat` issue, not `accessory_type`).
 
+### Razorpay payment capture: a known, current limitation
+
+Razorpay payment capture has been verified for order creation only; capture
+requires a human checkout step and has not been tested against a real
+capture response. Reconciliation logic is tested against a fake client, not
+the real API. This is a known, current limitation.
+
 ---
 
 ## Canonicalization agent

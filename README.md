@@ -20,9 +20,14 @@ transaction surface (AP2 mandate verify/issue, deterministic gate,
 idempotency, refusal taxonomy, Razorpay test-mode payments, MCP server) are
 built and tested against the real catalog. The before/after growth harness
 and an independent adversarial red-team have both been run for real, with
-results committed under `eval/`. The FastAPI app (`api/`) and frontend
-(`frontend/`) have not been started yet — everything above runs as scripts
-and a standalone MCP server today, not yet behind a web UI.
+results committed under `eval/`. A four-screen frontend demo
+(`frontend/`) is built and replays those real, committed results —
+extraction, the generated surface, a scripted agent transaction, and the
+growth/adversarial numbers — entirely client-side; it does not call the
+Python backend live (see its own note below). The FastAPI app (`api/`) has
+not been started — there is currently no live API layer connecting the
+frontend to the backend at all; they are two separate, independently-tested
+things today, not one running system.
 
 ## Quickstart
 
@@ -47,13 +52,32 @@ docker compose up -d     # Postgres + Redis. Only Redis is used by anything buil
                           # Postgres is provisioned for the future API layer, nothing reads
                           # or writes it yet.
 
-pytest -m "not llm"      # 246 passed, 1 skipped (needs a real Razorpay test key), 6 deselected
+pytest -m "not llm"      # 267 passed, 1 skipped (needs a real Razorpay test key), 6 deselected
 ```
 
 No `GOOGLE_API_KEY` / `GROQ_API_KEY` / `RAZORPAY_KEY_ID` needed for any of the
 above — the full test suite runs against real Redis and real (committed)
 catalog data, with every LLM call either mocked or gracefully skipped without
 a key.
+
+## Frontend demo
+
+```bash
+cd frontend
+npm install
+npm run dev              # prints the local URL, typically http://localhost:5173/
+```
+
+Open the printed URL and step through Extraction → Surface → Agent mode →
+Results. Everything on every screen replays real, committed data from
+`eval/` client-side — no backend process, no API keys, no live LLM or
+Razorpay calls. **This is a deliberate design choice** (a deterministic demo
+that can't fail mid-recording), not a placeholder for a missing
+integration — but it means "Run session" in Agent mode plays back a
+scripted transaction shape, not a live one. The header's "Replaying from
+cache" badge and the payment step's own "simulated" label both say this
+explicitly; see `docs/what-broke.md` for the specific, current limitation
+this implies for Razorpay capture.
 
 ## What runs right now with zero API keys
 
@@ -123,7 +147,7 @@ pytest tests/test_payments.py -k real_api    # the one test that's skipped above
 /surface/            generated per merchant
   mandate.py            AP2 intent verify + cart mandate issue -- NO LLM IMPORTS
   gate.py                ALLOW / REFUSE(code) / ESCALATE, pure function -- NO LLM IMPORTS
-  refusal.py             structured refusal taxonomy (12 codes, see docs/refusal_codes.md)
+  refusal.py             structured refusal taxonomy (13 codes, see docs/refusal_codes.md)
   idempotency.py         Redis, keyed on hash(intent_mandate_id + cart_hash)
   payments.py            Razorpay test-mode order/capture, strictly behind the gate
   mcp_server.py          search / get_product / check_availability / create_cart_mandate / ...
@@ -137,5 +161,8 @@ pytest tests/test_payments.py -k real_api    # the one test that's skipped above
 /scripts/            one-off / operational scripts (catalog curation, Razorpay smoke test)
 /tests/              pytest suite -- mocked LLM calls, real Redis, real Ed25519 crypto
 /docs/               architecture, what actually broke, refusal code table, build plan
-/api/  /frontend/    not started yet
+/frontend/           React + TS + Tailwind demo -- replays committed eval/ results, no live backend call
+  src/data/            fixtures pulled from real eval/*.json, not invented
+  src/components/      layout/ catalog/ extraction/ agent/ metrics/ ui/
+/api/                empty -- no FastAPI app yet, no live link between frontend and backend
 ```

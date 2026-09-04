@@ -41,9 +41,10 @@ function TimelineStep({ step, state }: { step: AgentStep; state: 'pending' | 'ac
         {state === 'active' ? <Loader2 className="size-4 animate-spin" /> : <Icon className="size-4" />}
       </div>
       <div className="min-w-0">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <p className="text-body-sm font-medium text-foreground">{step.title}</p>
           {state === 'done' && <CheckCircle2 className="size-3.5 shrink-0 text-success" />}
+          {step.id === 'payment' && <Badge variant="warning">Simulated</Badge>}
         </div>
         <p className="mt-0.5 text-caption text-muted-foreground">{step.narrative}</p>
       </div>
@@ -106,10 +107,10 @@ export function AgentView() {
               <Split className="size-5" />
             </div>
             <div>
-              <p className="text-heading-sm text-foreground">Scripted buyer agent, live transaction</p>
+              <p className="text-heading-sm text-foreground">Scripted replay of a real transaction shape</p>
               <p className="text-body-sm text-muted-foreground">
-                Intent Mandate → gate decision → Razorpay test-mode capture. Every step below is a real request/response
-                shape, replayed.
+                Intent Mandate → gate decision → Razorpay test-mode capture. Every request/response below matches the
+                real schemas — nothing here is a live call; see the simulated label on the payment step.
               </p>
             </div>
           </div>
@@ -129,11 +130,19 @@ export function AgentView() {
         </CardHeader>
         {isDone && (
           <CardContent className="pt-0">
-            <div className="flex items-center gap-2 rounded-lg border border-success/30 bg-success-subtle px-4 py-3 animate-fade-in">
-              <CheckCircle2 className="size-4 shrink-0 text-success" />
-              <p className="text-body-sm text-success">
-                Payment captured — {formatPaise(29900)} for SKU-018, mandate-verified end to end.
-              </p>
+            <div className="flex flex-col gap-2 rounded-lg border border-success/30 bg-success-subtle px-4 py-3 animate-fade-in">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="size-4 shrink-0 text-success" />
+                <p className="text-body-sm text-success">
+                  Scripted result: {formatPaise(29900)} for SKU-018, mandate-verified end to end.
+                </p>
+              </div>
+              <div className="flex items-center gap-1.5 pl-6">
+                <Badge variant="warning">Simulated — not a live charge</Badge>
+                <span className="text-caption text-muted-foreground">
+                  Razorpay capture has only been verified for order creation; see docs/what-broke.md.
+                </span>
+              </div>
             </div>
           </CardContent>
         )}

@@ -11,7 +11,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 const STEPS: Step[] = [
   { id: 'extraction', label: 'Extraction', description: 'Messy catalog → structured' },
   { id: 'surface', label: 'Surface', description: 'Browsable, verified catalog' },
-  { id: 'agent', label: 'Agent mode', description: 'Live MCP transaction' },
+  { id: 'agent', label: 'Agent mode', description: 'Scripted MCP transaction' },
   { id: 'results', label: 'Results', description: 'Growth & adversarial' },
 ]
 
