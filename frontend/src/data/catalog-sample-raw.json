@@ -1,0 +1,780 @@
+[
+  {
+    "skuId": "SKU-001",
+    "title": "Generix OTG for Sony Xperia M5 OTG Cable",
+    "pricePaise": 19900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [
+          "sony_xperia_m5"
+        ],
+        "confidence": 0.95
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-002",
+    "title": "Sound Logic Soundlogic Dynabass Foldable Headphones Headphones",
+    "pricePaise": 312000,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-003",
+    "title": "Dynex Digital Full Size Headphone Dx-Hp550 Headphones",
+    "pricePaise": 351200,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-005",
+    "title": "Naxa Electronics Naxa Ne-929 Wh Headphones () Headphones",
+    "pricePaise": 384000,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-012",
+    "title": "Lexel High Quality Braided Metal Head Pure Copper Fast Charging 1.5 Meter Long for Iphone & Ipad Lightning Cable",
+    "pricePaise": 33900,
+    "published": true,
+    "redactedFields": [
+      "material"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": "lightning",
+        "confidence": 1.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "metal",
+        "confidence": 0.24
+      }
+    }
+  },
+  {
+    "skuId": "SKU-014",
+    "title": "Dicapac Grip Back Cover for Galaxy Note",
+    "pricePaise": 135000,
+    "published": true,
+    "redactedFields": [
+      "model_compat"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "samsung_galaxy_note"
+        ],
+        "confidence": 0.28
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-018",
+    "title": "Newdort Usb Charger Full Charging Pad",
+    "pricePaise": 29900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "charger",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-020",
+    "title": "Lexel High Quality Braided Metal Head Pure Copper Fast Charging 1.5 Meter Long for All Smartphone like Samsung HTC etc USB Cable",
+    "pricePaise": 33900,
+    "published": true,
+    "redactedFields": [
+      "model_compat"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 0.97
+      },
+      "model_compat": {
+        "value": [],
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 0.95
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "fabric_nylon",
+        "confidence": 0.93
+      }
+    }
+  },
+  {
+    "skuId": "SKU-021",
+    "title": "Fuson Back Cover for Samsung Galaxy J7",
+    "pricePaise": 59900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "samsung_galaxy_j7"
+        ],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-030",
+    "title": "kits kart Pouch for Microsoft Lumia 1320",
+    "pricePaise": 45400,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "microsoft_lumia_1320"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "leather",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-036",
+    "title": "TRINK 6S Tempered Glass for APPLE IPHONE 6S",
+    "pricePaise": 39900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "apple_iphone_6s"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-047",
+    "title": "D'clair Micromax A46 Battery Charger",
+    "pricePaise": 40000,
+    "published": true,
+    "redactedFields": [
+      "wattage_w"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "charger",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 1.0
+      },
+      "wattage_w": {
+        "value": 10.5,
+        "confidence": 0.28
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-048",
+    "title": "D'clair Huwai Honor 4X Battery Charger",
+    "pricePaise": 40000,
+    "published": true,
+    "redactedFields": [
+      "model_compat"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "charger",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "huawei_honor_4x"
+        ],
+        "confidence": 0.4
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 1.0
+      },
+      "wattage_w": {
+        "value": 10.5,
+        "confidence": 0.7
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-050",
+    "title": "Generix OTG for Xiaomi Mi4 OTG Cable",
+    "pricePaise": 19900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [
+          "xiaomi_mi4"
+        ],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 0.8
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-053",
+    "title": "Acromax Type C for One Plus Two USB C Type Cable",
+    "pricePaise": 88800,
+    "published": true,
+    "redactedFields": [
+      "model_compat"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [
+          "oneplus_two",
+          "oneplus_one",
+          "nexus_6p",
+          "nexus_5x"
+        ],
+        "confidence": 0.28
+      },
+      "connector_type": {
+        "value": "usb_c",
+        "confidence": 0.9
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-054",
+    "title": "XEBAC For Alcatel One Touch Idol X+ USB Cable",
+    "pricePaise": 22000,
+    "published": true,
+    "redactedFields": [
+      "material"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "alcatel_one_touch_idol_x_plus"
+        ],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 0.9
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "other",
+        "confidence": 0.32
+      }
+    }
+  },
+  {
+    "skuId": "SKU-057",
+    "title": "CONVENIENCE vm46 headphone for XIOMI Mi4 and Mi4i Signature vm46 Stereo Wired Headphones",
+    "pricePaise": 24900,
+    "published": true,
+    "redactedFields": [
+      "model_compat"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [
+          "xiaomi_redmi_mi4",
+          "xiaomi_redmi_mi4i"
+        ],
+        "confidence": 0.36
+      },
+      "connector_type": {
+        "value": "3_5mm_jack",
+        "confidence": 0.98
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-060",
+    "title": "Zebie SPB100096 Solar 12000 MAH Power Bank 12000 mAh",
+    "pricePaise": 129900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "power_bank",
+        "confidence": 0.99
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": 12000,
+        "confidence": 0.99
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  }
+]

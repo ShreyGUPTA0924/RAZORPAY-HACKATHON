@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Semantic color tokens as unitless HSL triples, wrapped at the point of
+ * use via hsl(var(--x)) (see tailwind.config.ts). One definition per theme
+ * here is what lets every component work in both light and dark without
+ * a single dark: variant scattered through component code -- components
+ * reference `bg-card`, `text-foreground`, `border-border`; only these two
+ * blocks know what those actually resolve to.
+ */
+:root {
+  --background: 210 40% 99%;
+  --foreground: 222 47% 11%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  --primary: 243 75% 59%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+
+  --muted: 210 40% 95%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 226 100% 97%;
+  --accent-foreground: 245 58% 42%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 214 32% 91%;
+  --input: 214 25% 88%;
+  --ring: 239 84% 67%;
+
+  --success: 142 71% 35%;
+  --success-foreground: 0 0% 100%;
+  --success-subtle: 142 55% 94%;
+
+  --warning: 32 92% 40%;
+  --warning-foreground: 0 0% 100%;
+  --warning-subtle: 38 92% 93%;
+
+  --danger: 0 72% 48%;
+  --danger-foreground: 0 0% 100%;
+  --danger-subtle: 0 80% 96%;
+
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: 224 39% 7%;
+  --foreground: 210 40% 96%;
+
+  --card: 222 37% 10%;
+  --card-foreground: 210 40% 96%;
+
+  --popover: 222 37% 10%;
+  --popover-foreground: 210 40% 96%;
+
+  --primary: 239 84% 71%;
+  --primary-foreground: 224 39% 7%;
+
+  --secondary: 222 30% 15%;
+  --secondary-foreground: 210 40% 96%;
+
+  --muted: 222 30% 14%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 243 36% 20%;
+  --accent-foreground: 226 90% 88%;
+
+  --destructive: 0 70% 58%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 222 25% 18%;
+  --input: 222 25% 20%;
+  --ring: 239 84% 71%;
+
+  --success: 142 55% 48%;
+  --success-foreground: 224 39% 7%;
+  --success-subtle: 142 40% 13%;
+
+  --warning: 38 92% 55%;
+  --warning-foreground: 224 39% 7%;
+  --warning-subtle: 38 55% 14%;
+
+  --danger: 0 75% 65%;
+  --danger-foreground: 224 39% 7%;
+  --danger-subtle: 0 50% 15%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans text-body antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand-200/70 text-brand-900;
+  }
+  .dark ::selection {
+    @apply bg-brand-800/60 text-brand-50;
+  }
+
+  /* Thin, unobtrusive scrollbars for the streaming panels -- a heavy
+     default scrollbar reads as "unstyled app," not a deliberate choice. */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300 dark:bg-neutral-700;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-400 dark:bg-neutral-600;
+  }
+}
+
+@layer utilities {
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--accent)) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+  }
+}
