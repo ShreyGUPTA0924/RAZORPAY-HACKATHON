@@ -158,11 +158,14 @@ only — `surface/payments.py` refuses anything else) for `scripts/razorpay_smok
   accessories anywhere and would carry over as-is. The extraction schema, the quarantine
   gate field, and the compatibility logic are currently scoped to this one vertical (phone
   accessories, 60 real SKUs) — depth over breadth, a scope decision, not a hidden gap.
-- **Razorpay capture is verified for order creation only.** Capture requires a human to
-  complete Razorpay's hosted checkout; there's no server-to-server auto-pay path on this test
-  account (both UPI Collect S2S and generic S2S JSON returned 404). Capture/reconciliation
-  logic is tested against a realistic fake client, not yet a real captured payment. See
-  `docs/what-broke.md`'s payments entry.
+- **Razorpay capture has been verified once for real, not automated.** A human completed
+  Razorpay's actual hosted checkout (no server-to-server auto-pay path exists on this test
+  account), and `surface/payments.py`'s real capture + reconciliation — not the fake client
+  the automated suite uses — was run against the resulting real payment and independently
+  confirmed `captured` straight from Razorpay. Real IDs and the full writeup:
+  `docs/what-broke.md`'s payments entry. This is one verified transaction pair, run by hand —
+  `tests/test_payments.py` still exercises this path against a fake client, not real-API
+  coverage on every run.
 - **A fourth growth metric (agent basket value / bundling) was cut for time**, not measured —
   the three metrics reported above are complete and real on their own.
 - **Model-compatibility extraction (0.67 F1) is a real, acknowledged weak field**, not hidden

@@ -44,7 +44,7 @@ function TimelineStep({ step, state }: { step: AgentStep; state: 'pending' | 'ac
         <div className="flex flex-wrap items-center gap-2">
           <p className="text-body-sm font-medium text-foreground">{step.title}</p>
           {state === 'done' && <CheckCircle2 className="size-3.5 shrink-0 text-success" />}
-          {step.id === 'payment' && <Badge variant="warning">Simulated</Badge>}
+          {step.id === 'payment' && <Badge variant="warning">Real capture, replayed</Badge>}
         </div>
         <p className="mt-0.5 text-caption text-muted-foreground">{step.narrative}</p>
       </div>
@@ -109,8 +109,10 @@ export function AgentView() {
             <div>
               <p className="text-heading-sm text-foreground">Scripted replay of a real transaction shape</p>
               <p className="text-body-sm text-muted-foreground">
-                Intent Mandate → gate decision → Razorpay test-mode capture. Every request/response below matches the
-                real schemas — nothing here is a live call; see the simulated label on the payment step.
+                Intent Mandate → gate decision → Razorpay test-mode capture. Clicking "Run session" replays this
+                scripted flow — no live call happens now. The payment step is the one exception worth reading
+                closely: its request/response is real data from an actual captured transaction, not fabricated
+                — see its "Real capture, replayed" label below.
               </p>
             </div>
           </div>
@@ -138,9 +140,11 @@ export function AgentView() {
                 </p>
               </div>
               <div className="flex items-center gap-1.5 pl-6">
-                <Badge variant="warning">Simulated — not a live charge</Badge>
+                <Badge variant="warning">Replay of a real test-mode payment</Badge>
                 <span className="text-caption text-muted-foreground">
-                  Razorpay capture has only been verified for order creation; see docs/what-broke.md.
+                  order_TYMYOQ0jzCVZLY / pay_TYMYcCUNCJp6zY — captured and reconciled against Razorpay's live
+                  test API (₹1.00, netbanking), a separate manual checkout, not this exact ₹299 amount. One
+                  verified transaction, not automated coverage — see docs/what-broke.md.
                 </span>
               </div>
             </div>

@@ -131,10 +131,11 @@ export const agentSteps: AgentStep[] = [
     id: 'payment',
     actor: 'payment',
     title: 'Razorpay order + capture (test mode)',
-    narrative: 'Order created, then captured — reconciled against the cart total at both steps, strictly behind the gate.',
+    narrative:
+      'Real order/payment IDs from a human-completed Razorpay test-mode checkout, captured and reconciled against Razorpay\'s live API via this exact surface/payments.py code path. Amount is that real transaction\'s (₹1.00, netbanking) — a separate smoke test, not a live capture of this scripted cart\'s ₹299 total. See docs/what-broke.md.',
     toolCall: 'execute_payment_behind_gate',
-    request: { razorpay_order_id: 'order_fake_0', payment_id: 'pay_upi_2291' },
-    response: { status: 'captured', amount: 29900, currency: 'INR', method: 'upi' },
+    request: { razorpay_order_id: 'order_TYMYOQ0jzCVZLY', payment_id: 'pay_TYMYcCUNCJp6zY' },
+    response: { status: 'captured', amount: 100, currency: 'INR', method: 'netbanking' },
     durationMs: 1100,
   },
 ]

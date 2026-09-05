@@ -236,12 +236,47 @@ compatibility claim that appears nowhere in the source text, though not the
 specific "universal compatibility" claim the attacker asked for) that this
 fix doesn't address (it's a `model_compat` issue, not `accessory_type`).
 
-### Razorpay payment capture: a known, current limitation
+### Razorpay payment capture: verified once, for real, against a human checkout
 
-Razorpay payment capture has been verified for order creation only; capture
-requires a human checkout step and has not been tested against a real
-capture response. Reconciliation logic is tested against a fake client, not
-the real API. This is a known, current limitation.
+**Update.** Order creation was already verified live. Capture and
+reconciliation have now been too — twice, in fact, once before and once
+after a key rotation partway through, so this isn't a one-off fluke tied to
+one specific account state.
+
+For each: `scripts/razorpay_smoke.py` created a real test-mode order, a
+human completed Razorpay's actual hosted checkout in a browser (no
+server-side shortcut exists on this account — see the script's own
+docstring), and `surface/payments.py`'s real `capture_payment()` — not the
+fake client the automated test suite uses — was run against the resulting
+real `payment_id`. Both runs: reconciliation passed (Razorpay's own
+recorded amount matched the cart mandate's `total_amount` both before and
+after the capture call), and an independent direct fetch of the payment
+object confirmed `"status": "captured", "captured": true` straight from
+Razorpay, not just this code's own say-so.
+
+Real, verifiable IDs from the second run (current keys):
+`order_TYMYOQ0jzCVZLY` / `pay_TYMYcCUNCJp6zY`, ₹1.00 INR, captured via
+netbanking (not UPI — Razorpay's checkout defaulted differently than the
+smoke-test page's UPI-prefilled button suggested it would). First run
+(prior keys, since rotated): `order_TYMB0GYFPc890k` / `pay_TYMGVLgGxlquJi`,
+same amount, same outcome. The very first attempt on that first run hit a
+transient local network error (`ConnectionAbortedError`, no response ever
+reached Razorpay) before a clean retry succeeded — noted for completeness,
+not a code bug.
+
+**What this does NOT claim.** This is one verified transaction pair (well,
+two), run by hand, against a fixed ₹1.00 test amount — not automated
+coverage. `tests/test_payments.py` and every other test still exercise
+`capture_payment()`/reconciliation against a fake client, not the real API;
+that hasn't changed and isn't the point of this entry. What this closes is
+the previous honest gap: "capture has never been tested against a real
+capture response" is no longer true. "Capture is covered by an automated,
+repeatable, real-API test" still isn't — that would need a scripted way to
+complete Checkout, which doesn't exist on this account.
+
+Status: **capture path verified live**, reconciliation logic confirmed
+correct against a real response, not just a fake one. Automated real-API
+coverage remains future work.
 
 ---
 
