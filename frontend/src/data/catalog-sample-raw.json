@@ -125,6 +125,47 @@
     }
   },
   {
+    "skuId": "SKU-004",
+    "title": "Radius Earbuds Radheadphones Hp-Rhf41P Headphones",
+    "pricePaise": 2263000,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
     "skuId": "SKU-005",
     "title": "Naxa Electronics Naxa Ne-929 Wh Headphones () Headphones",
     "pricePaise": 384000,
@@ -142,6 +183,252 @@
       "connector_type": {
         "value": null,
         "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-006",
+    "title": "snjmart Gold Note 4 Stereo Dynamic Earphone Wired Headphones",
+    "pricePaise": 29900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [],
+        "confidence": 0.95
+      },
+      "connector_type": {
+        "value": "3_5mm_jack",
+        "confidence": 0.95
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-007",
+    "title": "snjmart M5 Dual Stereo Dynamic Earphone Wired Headphones",
+    "pricePaise": 33500,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [],
+        "confidence": 0.95
+      },
+      "connector_type": {
+        "value": "3_5mm_jack",
+        "confidence": 0.95
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-008",
+    "title": "RJ philips Earphone 23000 Stereo Dynamic Headphone Wired Headphones",
+    "pricePaise": 39900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": "3_5mm_jack",
+        "confidence": 0.95
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-009",
+    "title": "LIFE LIKE S450 3.0 WITH MIC GOOD SOUND QUALITY Wired & Wireless Bluetooth Headphones",
+    "pricePaise": 99900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [],
+        "confidence": 0.8
+      },
+      "connector_type": {
+        "value": "3_5mm_jack",
+        "confidence": 0.95
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-010",
+    "title": "LIFE LIKE STN-840 4.1 WITH MIC Wireless Bluetooth Headset",
+    "pricePaise": 89900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [],
+        "confidence": 0.7
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-011",
+    "title": "snjmart C5 Ultra Dual Stereo Dynamic Earphone Wired Headphones",
+    "pricePaise": 33500,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [],
+        "confidence": 0.8
+      },
+      "connector_type": {
+        "value": "3_5mm_jack",
+        "confidence": 0.95
       },
       "wattage_w": {
         "value": null,
@@ -209,6 +496,47 @@
     }
   },
   {
+    "skuId": "SKU-013",
+    "title": "Generix Android Smart Phone OTG OTG Cable",
+    "pricePaise": 20700,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [],
+        "confidence": 0.8
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 0.9
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
     "skuId": "SKU-014",
     "title": "Dicapac Grip Back Cover for Galaxy Note",
     "pricePaise": 135000,
@@ -254,6 +582,131 @@
     }
   },
   {
+    "skuId": "SKU-015",
+    "title": "Vps Flip Cover for 7 Inch Oppo Find 7A",
+    "pricePaise": 33000,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "oppo_find_7a"
+        ],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": 7.0,
+        "confidence": 0.95
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-016",
+    "title": "Samsung Pouch for Samsung Galaxy Note 510",
+    "pricePaise": 183400,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-017",
+    "title": "codio World A114 Sony CP-V0 112 10000 mAh",
+    "pricePaise": 109900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "power_bank",
+        "confidence": 0.98
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 0.97
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": 10000,
+        "confidence": 0.99
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
     "skuId": "SKU-018",
     "title": "Newdort Usb Charger Full Charging Pad",
     "pricePaise": 29900,
@@ -271,6 +724,49 @@
       "connector_type": {
         "value": null,
         "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-019",
+    "title": "D'clair Micromax Canvas Play 4G Q469 Battery Charger",
+    "pricePaise": 40000,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "charger",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "micromax_canvas_play_4g_q469"
+        ],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 0.96
       },
       "wattage_w": {
         "value": null,
@@ -381,6 +877,356 @@
     }
   },
   {
+    "skuId": "SKU-022",
+    "title": "Kanu Book Cover for Spice Mi-720",
+    "pricePaise": 59900,
+    "published": true,
+    "redactedFields": [
+      "material"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [
+          "spice_mi_720"
+        ],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "other",
+        "confidence": 0.28
+      }
+    }
+  },
+  {
+    "skuId": "SKU-023",
+    "title": "Kanu Book Cover for Huawei Honor X1",
+    "pricePaise": 59900,
+    "published": true,
+    "redactedFields": [
+      "material"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [
+          "huawei_honor_x1"
+        ],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "other",
+        "confidence": 0.28
+      }
+    }
+  },
+  {
+    "skuId": "SKU-024",
+    "title": "Instyles Back Cover for HTC One S",
+    "pricePaise": 59400,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "htc_one_s"
+        ],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "plastic",
+        "confidence": 0.95
+      }
+    }
+  },
+  {
+    "skuId": "SKU-025",
+    "title": "SNE Book Cover for Karbonn A37",
+    "pricePaise": 26000,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "case",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "karbonn_a37"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": 7.0,
+        "confidence": 1.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-026",
+    "title": "ACM Pouch for Swipe Elite Plus",
+    "pricePaise": 33900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "swipe_elite_plus"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "leather",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-027",
+    "title": "ACM Pouch for Intex Aqua Lions 3g",
+    "pricePaise": 33900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "intex_aqua_lions_3g"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "leather",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-028",
+    "title": "Totta Pouch for Sony Xperia M5 Dual",
+    "pricePaise": 39900,
+    "published": true,
+    "redactedFields": [
+      "material"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "sony_xperia_m5_dual"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "other",
+        "confidence": 0.36
+      }
+    }
+  },
+  {
+    "skuId": "SKU-029",
+    "title": "Wise Guys Pouch for Lenovo S880",
+    "pricePaise": 24900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "lenovo_s880"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
     "skuId": "SKU-030",
     "title": "kits kart Pouch for Microsoft Lumia 1320",
     "pricePaise": 45400,
@@ -419,6 +1265,221 @@
       },
       "material": {
         "value": "leather",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-031",
+    "title": "kits kart Pouch for OnePlus One",
+    "pricePaise": 45400,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "pouch",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "oneplus_one"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "leather",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-032",
+    "title": "Newworld RTNE Pack Of One -583 Tempered Glass for Xiaomi Mi 4i",
+    "pricePaise": 17500,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "xiaomi_mi_4i"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-033",
+    "title": "Buynow Glass_54 Tempered Glass for Xiaomi Mi 4S",
+    "pricePaise": 27900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "xiaomi_mi_4s"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-034",
+    "title": "Buynow Glass_53 Tempered Glass for Lenovo K5 Note",
+    "pricePaise": 27900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "lenovo_k5_note"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-035",
+    "title": "Protector G X1032 Tempered Glass for Motorola Moto G",
+    "pricePaise": 16900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "motorola_moto_g"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
         "confidence": 1.0
       }
     }
@@ -463,6 +1524,436 @@
       "material": {
         "value": "tempered_glass",
         "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-037",
+    "title": "DEBOCK HTC desire 526 Tempered Glass for HTC desire 526",
+    "pricePaise": 24900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "htc_desire_526"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-038",
+    "title": "DEBOCK Samsung Galaxy on5 Tempered Glass for Samsung Galaxy on5",
+    "pricePaise": 24900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "samsung_galaxy_on5"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-039",
+    "title": "Scratchgard Original Armour Shield - N830 Screen Guard for Nokia Lumia 830",
+    "pricePaise": 71200,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "nokia_lumia_830"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-040",
+    "title": "Gadgetshieldz 1358SPFB Screen Guard for Nokia Lumia 830",
+    "pricePaise": 89900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "nokia_lumia_830"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-041",
+    "title": "Nillkin 654 Tempered Glass for Samsung Galaxy S5 Mini",
+    "pricePaise": 58500,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "samsung_galaxy_s5_mini"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-042",
+    "title": "Nillkin Z3-84345 Mirror Screen Guard for Blackberry Z3",
+    "pricePaise": 59800,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "blackberry_z3"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-043",
+    "title": "ACM TEM1161 Tempered Glass for Huawei Honor 6",
+    "pricePaise": 24900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "screen_protector",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "huawei_honor_6"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": "tempered_glass",
+        "confidence": 1.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-044",
+    "title": "Furst USB Adapter with Cable For Dzire VC Battery Charger",
+    "pricePaise": 24900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "charger",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "htc_desire_vc"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 1.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-045",
+    "title": "Furst USB Adapter with Cable For Mt X (2nd Gen) Battery Charger",
+    "pricePaise": 24900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "charger",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "moto_x_2nd_gen"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 1.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-046",
+    "title": "Furst USB Adapter with Cable For Lnvo Vibe P1M Battery Charger",
+    "pricePaise": 24900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "charger",
+        "confidence": 1.0
+      },
+      "model_compat": {
+        "value": [
+          "lenovo_vibe_p1m"
+        ],
+        "confidence": 1.0
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 1.0
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
       }
     }
   },
@@ -555,6 +2046,47 @@
     }
   },
   {
+    "skuId": "SKU-049",
+    "title": "XEBAC XEBAC-ADAPTER-B1017 Battery Charger",
+    "pricePaise": 26900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "charger",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 0.9
+      },
+      "wattage_w": {
+        "value": 6.0,
+        "confidence": 0.9
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
     "skuId": "SKU-050",
     "title": "Generix OTG for Xiaomi Mi4 OTG Cable",
     "pricePaise": 19900,
@@ -574,6 +2106,97 @@
       "connector_type": {
         "value": "micro_usb",
         "confidence": 0.8
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-051",
+    "title": "Generix OTG for Blackberry Priv OTG Cable",
+    "pricePaise": 19900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 0.95
+      },
+      "model_compat": {
+        "value": [
+          "blackberry_priv"
+        ],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": "micro_usb",
+        "confidence": 0.8
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-052",
+    "title": "AW High Speed Charge and Sync Usb for Iphone 6 Lightning Cable",
+    "pricePaise": 27100,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "cable",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "iphone_6",
+          "iphone_6_plus",
+          "iphone_5s",
+          "iphone_5c",
+          "iphone_5",
+          "iphone_6s"
+        ],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": "lightning",
+        "confidence": 0.95
       },
       "wattage_w": {
         "value": null,
@@ -691,6 +2314,92 @@
     }
   },
   {
+    "skuId": "SKU-055",
+    "title": "SYL WALL CHARGER/TRAVEL CHARGER/FAST CHARGER/PORTABLE CHARGER FOR LETV 1S Battery Charger",
+    "pricePaise": 39900,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "charger",
+        "confidence": 0.94
+      },
+      "model_compat": {
+        "value": [
+          "letv_1s"
+        ],
+        "confidence": 0.85
+      },
+      "connector_type": {
+        "value": "usb_a",
+        "confidence": 0.7
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-056",
+    "title": "DEBOCK DEBOCK Earphone For Samsung galaxy s advance i9070 Stereo Dynamic Headphone Wired Headphones",
+    "pricePaise": 32000,
+    "published": true,
+    "redactedFields": [],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "samsung_galaxy_s_advance_i9070"
+        ],
+        "confidence": 0.9
+      },
+      "connector_type": {
+        "value": "3_5mm_jack",
+        "confidence": 0.95
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
     "skuId": "SKU-057",
     "title": "CONVENIENCE vm46 headphone for XIOMI Mi4 and Mi4i Signature vm46 Stereo Wired Headphones",
     "pricePaise": 24900,
@@ -729,6 +2438,99 @@
       "wireless_charging": {
         "value": null,
         "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-058",
+    "title": "Dhhan Earphones/Handfree for Iphone 4/4s/4g/5/5c/5s Stereo Dynamic Headphone Wired Bluetooth Headphones",
+    "pricePaise": 39900,
+    "published": true,
+    "redactedFields": [
+      "model_compat"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "headphone",
+        "confidence": 0.96
+      },
+      "model_compat": {
+        "value": [
+          "apple_iphone_4",
+          "apple_iphone_4s",
+          "apple_iphone_4g",
+          "apple_iphone_5",
+          "apple_iphone_5c",
+          "apple_iphone_5s"
+        ],
+        "confidence": 0.368
+      },
+      "connector_type": {
+        "value": "3_5mm_jack",
+        "confidence": 0.97
+      },
+      "wattage_w": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "capacity_mah": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "material": {
+        "value": null,
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "skuId": "SKU-059",
+    "title": "Wayona 10000mAh Wireless 10000mAh Power bank With Dual USB Output 10000 mAh",
+    "pricePaise": 214900,
+    "published": true,
+    "redactedFields": [
+      "wattage_w"
+    ],
+    "attributes": {
+      "accessory_type": {
+        "value": "power_bank",
+        "confidence": 0.99
+      },
+      "model_compat": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "connector_type": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wattage_w": {
+        "value": 10.5,
+        "confidence": 0.24
+      },
+      "capacity_mah": {
+        "value": 10000,
+        "confidence": 0.99
+      },
+      "screen_size_in": {
+        "value": null,
+        "confidence": 0.0
+      },
+      "wireless_charging": {
+        "value": true,
+        "confidence": 0.95
       },
       "material": {
         "value": null,

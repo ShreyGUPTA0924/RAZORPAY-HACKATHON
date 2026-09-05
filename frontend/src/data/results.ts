@@ -80,9 +80,14 @@ export const adversarialFindings: AdversarialFinding[] = [
 ]
 
 export const adversarialMeta = {
-  totalAttacks: 45,
-  mandateAttacks: 37,
+  // 15 attacks were generated (5 mandate + 10 catalog_injection), but 2
+  // catalog_injection attacks were skipped by the harness's own execution
+  // cap and never ran -- these counts are the 13 that were actually
+  // executed (5 + 8), matching exactly what adversarialFindings below
+  // itemizes (1 + 1 + 6 = 8 catalog-injection outcomes).
+  totalAttacks: 13,
+  mandateAttacks: 5,
   catalogInjectionAttacks: 8,
   attackerModel: 'gemini-3.1-flash-lite',
-  extractorModel: 'openai/gpt-oss-120b (Groq)',
+  extractorModel: 'gemini-2.5-flash (Gemini)',
 }

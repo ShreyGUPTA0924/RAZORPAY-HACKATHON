@@ -29,3 +29,6 @@ data/canonical_adjudication_cache/
 .idea/
 .DS_Store
 Thumbs.db
+
+# local-only notes / explainers -- never committed, never pushed
+/local/

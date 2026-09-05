@@ -28,13 +28,17 @@ export function AppShell({ steps, activeStepId, completedStepIds, onSelectStep, 
             </div>
           </div>
 
-          <div className="hidden items-center gap-2 lg:flex">
+          <div className="flex items-center gap-2">
+            {/* Always visible, at every breakpoint -- this is the one status a
+                judge must never miss, whether the backend is reachable or not. */}
             {backendLive ? (
               <Badge variant="success">Live backend</Badge>
             ) : (
               <Badge variant="secondary">Cached replay</Badge>
             )}
-            <Badge variant="secondary">Razorpay test mode</Badge>
+            <Badge variant="secondary" className="hidden lg:inline-flex">
+              Razorpay test mode
+            </Badge>
           </div>
 
           <ThemeToggle />

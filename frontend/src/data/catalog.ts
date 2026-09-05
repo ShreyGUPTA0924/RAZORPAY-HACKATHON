@@ -1,10 +1,9 @@
 import raw from './catalog-sample-raw.json'
 
-// Real output from pipeline/extract.py's committed run (eval/extraction_results.json)
-// against the real 60-SKU catalog, curated down to a representative 18 for
-// the demo -- a mix of clean high-confidence rows and every real redaction
-// pattern found in the actual run (model_compat, material, wattage_w).
-// Nothing here is fabricated; see eval/extraction_results.json for the source.
+// The real, full 60-SKU production run (eval/extraction_results.json),
+// reshaped by scripts/regen_frontend_catalog_sample.py -- not a curated
+// subset. Every value, confidence, and quarantine/redaction decision here
+// is exactly what that committed run produced.
 
 export const ATTRIBUTE_FIELDS = [
   'accessory_type',

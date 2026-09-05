@@ -42,7 +42,7 @@ export function SurfaceView() {
             type="button"
             onClick={() => setCategory(null)}
             className={cn(
-              'rounded-full border px-3 py-1 text-caption font-medium capitalize transition-colors',
+              'rounded-full border px-3 py-1 text-caption font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
               category === null
                 ? 'border-transparent bg-primary text-primary-foreground'
                 : 'border-border text-muted-foreground hover:text-foreground'
@@ -56,7 +56,7 @@ export function SurfaceView() {
               type="button"
               onClick={() => setCategory(c)}
               className={cn(
-                'rounded-full border px-3 py-1 text-caption font-medium capitalize transition-colors',
+                'rounded-full border px-3 py-1 text-caption font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                 category === c
                   ? 'border-transparent bg-primary text-primary-foreground'
                   : 'border-border text-muted-foreground hover:text-foreground'

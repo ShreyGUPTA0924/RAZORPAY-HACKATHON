@@ -16,7 +16,7 @@ interface StepperProps {
 
 export function Stepper({ steps, activeId, completedIds, onSelect }: StepperProps) {
   return (
-    <nav aria-label="Demo flow" className="w-full">
+    <nav aria-label="Demo flow" className="w-full overflow-x-auto">
       <ol className="flex items-stretch">
         {steps.map((step, i) => {
           const isActive = step.id === activeId
