@@ -83,6 +83,34 @@ extracting and publishing, not being scored.
 **Fix.** Production extraction now uses the full, only-boilerplate-trimmed
 description. `strip_spec_block()` stays eval-only. Status: **fixed**.
 
+### `extraction_eval.py`'s missing normalization masked a working `model_compat` extractor
+
+**Symptom.** A real scoring run against the held-out ground truth:
+`model_compat` came back a flat 0.00 precision, 0.00 recall — despite
+`pipeline/extract.py` visibly proposing correct values in that same run's
+own output.
+
+**Root cause.** `eval/extraction_eval.py`'s own `_normalize()` only
+lowercased strings. Ground truth is hand-labeled as human-readable text
+straight off the listing ("Samsung Galaxy J7"); `pipeline/extract.py`
+emits canonical snake_case ("samsung_galaxy_j7") — a correct extraction,
+scored as a 100% miss because the comparison never normalized
+spaces/hyphens to underscores the way `pipeline/verify.py`'s own
+`_normalize()` already did.
+
+**Caught by:** treating a suspiciously flat 0.00 across 13 real,
+non-trivial support rows as a signal to check the actual value pairs by
+hand, rather than accepting it as "the extractor is just bad at this
+field."
+
+**Fix.** `_normalize()` now matches `pipeline/verify.py`'s convention
+(strip, lowercase, space/hyphen → underscore). Re-run:
+`model_compat` 0.64/0.69/0.67 (precision/recall/F1, n=13) — the real
+number, not the artifact. `load_predictions()` was rewritten in the same
+pass: it expected an abstract prediction format nothing in this codebase
+ever produced, instead of `pipeline/extract.py`'s actual output shape.
+Status: **fixed**.
+
 ---
 
 ## Surface / payments layer
@@ -461,6 +489,96 @@ recording so they aren't re-made:
   won't recover until tomorrow) — the same mechanism, two opposite
   verdicts depending on which quota dimension actually fired. Both were
   observed for real in this project, not inferred from documentation.
+
+---
+
+## Documentation and demo-layer drift
+
+The bugs above are in code that computes something. These are bugs in what
+the project *said* about itself, or in fixture data that stopped matching
+its own source of truth — caught the same way, by checking the actual
+current state rather than trusting an earlier description of it.
+
+### README claimed the frontend didn't exist, after it had already been built
+
+**Symptom.** An adversarial self-audit (explicitly instructed to verify
+every claim against the actual code, not prior status reports) found
+README's Status section and repo layout still read: *"The FastAPI app
+(`api/`) and frontend (`frontend/`) have not been started yet —
+everything above runs as scripts and a standalone MCP server today, not
+yet behind a web UI."* The frontend had already been built and committed
+(`edec59d`, `be7e6db`) by the time this was read. The same pass found the
+test count was stale (246, actually 267) and the refusal code count was
+stale (12, actually 13).
+
+**Root cause.** Documentation was written once and never re-checked
+against the repo's actual state after later commits changed that state —
+each read of the doc assumed it still described current reality instead
+of treating it as a claim to verify.
+
+**Caught by:** reading the actual current file tree and test output
+against what README claimed, on explicit instruction not to trust prior
+session summaries.
+
+**Fix.** Corrected in `70338ed`: Status section rewritten to describe the
+frontend accurately, a Frontend demo quickstart section added, test/code
+counts corrected. Status: **fixed**.
+
+### Two frontend fixtures drifted from the source-of-truth JSON they claimed to show
+
+**Symptom 1 — Extraction screen.** The header read *"60-SKU messy
+Flipkart phone-accessories export,"* but the data behind it
+(`frontend/src/data/catalog-sample-raw.json`) was an 18-SKU curated
+subset pulled from the held-out eval set — a title naming the real
+60-SKU production run while actually showing a fraction of it, with the
+progress bar consequently stuck at "18/18."
+
+**Symptom 2 — Results screen.** The adversarial summary card showed
+`totalAttacks: 45, mandateAttacks: 37, catalogInjectionAttacks: 8` against
+the real, committed `eval/adversarial/adversarial_results.json`
+(`n_attacks: 15` — 5 mandate + 10 catalog_injection generated, 13
+executed) — the mandate count was invented, off by roughly 7x.
+`extractorModel` also had the provider swapped, naming Groq's model where
+the actual default extractor is Gemini's.
+
+**Root cause.** Both fixtures were written once, by hand, with no
+mechanical link back to the source-of-truth JSON files they were
+supposed to represent — the same failure mode as a hardcoded number in a
+doc going stale, just inside a `.ts` file instead of markdown.
+
+**Caught by:** an explicit numbers-audit pass across every frontend data
+file, comparing each field against the actual committed `eval/*.json` it
+claimed to represent, rather than trusting the frontend was built
+correctly the first time and never checking again.
+
+**Fix.** `catalog-sample-raw.json` regenerated from the real, full
+60-SKU run (`scripts/regen_frontend_catalog_sample.py`, reading
+`eval/extraction_results.json` directly, including its own
+already-computed `quarantine` decision per SKU — not re-derived).
+`adversarialMeta` corrected to `13` total / `5` mandate / `8` catalog
+injection, matching both the real committed file and the qualitative
+findings list already itemized on the same screen (1 + 1 + 6 = 8).
+`extractorModel` corrected to Gemini. Status: **fixed**.
+
+### The `api` container exits on its own — known, not fixed
+
+**Symptom.** Across one working session, the `api` Docker container
+stopped on its own three times without `docker compose stop`/`down`
+being run against it: twice with a clean exit (code 0, graceful shutdown
+logged), once killed (code 137).
+
+**Root cause.** Not established. `docker inspect` shows `RestartCount: 0`
+each time — so `restart: unless-stopped` never even attempted a restart,
+consistent with something explicitly stopping the container rather than
+it crashing — and `OOMKilled: false`. Redis and Postgres, running in the
+same Compose project the whole time, were never interrupted, which rules
+out a full Docker Desktop/WSL2 engine restart as the cause. A clean
+shutdown logs that it happened, not why.
+
+**Status: not fixed, not fully explained.** Documented here rather than
+silently worked around, so a recording session checks `docker compose ps`
+immediately beforehand rather than assuming a container started earlier
+is still running.
 
 ---
 

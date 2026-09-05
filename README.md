@@ -109,7 +109,7 @@ Verified from a genuinely clean clone into a fresh temp directory before this wa
 down.
 
 ```bash
-git clone <this repo> && cd agentfront
+git clone https://github.com/ShreyGUPTA0924/RAZORPAY-HACKATHON.git && cd RAZORPAY-HACKATHON
 python -m venv .venv && source .venv/Scripts/activate   # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
 
